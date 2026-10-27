@@ -1,0 +1,9 @@
+reports/
+.env
+__pycache__/
+
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
