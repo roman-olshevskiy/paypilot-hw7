@@ -30,7 +30,7 @@ def load(path: str | Path) -> list[dict]:
         try:
             case = json.loads(line)
         except json.JSONDecodeError as e:
-            raise SetError(f"{path.name}:{lineno}: bad JSON — {e}") from e
+            raise SetError(f"{path.name}:{lineno}: bad JSON вЂ” {e}") from e
         _validate(case, f"{path.name}:{lineno}")
         if case["id"] in seen:
             raise SetError(f"{path.name}:{lineno}: duplicate id {case['id']}")
@@ -79,7 +79,7 @@ def set_hash(path: str | Path) -> str:
 def summarise(cases: list[dict]) -> dict:
     ""
     meta = [c.get("additional_metadata", {}) for c in cases]
-    levels = {NAME_TO_LEVEL[m["assertion"]] for m in meta}
+    levels = {1 if m["assertion"] == "budget" and set(m.get("budget", {})) == {"identical_tool_calls_max"} else NAME_TO_LEVEL[m["assertion"]] for m in meta}
     return {
         "cases": len(cases),
         "layers": _count(m["layer"] for m in meta),

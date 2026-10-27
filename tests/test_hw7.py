@@ -15,6 +15,7 @@ class Budget(unittest.TestCase):
   self.assertFalse(runner._budget(meta,[self.result(130) for _ in range(5)]).passed)
  def test_six_cases_and_levels(self):
   cases=[json.loads(x) for x in (ROOT/'sets/l05_dialogs.jsonl').read_text(encoding='utf-8').splitlines()];self.assertEqual(len(cases),6)
+  import loader;self.assertEqual(len(loader.load(ROOT/'sets/l05_dialogs.jsonl')),6)
   for c in cases:
    m=c['additional_metadata'];daily=set(m['budget'])=={'identical_tool_calls_max'}
    self.assertEqual(m['gate'],'daily' if daily else 'release');self.assertEqual(m['runs'],1 if daily else 5)

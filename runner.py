@@ -184,10 +184,9 @@ def run_case(case: dict) -> dict:
         "runs": runs,
         "verdict": verdict.as_dict(),
         "answers": [r["answer"][:400] for r in results],
-        "latency_ms": results[-1]["latency_ms"] if results else 0,
-        "tokens": sum((r["usage"] or {}).get("input_tokens", 0)
-                      + (r["usage"] or {}).get("output_tokens", 0)
-                      for r in results),
+        "latency_ms": median([r["latency_ms"] for r in results]) if results else 0,
+        "budget_samples": [{"dialog_tokens":r["dialog_tokens"],"latency_ms":r["latency_ms"],"identical_max":max((_identical_calls(t) for t in r["step_traces"]),default=0)} for r in results],
+        "tokens": sum(r["dialog_tokens"] for r in results),
         "tool_calls": (stand.tool_calls(results[-1].get("trace") or {})
                        if results else []),
     }

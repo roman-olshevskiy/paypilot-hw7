@@ -81,7 +81,10 @@ def run_l03(label,args,calibration=False):
  runner.run_case=case
  try:
   def execute():
+   before=set((ROOT/'reports').glob('*.json'))
    code=cli.main(args)
+   new=set((ROOT/'reports').glob('*.json'))-before
+   for report in new:(cap.folder/'native-results.json').write_bytes(report.read_bytes())
    if code not in (0,1):raise RuntimeError('L03 transport/runner error '+str(code))
    return code
   cap.execute(label,execute)
