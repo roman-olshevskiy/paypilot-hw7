@@ -1,0 +1,12 @@
+{
+  "summary_after_2_provider_median": {
+    "baseline": 0.00283646,
+    "defect": 0.0029899799999999997
+  },
+  "summary_disabled_provider_median": {
+    "baseline": 0.0019318199999999999,
+    "defect": 0.00199224
+  },
+  "runs_per_condition": 5,
+  "scope": "Independent real dialogues, not paired deterministic generations; summary disabled via summarize_after=20 on four turns."
+}

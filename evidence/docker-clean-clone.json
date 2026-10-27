@@ -1,0 +1,84 @@
+{
+  "cloned_commit": "8a538933afd33043d3ab8c8f1592435fd95ee138",
+  "clone_clean_at_start": true,
+  "tracked_source_unchanged": true,
+  "scope": "Real paid Docker native L03 CLI, capture wrapper preserves every step. lesson-08 then clean; not replay. Historical host runs kept separate.",
+  "results": [
+    {
+      "profile": "lesson-08",
+      "actual_command": [
+        "docker",
+        "compose",
+        "run",
+        "--rm",
+        "-e",
+        "HW7_PAID=1",
+        "-e",
+        "HW7_FORECAST_SHA=a8bca1d14c7c5ff318440d91dc88d1104137a27ccc5745433e585d92b39a7240",
+        "--entrypoint",
+        "python",
+        "eval",
+        "scripts/docker_capture_entry.py",
+        "--set",
+        "l05_dialogs",
+        "--gate",
+        "all",
+        "--profile",
+        "lesson-08",
+        "--settings",
+        "{\"model\": \"anthropic/claude-haiku-5.5\", \"summarize_after\": 20, \"clock\": \"2026-09-15T10:00:00Z\"}"
+      ],
+      "native_cli_args": [
+        "--set",
+        "l05_dialogs",
+        "--gate",
+        "all",
+        "--profile",
+        "lesson-08",
+        "--settings",
+        "{\"model\": \"anthropic/claude-haiku-5.5\", \"summarize_after\": 20, \"clock\": \"2026-09-15T10:00:00Z\"}"
+      ],
+      "cases": 6,
+      "passed": 2,
+      "folder": "evidence/runs/20261027T223236576766Z-docker-budget-lesson-08-420be1"
+    },
+    {
+      "profile": "clean",
+      "actual_command": [
+        "docker",
+        "compose",
+        "run",
+        "--rm",
+        "-e",
+        "HW7_PAID=1",
+        "-e",
+        "HW7_FORECAST_SHA=a8bca1d14c7c5ff318440d91dc88d1104137a27ccc5745433e585d92b39a7240",
+        "--entrypoint",
+        "python",
+        "eval",
+        "scripts/docker_capture_entry.py",
+        "--set",
+        "l05_dialogs",
+        "--gate",
+        "all",
+        "--profile",
+        "clean",
+        "--settings",
+        "{\"model\": \"anthropic/claude-haiku-5.5\", \"summarize_after\": 20, \"clock\": \"2026-09-15T10:00:00Z\"}"
+      ],
+      "native_cli_args": [
+        "--set",
+        "l05_dialogs",
+        "--gate",
+        "all",
+        "--profile",
+        "clean",
+        "--settings",
+        "{\"model\": \"anthropic/claude-haiku-5.5\", \"summarize_after\": 20, \"clock\": \"2026-09-15T10:00:00Z\"}"
+      ],
+      "cases": 6,
+      "passed": 6,
+      "folder": "evidence/runs/20261027T224126192424Z-docker-budget-clean-bf79e3"
+    }
+  ]
+}

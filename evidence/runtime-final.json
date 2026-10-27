@@ -1,0 +1,29 @@
+{
+  "health": {
+    "status": "ok",
+    "profile": "clean",
+    "startup_profile": "clean",
+    "active_defects": [],
+    "provider": "openrouter",
+    "router": "",
+    "otlp": true,
+    "trace_backends": [
+      "otlp",
+      "langfuse"
+    ],
+    "trace_content": true,
+    "scope": "server",
+    "request_settings": {},
+    "locked": false,
+    "keys_required": false,
+    "key": null,
+    "key_settings": null,
+    "admin": false
+  },
+  "runtime": {
+    "LLM_PROVIDER": "openrouter",
+    "HTTPS_PROXY": "",
+    "SSL_CERT_FILE": "",
+    "TRACE_CAPTURE_CONTENT": "1"
+  }
+}

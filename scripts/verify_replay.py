@@ -4,8 +4,8 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def worker(profile,out):
  sys.path.insert(0,str(ROOT));import cli,runner,stand
- index=json.loads((ROOT/('evidence/docker-budget-'+profile+'-index.json')).read_text());folder=ROOT/index['folder']
- captures=json.loads((folder/'captures.json').read_text());expected=json.loads((folder/'native-results.json').read_text())
+ index=json.loads((ROOT/('evidence/docker-budget-'+profile+'-index.json')).read_text(encoding='utf-8'));folder=ROOT/index['folder']
+ captures=json.loads((folder/'captures.json').read_text(encoding='utf-8'));expected=json.loads((folder/'native-results.json').read_text(encoding='utf-8'))
  bycase={};traces={x['response']['request_id']:x['trace'] for x in captures}
  for row in captures:bycase.setdefault(row['scenario'],{}).setdefault(row['repeat'],[]).append(row)
  state={'case':None,'repeat':0,'step':0,'clock':0,'profile':profile,'real_http_calls':0,'fixture_chat_calls':0}
@@ -33,7 +33,7 @@ def worker(profile,out):
  stand._call=call;runner.run_case=run_case;runner.time=types.SimpleNamespace(time=clock)
  runner.REPORTS_DIR=Path(out);runner.REPORTS_DIR.mkdir(exist_ok=True,parents=True)
  code=cli.main(['--set','l05_dialogs','--profile',profile,'--gate','all'])
- report=json.loads(next(Path(out).glob('*.json')).read_text())
+ report=json.loads(next(Path(out).glob('*.json')).read_text(encoding='utf-8'))
  assert [(x['id'],x['verdict']['passed']) for x in report['cases']]==[(x['id'],x['verdict']['passed']) for x in expected['cases']]
  print(json.dumps({'profile':profile,'native_cli_exit':code,'verdicts_reproduced':len(report['cases']),'fixture_chat_calls':state['fixture_chat_calls'],'real_http_calls':0,'real_model_calls':0}))
 def main():

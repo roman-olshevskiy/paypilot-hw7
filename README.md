@@ -1,306 +1,68 @@
-# L03 · Золотий набір і ранер
-
-Демо-набір із 14 кейсів, ранер курсу і дошки до лабораторної заняття L03
-курсу з тестування LLM-агентів. Набір перевіряє бота підтримки PayPilot:
-правильні відповіді в кейсах рахує код банку — рушії стенду, а сам набір
-проганяється на справній версії стенду і на зламаній.
-
-Python локально не потрібен: ранер іде в Docker, у голому образі
-`python:3.12-slim`, без збирання і без залежностей. Ключ API цьому
-репозиторію теж не потрібен: ранер ходить у стенд по HTTP, а ключ моделі
-живе в `.env` стенду.
-
-## Що зробити, коротко
-
-Корінь курсу завжди `~/paypilot`: стенд у `~/paypilot/paypilot-stand`, цей
-репозиторій — у `~/paypilot/l03` (папка уроку, поруч із `l02`).
-
-1. Підняти локальний стенд: у `~/paypilot/paypilot-stand` — `docker compose up -d --build`, потім `docker compose exec stand python scripts/doctor.py`.
-2. Склонувати цей репозиторій поруч зі стендом:
-   `git clone https://github.com/sergeytkachenko/paypilot-l03-eval.git ~/paypilot/l03`
-3. `cd ~/paypilot/l03` і перевірити набір: `docker compose run --rm eval --dry-run`.
-4. Прогнати набір на справній версії: `docker compose run --rm eval --profile clean`.
-5. Прогнати на зламаній: `docker compose run --rm eval --profile lesson-03`.
-
-Команди влаштовані як на L02: усе після `eval` — прапорці.
-
-Деталі кожного кроку нижче.
-
-## Що в репозиторії
-
-| Файл | Що це |
-|---|---|
-| `complaints.md` | двадцять скарг C-01…C-20, той самий корпус, що на L02 |
-| `triage.md` | дошка кроку 1: скарги в трьох купках за відтворюваністю — придатні одразу, після добору контексту, непридатні |
-| `case-FX-004.json` | перший кейс набору, розгорнутий по полях |
-| `sets/l03.jsonl` | демо-набір: 14 кейсів, по одному на рядок; його читає ранер |
-| `generate_from_engines.py` | генератор: викликає рушії стенду і друкує кейси з готовими очікуваннями |
-| `ladder.md` | дошка драбини перевірок: рівень перевірки для кожного кейса |
-| `gaps.md` | дошка «чого набір не ловить» |
-| `runner.py`, `loader.py`, `assertions.py`, `stand.py`, `judge.py`, `console.py` | ранер курсу, лише стандартна бібліотека Python |
-| `validate.py` | друкує `set_hash` і покриття набору |
-| `cli.py` | розбирає прапорці запуску, перемикає профіль стенду і викликає ранер |
-| `docker-compose.yml`, `.env.example` | запуск у Docker і шаблон `.env` |
-
-## Що потрібно
-
-- Docker Desktop (macOS, Windows) або Docker Engine з compose (Linux).
-- Піднятий **локальний** стенд `~/paypilot/paypilot-stand` на
-  `http://localhost:8000` із живою моделлю: `doctor.py` показує
-  `llm provider [OK]`. Ранер скидає базу стенду перед кожним кейсом, тому на
-  спільному стенді його не запускай.
-- Каталог стенду на цьому ж комп'ютері: ранер і генератор імпортують з нього
-  рушії (`app/engines`). Клонуй цей репозиторій у `~/paypilot/l03`, поруч зі
-  стендом: тоді шлях за замовчуванням (`../paypilot-stand`) уже правильний.
-
-## Запуск
-
-```bash
-mkdir -p ~/paypilot
-git clone https://github.com/sergeytkachenko/paypilot-l03-eval.git ~/paypilot/l03
-cd ~/paypilot/l03
-docker compose run --rm eval --dry-run
-```
-
-`--dry-run` нічого не викликає: друкує хеш набору і зведення — скільки
-кейсів, які оракули, які рівні перевірок. Для демо-набору перший рядок —
-`set l03.jsonl set_hash be48a694a047`. Два прогони можна порівнювати, лише
-коли хеш однаковий: зміниш хоч один символ у наборі — зміниться хеш.
-
-Прогін і код повернення:
-
-```bash
-docker compose run --rm eval --profile clean
-echo $?
-```
-
-`--profile` перемикає стенд на названий профіль перед прогоном і чекає,
-поки стенд почне приймати запити. Без `--profile` ранер профіль не чіпає:
-ганяє той, що зараз на стенді. Який профіль був у прогоні, видно в першому
-рядку виводу.
-
-Ранер ставить боту кейси набору по одному, перед кожним скидає базу стенду
-і друкує блок на кейс: рядок із `PASS` або `FAIL`, рівнем і назвою
-перевірки, а під ним — питання, що очікувалося, кожен виклик інструмента з
-аргументами і результатом, вердикт і початок відповіді бота. У звіт по
-подробиці ходити не треба. Із `--brief` лишається по рядку на кейс. Колір є
-лише в терміналі; змінна `NO_COLOR` його вимикає.
-
-```text
-FAIL  FX-004     L2 generation  tool_grounded_numeric  3.2s, 4876 tokens
-      question  I'm CUS-0007. Convert 2000 EUR to USD. What is the final amount I receive?
-      expected  quote_fx.final_amount = 2154.35 +/-0.02, and the same figure in the answer
-      tool      quote_fx(customer_id=CUS-0007, amount=2000, from_currency=EUR, to_currency=USD)
-                -> final_amount=2157.608696, from_currency=EUR, to_currency=USD, …
-      verdict   quote_fx.final_amount = [2157.608696], expected 2154.35 +/-0.02
-      answer    Here's your conversion breakdown: …
-```
-
-Демо-набір — 14 звернень до бота, близько хвилини. Код
-повернення — 0, якщо пройшли всі кейси, і 1, якщо впав хоч один; у
-PowerShell його показує `$LASTEXITCODE`. Читай його одразу після прогону:
-будь-яка команда між ними його перезапише. І не додавай до прогону `| tee`:
-після конвеєра `$?` — це код `tee`.
-
-Далі те саме з `--profile lesson-03`: справна версія дає точку відліку, а
-зламана перевіряє сам набір. Якщо набір на ній не червоніє, слабкий набір, а
-не бот. Після прогонів стенд лишається на останньому профілі.
-
-## Прапорці
-
-| Прапорець | Що робить |
-|---|---|
-| `--profile clean` | перемикає стенд на профіль перед прогоном |
-| `--settings '{"model": "google/gemini-2.5-flash"}'` | заголовок `X-Stand-Settings` на кожен запит `/chat` набору: `model`, `reasoning`, `summarize_after`, `top_k` тощо |
-| `--only FX-004,LIM-003` | лише названі кейси |
-| `--set l03` | який набір читати: `sets/<назва>.jsonl` |
-| `--gate daily` | кейси якого гейта: `daily`, `release` або `all`; за замовчуванням `daily` |
-| `--brief` | по рядку на кейс, без подробиць |
-| `--dry-run` | хеш і покриття набору, нічого не викликає |
-
-```bash
-docker compose run --rm eval --profile clean --only FX-004,LIM-003
-```
-
-Профіль можна перемкнути й без прогону — у чаті стенду
-(`http://localhost:8000`, бічна панель, блок «Профіль заняття») або з
-термінала:
-
-```bash
-curl -s -X PUT localhost:8000/api/_test/profile \
-  -H 'Content-Type: application/json' -d '{"profile":"clean"}'
-```
-
-## Мок моделі
-
-Частина 4 заняття перевіряє виклики інструментів без моделі. Між стендом і
-API моделі стає MockServer: стенд, як і завжди, шле запит на адресу
-провайдера, але йде через проксі (`HTTPS_PROXY`) і довіряє його
-сертифікату (`SSL_CERT_FILE`), а відповідає мок за сценарієм з
-`mock/expectations.json`. Код стенду не змінюється, ключ не потрібен:
-запит до моделі не доходить. Override-файл перемикає стенд на провайдер
-`openai` з фіктивним ключем, бо для мока провайдер — лише формат запиту.
-
-```bash
-cd ~/paypilot/l03
-docker compose up -d llm-mock
-cd ~/paypilot/paypilot-stand
-docker compose -f docker-compose.yml -f ../l03/mock/stand.override.yml up -d --force-recreate stand
-cd ~/paypilot/l03
-docker compose run --rm eval --set l03-mock --profile clean
-```
-
-Набір `sets/l03-mock.jsonl` — ті самі FX-004, LIM-003 і DIS-006 плюс
-FX-004-CALL: перевірка `tool_called_with`, що стенд виконав саме той
-виклик, який повернула «модель», з тими самими аргументами. На `clean` має
-бути 4/4, на `lesson-03` — 1/4: виклик правильний, результати інструментів
-ні.
-
-Що стенд надіслав моделі, показує журнал мока, а `verify` перевіряє
-взаємодію: чи повернув стенд результат інструмента у другому запиті.
-
-```bash
-docker compose run --rm eval python mock/journal.py
-curl -s -o /dev/null -w '%{http_code}\n' -X PUT localhost:1080/mockserver/verify \
-  -H 'Content-Type: application/json' -d @mock/verify-fx-004.json
-```
-
-`202` — перевірка пройшла; інакше MockServer друкує, що очікував і що
-отримав. Повернути справжню модель:
-
-```bash
-cd ~/paypilot/paypilot-stand
-docker compose up -d --force-recreate stand
-cd ~/paypilot/l03
-docker compose stop llm-mock
-```
-
-Сертифікат `mock/mockserver-ca.pem` — стандартний CA MockServer, його
-приватний ключ опублікований у репозиторії MockServer, тому цей мок
-годиться лише для локального стенду. `/health` за проксі й далі показує
-`"provider":"openai"`: чи стенд за моком, видно з журналу мока, а не зі
-стенду.
-
-## Змінні ранера
-
-Те саме, що прапорці, але через оточення; прапорець сильніший за змінну.
-Передаються через `-e` після `--rm`:
-
-| Змінна | Що робить |
-|---|---|
-| `SET=l03` | який набір читати: `sets/<SET>.jsonl`; за замовчуванням `l03`. `validate.py` читає ту саму змінну |
-| `CASE=FX-004,LIM-003` | лише названі кейси |
-| `GATE=daily` | лише кейси щоденного гейта, це значення за замовчуванням; `GATE=release` — лише релізні, `GATE=` — усі |
-| `BRIEF=1` | по рядку на кейс, без подробиць |
-
-```bash
-docker compose run --rm -e CASE=FX-004,LIM-003 eval
-```
-
-Свій набір для домашнього завдання клади поруч із демо-набором, у
-`sets/<назва>.jsonl`, і запускай із `--set <назва>`.
-
-Команди з `python` після `eval` працюють як раніше:
-`docker compose run --rm eval python validate.py`.
-
-## Генератор
-
-```bash
-docker compose run --rm eval python generate_from_engines.py > sets/_generated.jsonl
-```
-
-Генератор викликає рушії стенду напряму, без бота й моделі: працює за
-секунду й нічого не коштує. Кейси він друкує у стандартний вивід, а рядок
-`# 21 cases generated from the engines` — у потік помилок, тому його видно
-в терміналі, а не у файлі. Не пиши вивід генератора в `sets/l03.jsonl`:
-перезапишеш демо-набір, і зміниться `set_hash`.
-
-У Windows PowerShell 5.1 `>` пише файл у кодуванні UTF-16, і такий набір
-ранер не прочитає. У PowerShell 7 (`pwsh`), macOS і Linux файл виходить у
-UTF-8.
-
-## Клієнт кейса
-
-Стенд не бере клієнта з тексту питання: «I'm CUS-0007» у запиті сесію не
-відкриває. Ранер передає стенду `context.customer_id` кейса — це те саме,
-що обрати клієнта в дропдауні «як клієнт» у вебінтерфейсі. Кейс без
-`customer_id` іде «без клієнта», і `get_account` відповідає
-`no customer is signed in for this session`. Пишеш свій кейс про рахунок,
-ліміт чи обмін — додай йому `"context": {"customer_id": "CUS-…"}`.
-
-## Бюджет (`assertion: budget`, L08)
-
-Кейс із `"assertion": "budget"` перевіряє не відповідь, а ціну діалогу:
-
-```json
-"additional_metadata": {
-  "layer": "memory", "oracle": "human", "assertion": "budget",
-  "severity": "medium", "source": "baseline 22.10",
-  "budget": {"tokens_total": 66000, "latency_ms": 35000,
-             "identical_tool_calls_max": 1},
-  "runs": 5, "gate": "release"}
-```
-
-- `tokens_total` — вхідні й вихідні токени **усіх кроків** діалогу одного
-  прогону (з `usage` відповідей `/chat`). Порівнюється медіана прогонів.
-- `latency_ms` — час усього діалогу одного прогону. Порівнюється медіана.
-- `identical_tool_calls_max` — скільки викликів з **однаковими назвою й
-  аргументами** може бути в одному кроці. Береться найгірший крок
-  найгіршого прогону: петля повторів детермінована, тут медіана не потрібна.
-
-Пороги не з повітря: проженіть кейс на `--profile clean` з `runs: 5`, візьміть
-медіану з вердикту (`per run: tokens […]`) і додайте запас. У звіті вердикт
-показує числа кожного прогону.
-
-Бюджет на токени й час зазвичай має `gate: release`, а ранер без `--gate`
-бере лише `daily`-кейси. Тому бюджетні кейси запускайте з `--gate release`
-або `--gate all`, інакше їх не буде у звіті:
-
-```bash
-docker compose run --rm eval --set l05_dialogs --only C07-BUDGET --gate release --profile clean
-docker compose run --rm eval --set l05_dialogs --gate all --profile lesson-08
-```
-
-## Звіти
-
-Кожен прогін пише JSON-звіт у `reports/` цього каталогу:
-`reports/<набір>-<профіль>-<час>.json`. У ньому `set_hash`,
-`prompt_version`, профіль, вердикт кожного кейса і відповіді бота. Ранер
-друкує шлях як `evals/reports/…`: так його бачить контейнер, а файл лежить
-у `reports/`. На Linux файли звітів належать користувачу root: читати їх
-можна, видаляти — через `sudo`.
-
-## `.env`
-
-Файл необов'язковий: без нього діють значення за замовчуванням. Якщо треба
-їх змінити — `cp .env.example .env`.
-
-| Змінна | Що це |
-|---|---|
-| `STAND_DIR` | шлях до каталогу `paypilot-stand`, за замовчуванням `../paypilot-stand`. Windows: `C:/paypilot/paypilot-stand` |
-| `EVAL_STAND_URL` | адреса стенду зсередини контейнера, за замовчуванням `http://host.docker.internal:8000`, див. нижче |
-| `JUDGE_MODEL` | модель-суддя для перевірок рівня 7, наприклад `claude-haiku-5-5`. Порожнє значення означає «судді немає»: кейс рівня 7 тоді падає з `judge not configured` |
-| `ANTHROPIC_API_KEY` | ключ судді, той самий, що в `.env` стенду |
-
-`judge.py` — модель-суддя для перевірок рівня 7. У демо-наборі таких
-перевірок немає, тож на самому занятті ключ судді не потрібен. Для ДЗ він
-потрібен: там рівень 7 обов'язковий, тож впиши в `.env` ключ і
-`JUDGE_MODEL=claude-haiku-5-5`.
-
-## Адреса стенду
-
-Усередині контейнера `localhost` — це сам контейнер, а не твій комп'ютер.
-Тому сервіс `eval` ходить на стенд через `http://host.docker.internal:8000`.
-Стенд на іншому порту — задай `EVAL_STAND_URL` у `.env`, наприклад
-`http://host.docker.internal:8010`.
-
-Linux, стенд опублікований лише на `127.0.0.1`: `host.docker.internal` туди
-не дістане. Бери сервіс `eval-host`, він працює в мережі хоста й ходить на
-`http://127.0.0.1:8000`:
-
-```bash
-docker compose --profile host run --rm eval-host
-```
-
-Змінні й команди в нього ті самі, що в `eval`. Стенд на іншому порту — у
-`.env` задай `EVAL_STAND_URL=http://127.0.0.1:<порт>`.
+# ДЗ №7 · Observability & Cost Report
+
+Готово до здачі. Повна копія актуального L03, власні бюджетні кейси й pinned L08. [Артефакти](SUBMISSION.md). [Оригінальний README L03](sources/L03-README.md).
+
+## L08 · Observability & Cost Report
+
+- [Звіт:3 слайди](l08/observability-cost-report.md) · [порожня форма](l08/observability-cost-report.template.md).
+- [Інцидент B3](l08/incident-summary.md) · [B4](l08/b4.json) · [витрати](evidence/billing-reconciliation.json).
+- [Межі вимірювання](l08/measurement-scope.md) · [зміни кіта](l08/capture-and-runner-changes.md).
+
+### Запуск
+
+Потрібні shared-стенд із OpenRouter, TRACE_CAPTURE_CONTENT=1 і Langfuse, без L07 proxy. Ключ тільки в .env стенду. Sibling каталог — paypilot-stand-shared; для іншого шляху задати STAND_DIR.
+
+**Ці команди платні й скидають seed-БД:**
+
+~~~powershell
+
+docker compose run --rm eval --set l05_dialogs --gate all --profile lesson-08 --settings '{"model": "anthropic/claude-haiku-5.5", "summarize_after": 20, "clock": "2026-09-15T10:00:00Z"}'
+
+docker compose run --rm eval --set l05_dialogs --gate all --profile clean --settings '{"model": "anthropic/claude-haiku-5.5", "summarize_after": 20, "clock": "2026-09-15T10:00:00Z"}'
+
+~~~
+
+Без --gate all release-кейси не потраплять у звіт. Для іншої моделі змінити model у --settings і перезняти пороги. B4: з l08/kit виконати docker compose run --rm eval --scenario B4 --runs 5.
+
+Без генерацій:
+
+~~~powershell
+
+docker compose run --rm eval python -m unittest discover -s tests -v
+
+~~~
+
+### Бюджетні кейси (sets/l05_dialogs.jsonl)
+
+| ID | Що ловить | identical max | tokens_total | latency_ms | gate/runs |
+|---|---|---|---|---|---|
+| BUD-H01 | Вартість історії / D15 | — | 63980 | 40436 | release/5 |
+| BUD-H02 | Вартість історії / D15 | — | 44556 | 34254 | release/5 |
+| BUD-H04 | Вартість історії; V2 пропускає D15 | — | 65935 | 46328 | release/5 |
+| BUD-D15 | Вартість історії / D15 | — | 47252 | 43080 | release/5 |
+| BUD-D14 | D14 повтор tool | 1 | — | — | daily/1 |
+| BUD-READ | Контроль повторів | 1 | — | — | daily/1 |
+
+### Прогони
+
+Фінальне Docker підтвердження V2: clean **6/6**, lesson-08 **2/6 PASS**. Очікувані defect FAIL — бюджетні порушення, не ERROR. [Чистий клон](evidence/docker-clean-clone.json).
+
+| Серія | Обсяг | Звіт |
+|---|---|---|
+| budget-clean | 134 chat | [native](evidence/runs/20261027T221538630461Z-budget-clean-2d46f5/native-results.json) |
+| budget-lesson-08 | 134 chat | [native](evidence/runs/20261027T222429188410Z-budget-lesson-08-d0d880/native-results.json) |
+| calibration-clean | 130 chat | [native](evidence/runs/20261027T220838340008Z-calibration-clean-4ee9d2/native-results.json) |
+| docker-budget-clean | 134 chat | [native](evidence/runs/20261027T224126192424Z-docker-budget-clean-bf79e3/native-results.json) |
+| docker-budget-lesson-08 | 134 chat | [native](evidence/runs/20261027T223236576766Z-docker-budget-lesson-08-420be1/native-results.json) |
+| full-b3 | 40 chat | [native](evidence/runs/20261027T220440252303Z-full-b3-4903b6/native-results.json) |
+| full-b4 | 180 chat | [native](evidence/runs/20261027T215512055520Z-full-b4-3be58d/native-results.json) |
+| no-summary-control | 40 chat | [native](evidence/runs/20261027T225106650172Z-no-summary-control-0d37bf/native-results.json) |
+| pilot-b1 | 4 chat | [native](evidence/runs/20261027T215203220006Z-pilot-b1-013ccb/native-results.json) |
+| pilot-b2 | 14 chat | [native](evidence/runs/20261027T215236752199Z-pilot-b2-e4d843/native-results.json) |
+| pilot-gemini | 2 chat | [native](evidence/runs/20261027T215338813072Z-pilot-gemini-4de854/native-results.json) |
+
+Всього 946 chat /173 сесій з усіма пілотними, калібрувальними та підтверджувальними серіями. Ці серії не злиті у спільні5/5. OpenRouter **USD0.59045408**; прямий Anthropic не використовувався.
+
+H04 V1 clean мав запас11 токенів. Clean-only правило розширення вибірки зафіксовано до own defect; V1 збережено, V2 frozen до незалежного Docker. [Рішення](evidence/calibration-amendment-intent.json), [freeze](evidence/budget-freeze.json).
+
+Budget PASS не доводить якість відповіді чи доречність дії. Raw transcripts не редагуються. Попередні ДЗ і стенд окремо не здаються.

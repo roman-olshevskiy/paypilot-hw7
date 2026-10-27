@@ -1,0 +1,14 @@
+{
+  "host_tests": {
+    "run": 11,
+    "passed": 10,
+    "skipped": 1,
+    "includes_live_readiness": true
+  },
+  "docker_offline_tests": {
+    "run": 11,
+    "passed": 9,
+    "skipped": 2
+  },
+  "paid_calls_in_checks": 0
+}

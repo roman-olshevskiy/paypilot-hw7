@@ -11,7 +11,7 @@ class Services(unittest.TestCase):
   req=urllib.request.Request('https://openrouter.ai/api/v1/key',headers={'Authorization':'Bearer '+values['OPENROUTER_API_KEY']})
   with urllib.request.urlopen(req,timeout=30) as res:data=json.load(res)['data']
   phase=os.environ.get('HW7_BILLING_PHASE','before')
-  out=ROOT/'evidence'/('key-usage-'+phase+'.json');self.assertFalse(out.exists());out.write_text(json.dumps({k:data.get(k) for k in ['usage','byok_usage']},indent=2))
+  out=ROOT/'evidence'/('key-usage-'+phase+'.json');self.assertFalse(out.exists());out.write_text(json.dumps({**{k:data.get(k) for k in ['usage','byok_usage']},'read_at_utc':__import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat()},indent=2),encoding='utf-8')
   if phase=='before':
    with urllib.request.urlopen('https://openrouter.ai/api/v1/models',timeout=30) as res:models=json.load(res)['data']
    wanted=['anthropic/claude-haiku-5.5','google/gemini-2.5-flash'];selected=[{k:m.get(k) for k in ['id','pricing','context_length']} for m in models if m['id'] in wanted]

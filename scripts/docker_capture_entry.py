@@ -8,7 +8,7 @@ import stand,runner,cli
 def main():
  assert os.environ.get('HW7_PAID')=='1'
  assert hashlib.sha256((ROOT/'l08/forecast-before-runs.md').read_bytes()).hexdigest()==os.environ['HW7_FORECAST_SHA']
- frozen=json.loads((ROOT/'evidence/budget-freeze.json').read_text())
+ frozen=json.loads((ROOT/'evidence/budget-freeze.json').read_text(encoding='utf-8'))
  assert hashlib.sha256((ROOT/'sets/l05_dialogs.jsonl').read_bytes()).hexdigest()==frozen['sha256']
  args=sys.argv[1:];profile=args[args.index('--profile')+1];label='docker-budget-'+profile;cap=Capture(label,stand);original=runner.run_case
  def case(c):

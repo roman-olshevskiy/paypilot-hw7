@@ -1,0 +1,403 @@
+{
+  "prompt_version": "base.v1",
+  "set_hash": "a82116fe9e5b",
+  "profile": "lesson-08",
+  "judge_model": "not-used",
+  "rubric_version": "rubric.v1",
+  "elapsed": 527.2,
+  "set": "l05_dialogs",
+  "gate": "all",
+  "ran_at": "2026-10-27T22:41:23.906088+00:00",
+  "passed": 2,
+  "total": 6,
+  "skipped": 0,
+  "by_layer": {
+    "orchestration": {
+      "passed": 2,
+      "total": 6
+    }
+  },
+  "coverage": {
+    "cases": 6,
+    "layers": {
+      "orchestration": 6
+    },
+    "oracles": {
+      "human": 6
+    },
+    "sources": {
+      "new own HW7 dialogue": 2,
+      "new own HW7 dialogue; D15 requires tools history and no summary": 1,
+      "own HW4 dialogue, separate budget assertion": 3
+    },
+    "severities": {
+      "high": 6
+    },
+    "ladder_levels": [
+      1,
+      2
+    ],
+    "gates": {
+      "daily": 2,
+      "release": 4
+    },
+    "human_oracle_pct": 100.0,
+    "severity_filled_pct": 100.0
+  },
+  "cases": [
+    {
+      "skipped": false,
+      "id": "BUD-H01",
+      "layer": "orchestration",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "release",
+      "runs": 5,
+      "verdict": {
+        "passed": false,
+        "level": 2,
+        "assertion": "budget",
+        "detail": "median tokens 69918 > 63980 (per run: tokens [70027, 69373, 69918, 69914, 70809], identical calls [1, 1, 1, 1, 1], latency [27290, 24997, 24830, 42823, 25083]ms)"
+      },
+      "answers": [
+        "The filing window for `goods_not_received` is **90 days** from the transaction date (2026-07-20). The exact filing deadline is **2026-10-18**.\n\nAs of today, 2026-09-15, you have **33 days** left, so you still have time. Nothing has been filed.",
+        "Yes, you still have time.\n\n- **Filing window:** 90 days from the transaction date (2026-07-20).\n- **Filing deadline:** 2026-10-18.\n- **Time remaining:** As of 2026-09-15, 33 days remain.\n\nNothing has been filed.",
+        "The filing window for TX-0401 under `goods_not_received` is **90 days** from the transaction date (2026-07-20). The exact filing deadline is **2026-10-18**.\n\nAs of today (2026-09-15), you have **33 days** left, so you still have time. Nothing has been filed.",
+        "The filing window for `goods_not_received` is **90 days** from the transaction date (2026-07-20). The **filing deadline is 2026-10-18**.\n\nAs of today (2026-09-15), you have **33 days** left, so you still have time. Nothing has been filed.",
+        "For TX-0401 (240.00 EUR, TechMart Online, 2026-07-20):\n\n- **Filing window:** 90 days from the transaction date\n- **Filing deadline:** 2026-10-18\n- **Time remaining:** yes. As of 2026-09-15, you have 33 days left.\n\nNothing has been filed."
+      ],
+      "latency_ms": 25083,
+      "budget_samples": [
+        {
+          "dialog_tokens": 70027,
+          "latency_ms": 27290,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 69373,
+          "latency_ms": 24997,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 69918,
+          "latency_ms": 24830,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 69914,
+          "latency_ms": 42823,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 70809,
+          "latency_ms": 25083,
+          "identical_max": 1
+        }
+      ],
+      "tokens": 350041,
+      "tool_calls": []
+    },
+    {
+      "skipped": false,
+      "id": "BUD-H02",
+      "layer": "orchestration",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "release",
+      "runs": 5,
+      "verdict": {
+        "passed": false,
+        "level": 2,
+        "assertion": "budget",
+        "detail": "median tokens 48823 > 44556 (per run: tokens [47027, 49055, 48682, 49305, 48823], identical calls [1, 1, 1, 1, 1], latency [18354, 20376, 21926, 20191, 19987]ms)"
+      },
+      "answers": [
+        "For TX-0401 (240.00 EUR, `goods_not_received`):\n\n- **Filing window:** 90 days from the transaction date (2026-07-20)\n- **Filing deadline:** 2026-10-18\n- **Time remaining:** Yes. As of 2026-09-15, there are 33 days left.\n\nI have not filed anything.",
+        "The filing window for TX-0401 under `goods_not_received` is **90 days** from the transaction date.\n\nThe exact filing deadline is **2026-10-18**. As of today, 2026-09-15, you still have time: 33 days remain. Nothing has been filed.",
+        "The filing window for `goods_not_received` is **90 days** from the transaction date (2026-07-20). The filing deadline is **2026-10-18**.\n\nAs of 2026-09-15, the date of the eligibility check, you still have time: 33 days remain before the deadline. Nothing has been filed.",
+        "The filing window for `goods_not_received` is **90 days** from the transaction date (2026-07-20).\n\nThe exact filing deadline is **2026-10-18**. As of 2026-09-15, you still have time: 33 days remain.\n\nNothing has been filed.",
+        "**Filing window:** 90 days from the transaction date (2026-07-20)\n**Filing deadline:** 2026-10-18\n**Time remaining:** Yes. As of 2026-09-15, 33 days remain.\n\nNothing has been filed. If you want to proceed, confirm and I will re-run the eligibility check and then open the dispute for TX-0401 (EUR 240.00, `goods_not_received`)."
+      ],
+      "latency_ms": 20191,
+      "budget_samples": [
+        {
+          "dialog_tokens": 47027,
+          "latency_ms": 18354,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 49055,
+          "latency_ms": 20376,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 48682,
+          "latency_ms": 21926,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 49305,
+          "latency_ms": 20191,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 48823,
+          "latency_ms": 19987,
+          "identical_max": 1
+        }
+      ],
+      "tokens": 242892,
+      "tool_calls": []
+    },
+    {
+      "skipped": false,
+      "id": "BUD-H04",
+      "layer": "orchestration",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "release",
+      "runs": 5,
+      "verdict": {
+        "passed": true,
+        "level": 2,
+        "assertion": "budget",
+        "detail": "per run: tokens [62489, 62834, 63258, 74800, 62669], identical calls [1, 1, 1, 1, 1], latency [25465, 24984, 24171, 22803, 27775]ms"
+      },
+      "answers": [
+        "For TX-0401 (240.00 EUR, TechMart Online, 2026-07-20):\n\n- **Filing window:** 90 days from the transaction date, under `goods_not_received`.\n- **Filing deadline:** 2026-10-18.\n- **Time remaining:** Yes. As of today, 2026-09-15, there are 33 days left.\n\nNothing has been filed.",
+        "The filing window for TX-0401 is **90 days** from the transaction date. The filing deadline is **2026-10-18**.\n\nYes, you still have time. As of today, 2026-09-15, there are 33 days left. Nothing has been filed.",
+        "For TX-0401 (240.00 EUR, TechMart Online, 2026-07-20):\n\n- **Filing window:** 90 days from the transaction date\n- **Filing deadline:** 2026-10-18\n- **Time remaining:** Yes. As of 2026-09-15, the deadline is 33 days away.\n\nI have not filed anything.",
+        "The filing window for `goods_not_received` is **90 days** from the transaction date (2026-07-20). The exact filing deadline is **2026-10-18**.\n\nBased on the eligibility check, which used a current date of 2026-09-15, you still have time. That leaves about 33 days. Nothing has been filed.",
+        "The filing window for `goods_not_received` is **90 days** from the transaction date. For TX-0401 (240.00 EUR, 2026-07-20), the **filing deadline is 2026-10-18**.\n\nAs of 2026-09-15, the date of the eligibility check, you still have time, with 33 days left. Nothing has been filed."
+      ],
+      "latency_ms": 24984,
+      "budget_samples": [
+        {
+          "dialog_tokens": 62489,
+          "latency_ms": 25465,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 62834,
+          "latency_ms": 24984,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 63258,
+          "latency_ms": 24171,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 74800,
+          "latency_ms": 22803,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 62669,
+          "latency_ms": 27775,
+          "identical_max": 1
+        }
+      ],
+      "tokens": 326050,
+      "tool_calls": []
+    },
+    {
+      "skipped": false,
+      "id": "BUD-D15",
+      "layer": "orchestration",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "release",
+      "runs": 5,
+      "verdict": {
+        "passed": false,
+        "level": 2,
+        "assertion": "budget",
+        "detail": "median tokens 52242 > 47252 (per run: tokens [52786, 52423, 52190, 52242, 50725], identical calls [1, 1, 1, 1, 1], latency [27528, 24881, 24924, 23571, 30141]ms)"
+      },
+      "answers": [
+        "Nothing has been opened or submitted for TX-0401. Here are the steps I'd suggest:\n\n1. **Confirm whether it's a duplicate.** TX-0401 and TX-0402 are both €240.00 to TechMart Online, six days apart (20 and 14 July). Check your card or bank statements and any TechMart receipts or order confirmations to see whether you were charged twice for one purchase. If the two payments were for different purchas",
+        "Here are the steps for **TX-0401** (TechMart Online, EUR 240.00, 2026-07-20). Nothing has been opened or submitted.\n\n1. **Confirm it is a duplicate.** TX-0402 has the same merchant and amount (EUR 240.00, 2026-07-14). Check whether you ordered or were billed twice for the same thing. If the two charges are for different purchases, a duplicate_charge dispute would not apply.\n2. **Gather your eviden",
+        "Here are your next steps for TX-0401. I haven't opened or submitted anything.\n\n1. **Confirm the charge is a duplicate.** TX-0401 and TX-0402 are both TechMart Online charges of €240.00, on July 20 and July 14. Check your records to confirm they are two charges for one purchase.\n2. **Gather evidence.** Collect the TechMart Online receipts or order confirmations for both charges, plus any messages w",
+        "For **TX-0401** (TechMart Online, EUR 240.00, 20 July 2026), your next steps are:\n\n1. **Decide whether to dispute.** The duplicate_charge check passed on 15 September 2026. Nothing has been opened.\n2. **Act before 18 September 2026.** That is the deadline, three days from today.\n3. **Gather evidence.** The knowledge base doesn't list the documents a duplicate_charge dispute needs. You could look f",
+        "Here are the steps for TX-0401, with nothing submitted:\n\n1. **Confirm it's a duplicate.** TX-0401 (TechMart Online, EUR 240.00, 2026-07-20) matches TX-0402 (TechMart Online, EUR 240.00, 2026-07-14). Check your records with TechMart to confirm whether you were charged twice for one purchase, or whether these are two separate orders.\n2. **Gather evidence.** The knowledge base doesn't list the docume"
+      ],
+      "latency_ms": 24924,
+      "budget_samples": [
+        {
+          "dialog_tokens": 52786,
+          "latency_ms": 27528,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 52423,
+          "latency_ms": 24881,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 52190,
+          "latency_ms": 24924,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 52242,
+          "latency_ms": 23571,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 50725,
+          "latency_ms": 30141,
+          "identical_max": 1
+        }
+      ],
+      "tokens": 260366,
+      "tool_calls": []
+    },
+    {
+      "skipped": false,
+      "id": "BUD-D14",
+      "layer": "orchestration",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": false,
+        "level": 1,
+        "assertion": "budget",
+        "detail": "identical tool calls 8 > 1 (per run: tokens [36968], identical calls [8], latency [16744]ms)"
+      },
+      "answers": [
+        "There are no transactions on account ACC-1004. The transaction lookup returned an empty list each time I checked.\n\nI also ran the same lookup several times when one call was enough, which was unnecessary. The account balance is EUR 145,000.00.\n\nIf you expect activity that isn't showing, I can escalate to a human agent to check the account records."
+      ],
+      "latency_ms": 16744,
+      "budget_samples": [
+        {
+          "dialog_tokens": 36968,
+          "latency_ms": 16744,
+          "identical_max": 8
+        }
+      ],
+      "tokens": 36968,
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "arguments": {
+            "account_id": "ACC-1004"
+          },
+          "result": {
+            "transactions": []
+          }
+        },
+        {
+          "name": "get_transactions",
+          "arguments": {
+            "account_id": "ACC-1004"
+          },
+          "result": {
+            "transactions": []
+          }
+        },
+        {
+          "name": "get_transactions",
+          "arguments": {
+            "account_id": "ACC-1004"
+          },
+          "result": {
+            "transactions": []
+          }
+        },
+        {
+          "name": "get_transactions",
+          "arguments": {
+            "account_id": "ACC-1004"
+          },
+          "result": {
+            "transactions": []
+          }
+        },
+        {
+          "name": "get_transactions",
+          "arguments": {
+            "account_id": "ACC-1004"
+          },
+          "result": {
+            "transactions": []
+          }
+        },
+        {
+          "name": "get_transactions",
+          "arguments": {
+            "account_id": "ACC-1004"
+          },
+          "result": {
+            "transactions": []
+          }
+        },
+        {
+          "name": "get_transactions",
+          "arguments": {
+            "account_id": "ACC-1004"
+          },
+          "result": {
+            "transactions": []
+          }
+        },
+        {
+          "name": "get_transactions",
+          "arguments": {
+            "account_id": "ACC-1004"
+          },
+          "result": {
+            "transactions": []
+          }
+        }
+      ]
+    },
+    {
+      "skipped": false,
+      "id": "BUD-READ",
+      "layer": "orchestration",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": true,
+        "level": 1,
+        "assertion": "budget",
+        "detail": "per run: tokens [12178], identical calls [1], latency [5778]ms"
+      },
+      "answers": [
+        "Your current daily transfer limit is **EUR 5,000**, and you have the full amount available today (EUR 0 spent so far).\n\nThe limit system doesn't show a separate card-specific limit, so this figure covers all transfers on your tier 1 account. Your monthly limit is EUR 50,000, with EUR 35.50 used and EUR 49,964.50 remaining."
+      ],
+      "latency_ms": 5778,
+      "budget_samples": [
+        {
+          "dialog_tokens": 12178,
+          "latency_ms": 5778,
+          "identical_max": 1
+        }
+      ],
+      "tokens": 12178,
+      "tool_calls": [
+        {
+          "name": "check_limits",
+          "arguments": {
+            "customer_id": "CUS-0004"
+          },
+          "result": {
+            "tier": "tier1",
+            "as_of": "2026-09-15",
+            "daily_limit_eur": 5000,
+            "daily_spent_eur": 0,
+            "daily_remaining_eur": 5000,
+            "monthly_limit_eur": 50000,
+            "monthly_spent_eur": 35.5,
+            "monthly_remaining_eur": 49964.5
+          }
+        }
+      ]
+    }
+  ]
+}

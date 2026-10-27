@@ -5,3 +5,4 @@
 evidence/runs/** -text
 reports/** -text
 *.png -text
+sources/l05_dialogs-hw4.jsonl -text

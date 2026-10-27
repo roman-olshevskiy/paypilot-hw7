@@ -47,7 +47,7 @@ class Integrity(unittest.TestCase):
   with tempfile.TemporaryDirectory() as tmp,patch.object(cap,'ROOT',Path(tmp)):
    c=cap.Capture('fixture',module)
    with self.assertRaises(RuntimeError):c.execute('fixture',lambda:module._call('POST','/chat',{'message':'fixture'}))
-   rows=json.loads((c.folder/'captures.json').read_text());self.assertEqual(rows[0]['response']['request_id'],'r1');self.assertEqual(len(hits),1)
+   rows=json.loads((c.folder/'captures.json').read_text(encoding='utf-8'));self.assertEqual(rows[0]['response']['request_id'],'r1');self.assertEqual(len(hits),1)
 @unittest.skipUnless(os.environ.get('HW7_ENV')=='1','Explicit readiness disabled')
 class Readiness(unittest.TestCase):
  def test_runtime(self):
@@ -56,4 +56,6 @@ class Readiness(unittest.TestCase):
   with urllib.request.urlopen('http://localhost:3000/api/public/health',timeout=30) as response:self.assertEqual(response.status,200)
   script="import os,json;print(json.dumps({k:os.environ.get(k,'') for k in ['LLM_PROVIDER','HTTPS_PROXY','SSL_CERT_FILE','TRACE_CAPTURE_CONTENT']}))"
   v=json.loads(subprocess.check_output(['docker','compose','exec','-T','stand','python','-c',script],cwd=ROOT.parent/'paypilot-stand-shared',text=True));self.assertFalse(v['HTTPS_PROXY']);self.assertEqual(v['TRACE_CAPTURE_CONTENT'],'1')
-  (ROOT/'evidence/readiness.json').write_text(json.dumps({'health':h,'runtime':v},indent=2))
+  name='runtime-final.json' if os.environ.get('HW7_FINAL_ENV')=='1' else 'readiness.json'
+  if name=='runtime-final.json':self.assertEqual(h['profile'],'clean')
+  (ROOT/'evidence'/name).write_text(json.dumps({'health':h,'runtime':v},indent=2),encoding='utf-8')

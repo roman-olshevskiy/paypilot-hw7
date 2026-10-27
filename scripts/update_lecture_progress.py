@@ -1,0 +1,33 @@
+from pathlib import Path
+import re,json
+L=Path('D:/neoversity/Lectures');p=L/'HW07/work/Homework-07-plan.md';s=p.read_text(encoding='utf-8');s=re.sub(r'Статус:.*?\n', 'Статус: виконання завершено, комплект готовий до здачі; надсилання в LMS ще не підтверджено. Оновлено 2026-10-28.\n',s,count=1);s=s.replace('- [ ]','- [x]');s=s.replace('### Крок10. Фінальне review, PR, LMS','### Крок10. Фінальна перевірка, публікація, LMS');s=s.replace('- [x] Review локального diff → дозволений коміт/push/PR → merge → LMS. Статус «готово» підготувати до merge; після надсилання оновити локальний покажчик.','- [x] Фінальна перевірка diff, commit/push прямо в main за останнім дозволом.\n- [ ] Надіслати SUBMISSION.md у LMS; після підтвердження оновити статус.');s=s.replace('- Робоча гілка реалізації: codex/hw7-observability-cost. Main лише через PR; commit/push за окремою вказівкою. Порожній baseline уже створено, повторна ініціалізація не потрібна.','- Реалізація в main: прямі commit/push без PR дозволені останньою вказівкою.');s=s.replace('Усі зміни ДЗ7 — в одній гілці codex/hw7-observability-cost. Окремі документи для локального review дозволені; без автоматичного commit/push.','Усі зміни ДЗ7 — у main за прямим дозволом; проміжні PR/review не потрібні.');s=s.replace('База: paypilot-l03-eval76ce435cbf344058bf528ce727e16e5a77f9f996.','База фактично: офіційний L03 7d0f5e7df63a9f3c198bc4368410a7bb61341286. Початковий локальний checkout76ce435 був застарілим.');s=s.replace('Файлова конфігурація Langfuse є; фактична готовність ще не перевірена тестами.','Langfuse4.69.0 працює; readiness перевірено реальним тестом.');s=s.replace('Нових paid calls зараз0. Перед ними потрібні актуальний доступний баланс/резерв і готовий capture. Langfuse поки перевірено лише за файлами, не runtime. paypilot-hw7 із порожнім baseline уже існує; повторно створювати не потрібно.','Фактично виконано946 chat у173 сесіях, включно з пілотом, калібруванням, V1 host і V2 Docker, контролем без summary. Langfuse і captures перевірені.');s=s.replace('Наступна дія після погодження плану — крок1, без платних викликів. Додаткових відповідей зараз не потрібно: доступний баланс підтверджено, решту сумісності з’ясовуємо з коду й реальних readiness-тестів.','Усі технічні кроки завершено. Подальші платні прогони для поточної здачі не потрібні.');s += '''
+## Підсумок виконання
+
+- 173 незалежні сесії,946 chat-відповідей; повтори серій не змішані. Captures повні, request IDs унікальні, hashes перевірені.
+- OpenRouter key delta **USD0.590454076**, provider span sum USD0.590454076667: збіг у межах округлення. Direct Anthropic не використовувався. Вихідний балансUSD9.96 — історичний snapshot, новий доступний баланс не підміняємо розрахунком.
+- Фінальний незалежний Docker V2: clean6/6 PASS; lesson-08 2/6 PASS,4 очікувані бюджетні FAIL. D14:8 однакових tools; D15: BUD-D15 median52242 проти clean44884, поріг47252.
+- H04 V1 мав11 токенів запасу на held-out clean. Clean-only розширення до10 зареєстровано до власного defect; V2 frozen до Docker. V2 поріг65935 пропускає його D15; H01/H02/BUD-D15 ловлять дефект. Цей trade-off збережено у звіті.
+- B4:40 діалогів. Haiku дешевший, Gemini швидший; рішення лишитися на Haiku. На Gemini Haiku-поріг6500 не ловить D15.
+- B3 summary2: provider median clean0.00283646/defect0.00298998; без summary0.00193182/0.00199224. Короткі діалоги не доводять вигоди summary на довгому контексті.
+- Host перевірки:10 passed,1 explicit skipped; Docker offline:9 passed,2 explicit skipped. Read-only billing тест окремо passed. Чистий replay — окремий доказ без нових генерацій.
+- Стенд залишено clean, OpenRouter без L07 proxy, Langfuse працює. Seed reset не є відновленням попередньої довільної БД.
+- [Артефакти здачі](https://github.com/roman-olshevskiy/paypilot-hw7/blob/main/SUBMISSION.md). Залишилося лише надсилання в LMS.
+''';p.write_text(s,encoding='utf-8')
+(L/'HW07/work/Homework-07-CTO-speech.md').write_text('''# ДЗ7 · Короткий звіт CTO
+
+Перевірено ціну й трасування діалогів PayPilot. [Основний звіт](https://github.com/roman-olshevskiy/paypilot-hw7/blob/main/l08/observability-cost-report.md) показує, де лічильник приховує витрати: D14 повторює однаковий tool8 разів, а на кроці з петлею provider cost приблизно у5 разів вищий за самозвіт.
+
+Для D15 ціна семикрокового діалогу на Haiku зростає у1.49 раза. У B3 локалізовано втрату TX-0401/duplicate_charge саме на виході agent.summarize; вхід і вихід збережено дослівно. У короткому контрольному діалозі summary не заощаджує кошти.
+
+[Матриця двох моделей](https://github.com/roman-olshevskiy/paypilot-hw7/blob/main/l08/b4.json) містить по5 повторів на умову: Haiku дешевший, Gemini швидший. Зараз модель не змінюємо; токенові пороги між tokenizer не переносимо.
+
+Фінальні6 власних бюджетів перевірено у чистому Docker-клоні: clean6/6, lesson-08 чотири бюджетні FAIL. H04 із ширшим запасом пропускає свій D15 — це зафіксована межа, а не повне покриття якості.
+
+Загалом173 сесії й946 chat-відповідей коштували **USD0.590454076**. [Звірка ключа і спанів](https://github.com/roman-olshevskiy/paypilot-hw7/blob/main/evidence/billing-reconciliation.json) збігається до округлення. За припущенням800 користувачів,20 діалогів і mix30/70 прогноз Haiku — USD48.27/місяць без hosting. Це розрахунок, не виміряний production-трафік.
+
+[Комплект для здачі](https://github.com/roman-olshevskiy/paypilot-hw7/blob/main/SUBMISSION.md).
+''',encoding='utf-8')
+p=L/'HW07/README.md';s=p.read_text(encoding='utf-8');s=re.sub(r'Статус:.*?\n','Статус: **Готово до здачі**. Надсилання в LMS ще не підтверджено.\n',s,count=1);s=s[:s.index('Потрібна копія L03;')]+'Виконано946 chat у173 сесіях, OpenRouter USD0.590454076; clean6/6, lesson-08 2/6 PASS. Деталі та межі — у звіті.\n\n- [Коротка промова CTO](work/Homework-07-CTO-speech.md).\n- [Артефакти здачі](https://github.com/roman-olshevskiy/paypilot-hw7/blob/main/SUBMISSION.md).\n';p.write_text(s,encoding='utf-8')
+p=L/'README.md';s=p.read_text(encoding='utf-8');s=re.sub(r'\n\| \[HW07\].*','',s);row='| [HW07](HW07/README.md) | Observability & Cost Report | Готово до здачі | [План](HW07/work/Homework-07-plan.md), звіт CTO |\n';s=s.replace('\n## Спільні матеріали','\n'+row+'\n## Спільні матеріали').replace('2026-10-27','2026-10-28');p.write_text(s,encoding='utf-8')
+p=L/'index.html';s=p.read_text(encoding='utf-8');start=s.index('<article class="card" data-search="дз 7');end=s.index('</article>',start);part=s[start:end].replace('Виконується','Готово до здачі');s=s[:start]+part+s[end:];s=s.replace('27.10.2026','28.10.2026');p.write_text(s,encoding='utf-8')
+print('Lecture navigation and plan updated')

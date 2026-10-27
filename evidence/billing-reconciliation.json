@@ -1,0 +1,14 @@
+{
+  "key_usage_before_usd": 0.03859273,
+  "key_usage_after_usd": 0.629046806,
+  "key_usage_delta_usd": 0.590454076,
+  "provider_generation_sum_usd": 0.5904540766666667,
+  "independent_span_price_usd": 0.5904540766666667,
+  "root_usage_estimate_usd": 0.566727,
+  "key_minus_provider_usd": -6.66666721826914e-10,
+  "chat_responses": 946,
+  "sessions": 173,
+  "byok_usage": 0,
+  "direct_anthropic_calls": 0,
+  "scope": "All HW7 paid batches; no concurrent key consumer confirmed. Key usage is not account available balance."
+}

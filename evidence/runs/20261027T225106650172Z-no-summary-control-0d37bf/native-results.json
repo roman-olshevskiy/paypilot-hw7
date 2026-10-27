@@ -1,0 +1,1060 @@
+[
+ {
+  "scenario": "B3-NO-SUMMARY",
+  "condition": "baseline",
+  "settings": {
+   "profile": "clean",
+   "defects": "",
+   "summarize_after": 20
+  },
+  "aggregates": [],
+  "runs": [
+   {
+    "run": 1,
+    "passed": true,
+    "steps": [
+     {
+      "step": 1,
+      "model_calls": 3,
+      "retries": 0,
+      "tools": [
+       "get_account",
+       "get_transactions"
+      ],
+      "identical_max": 1,
+      "first_call_input": 2627,
+      "input_tokens": 8552,
+      "cached_tokens": 5028,
+      "output_tokens": 509,
+      "duration_ms": 4317,
+      "trace_cost_usd": 0.00072,
+      "usage_cost_usd": 0.000721,
+      "provider_cost_usd": 0.00072,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"customer\": {\"id\": \"CUS-0004\", \"name\": \"Danylo Kovalenko\", \"tier\": \"tier1\"}, \"accounts\": [{\"id\": \"ACC-1005\", \"customer_id\": \"CUS-0004\", \"currency\": \"EUR\", \"balance\": 1310.2, \"tier\": \"tier1\", \"holder\": \"Danylo Kovalenko\"}]}",
+       "{\"transactions\": [{\"id\": \"TX-0403\", \"account_id\": \"ACC-1005\", \"date\": \"2026-09-01\", \"amount\": 35.5, \"currency\": \"EUR\", \"merchant\": \"CityParking\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0401\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-20\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0402\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-14\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}]}"
+      ],
+      "answer": "I found both charges on your EUR account (ACC-1005):\n\n| Transaction | Date | Merchant | Amount | Status |\n|---|---|---|---|---|\n| TX-0402 | 2026-07-14 | TechMart Online | EUR 240.00 | Settled |\n| TX-0401 | 2026-07-20 | TechMart Online | EUR 240.00 | Settled |\n\nYour recent transactions also include a CityParking charge of EUR 35.50 on 2026-09-01.\n\nIf you didn't expect the second TechMart charge, it may be a duplicate. I can check whether a duplicate-charge dispute is eligible for TX-0401 and, if it is, open it once you confirm. Would you like me to do that?"
+     },
+     {
+      "step": 2,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "check_dispute_eligibility"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3435,
+      "input_tokens": 7084,
+      "cached_tokens": 5028,
+      "output_tokens": 486,
+      "duration_ms": 3597,
+      "trace_cost_usd": 0.000499,
+      "usage_cost_usd": 0.000499,
+      "provider_cost_usd": 0.000499,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"eligible\": true, \"reason_code\": \"duplicate_charge\", \"window_days\": 60, \"tx_date\": \"2026-07-20\", \"as_of\": \"2026-09-15\", \"deadline\": \"2026-09-18\", \"checks\": {\"reason_code\": \"pass\", \"tx_status\": \"pass\", \"window\": \"pass\", \"compliance_hold\": \"pass\"}}"
+      ],
+      "answer": "The duplicate-charge dispute for TX-0401 is eligible.\n\n- **Reason code:** `duplicate_charge` fits a second identical charge from the same merchant.\n- **Deadline:** The dispute window is 60 days from the transaction date (2026-07-20). The deadline is **2026-09-18**, so you have until then. Today is 2026-09-15.\n- **Amount:** EUR 240.00 on TX-0401 (TX-0402 on 2026-07-14 stays as the original charge).\n\nShould I open the dispute for TX-0401 now? Please reply yes to confirm."
+     },
+     {
+      "step": 3,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "search_knowledge_base"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3860,
+      "input_tokens": 8281,
+      "cached_tokens": 5028,
+      "output_tokens": 377,
+      "duration_ms": 3530,
+      "trace_cost_usd": 0.000564,
+      "usage_cost_usd": 0.000564,
+      "provider_cost_usd": 0.000564,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"index\": \"kb_clean\", \"top_k\": 4, \"query\": \"duplicate charge dispute documents required\", \"fragments\": [{\"id\": \"disputes-process.md#s6\", \"doc\": \"disputes-process.md\", \"score\": 0.5303, \"text\": \"Dispute handling process\\n## Withdrawing a dispute\\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\\nfinal; the same transaction cannot be disputed again under the same reason code.\"}, {\"id\": \"glossary.md#s7\", \"doc\": \"glossary.md\", \"score\": 0.4714, \"text\": \"Glossary\\n## Provisional credit\\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\\nis declined.\"}, {\"id\": \"disputes-process.md#s1\", \"doc\": \"disputes-process.md\", \"score\": 0.4286, \"text\": \"Dispute handling process\\n## Raising a dispute\\nA dispute is raised against a single settled transaction. The customer supplies\\nthe transaction reference and a reason code. The agent verifies eligibility\\nbefore the case is opened; an ineligible request is refused with the failing\\ncondition named, except where confidentiality rules apply.\"}, {\"id\": \"notifications.md#s2\", \"doc\": \"notifications.md\", \"score\": 0.4082, \"text\": \"Notifications\\n## Dispute updates\\nA dispute generates a notification on every state change. The notification\\nnames the state, never the internal reason for a decision.\"}]}"
+      ],
+      "answer": "The knowledge base doesn't list specific documents for a duplicate-charge dispute, so I can't confirm what you'd need to provide.\n\nWhat it does say is that a dispute only requires the transaction reference and a reason code. For this case, that's TX-0401 and `duplicate_charge`. I can open it with those details once you confirm.\n\nIf you have a receipt, order confirmation, or statement showing the two TechMart charges, keep it on hand in case the bank or TechMart asks for it. I can't verify from my tools whether it will be required.\n\nDo you want me to open the dispute for TX-0401 (EUR 240.00) now? The deadline is 2026-09-18."
+     },
+     {
+      "step": 4,
+      "model_calls": 1,
+      "retries": 0,
+      "tools": [],
+      "identical_max": 0,
+      "first_call_input": 4661,
+      "input_tokens": 4661,
+      "cached_tokens": 2514,
+      "output_tokens": 122,
+      "duration_ms": 1302,
+      "trace_cost_usd": 0.000301,
+      "usage_cost_usd": 0.000301,
+      "provider_cost_usd": 0.000301,
+      "replay": false,
+      "summary": null,
+      "tool_results": [],
+      "answer": "We're disputing **TX-0401**, a EUR 240.00 charge to TechMart Online on 2026-07-20, under reason code `duplicate_charge`. The other TechMart charge, TX-0402 (EUR 240.00, 2026-07-14), would remain as the original payment.\n\nDo you want me to open this dispute now? Please reply yes to confirm."
+     }
+    ],
+    "verdicts": [
+     {
+      "kind": "summary_absent",
+      "ok": true,
+      "detail": "all four steps contain no agent.summarize"
+     }
+    ]
+   },
+   {
+    "run": 2,
+    "passed": true,
+    "steps": [
+     {
+      "step": 1,
+      "model_calls": 3,
+      "retries": 0,
+      "tools": [
+       "get_account",
+       "get_transactions"
+      ],
+      "identical_max": 1,
+      "first_call_input": 2627,
+      "input_tokens": 8552,
+      "cached_tokens": 7542,
+      "output_tokens": 480,
+      "duration_ms": 4499,
+      "trace_cost_usd": 0.000416,
+      "usage_cost_usd": 0.000417,
+      "provider_cost_usd": 0.000416,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"customer\": {\"id\": \"CUS-0004\", \"name\": \"Danylo Kovalenko\", \"tier\": \"tier1\"}, \"accounts\": [{\"id\": \"ACC-1005\", \"customer_id\": \"CUS-0004\", \"currency\": \"EUR\", \"balance\": 1310.2, \"tier\": \"tier1\", \"holder\": \"Danylo Kovalenko\"}]}",
+       "{\"transactions\": [{\"id\": \"TX-0403\", \"account_id\": \"ACC-1005\", \"date\": \"2026-09-01\", \"amount\": 35.5, \"currency\": \"EUR\", \"merchant\": \"CityParking\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0401\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-20\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0402\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-14\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}]}"
+      ],
+      "answer": "I found both charges on your EUR account (ACC-1005, balance EUR 1,310.20):\n\n| Transaction ID | Date | Merchant | Amount | Status |\n|---|---|---|---|---|\n| TX-0402 | 2026-07-14 | TechMart Online | EUR 240.00 | Settled |\n| TX-0401 | 2026-07-20 | TechMart Online | EUR 240.00 | Settled |\n\nYour recent history also includes one other card payment: TX-0403, CityParking, EUR 35.50 on 2026-09-01.\n\nIf you didn't expect the second TechMart charge, I can check whether TX-0401 is eligible for a duplicate-charge dispute. I won't open anything until you confirm. Would you like me to do that?"
+     },
+     {
+      "step": 2,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "check_dispute_eligibility"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3447,
+      "input_tokens": 7108,
+      "cached_tokens": 5028,
+      "output_tokens": 407,
+      "duration_ms": 3271,
+      "trace_cost_usd": 0.000462,
+      "usage_cost_usd": 0.000461,
+      "provider_cost_usd": 0.000462,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"eligible\": true, \"reason_code\": \"duplicate_charge\", \"window_days\": 60, \"tx_date\": \"2026-07-20\", \"as_of\": \"2026-09-15\", \"deadline\": \"2026-09-18\", \"checks\": {\"reason_code\": \"pass\", \"tx_status\": \"pass\", \"window\": \"pass\", \"compliance_hold\": \"pass\"}}"
+      ],
+      "answer": "The duplicate-charge reason fits. TX-0401 is eligible for it.\n\n- **Reason:** Duplicate charge\n- **Filing deadline:** 2026-09-18. The window is 60 days from the 2026-07-20 transaction date, and today is 2026-09-15, so you have 3 days left.\n\nI haven't opened the dispute yet because it can't be reversed. Should I file a duplicate-charge dispute for TX-0401 (EUR 240.00, TechMart Online, 2026-07-20)?"
+     },
+     {
+      "step": 3,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "search_knowledge_base"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3847,
+      "input_tokens": 8255,
+      "cached_tokens": 5028,
+      "output_tokens": 457,
+      "duration_ms": 3839,
+      "trace_cost_usd": 0.000601,
+      "usage_cost_usd": 0.000602,
+      "provider_cost_usd": 0.000601,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"index\": \"kb_clean\", \"top_k\": 4, \"query\": \"duplicate charge dispute documents required\", \"fragments\": [{\"id\": \"disputes-process.md#s6\", \"doc\": \"disputes-process.md\", \"score\": 0.5303, \"text\": \"Dispute handling process\\n## Withdrawing a dispute\\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\\nfinal; the same transaction cannot be disputed again under the same reason code.\"}, {\"id\": \"glossary.md#s7\", \"doc\": \"glossary.md\", \"score\": 0.4714, \"text\": \"Glossary\\n## Provisional credit\\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\\nis declined.\"}, {\"id\": \"disputes-process.md#s1\", \"doc\": \"disputes-process.md\", \"score\": 0.4286, \"text\": \"Dispute handling process\\n## Raising a dispute\\nA dispute is raised against a single settled transaction. The customer supplies\\nthe transaction reference and a reason code. The agent verifies eligibility\\nbefore the case is opened; an ineligible request is refused with the failing\\ncondition named, except where confidentiality rules apply.\"}, {\"id\": \"notifications.md#s2\", \"doc\": \"notifications.md\", \"score\": 0.4082, \"text\": \"Notifications\\n## Dispute updates\\nA dispute generates a notification on every state change. The notification\\nnames the state, never the internal reason for a decision.\"}]}"
+      ],
+      "answer": "I couldn't find a list of required documents in the Verta knowledge base. The dispute process only says that you supply the transaction reference and a reason code, and that eligibility is checked before the case is opened.\n\nBefore you file, it may help to have these ready in case the case is reviewed:\n- Both TechMart Online confirmations or receipts for the July 14 (TX-0402) and July 20 (TX-0401) payments.\n- Any order or booking confirmation emails showing that you bought only once.\n- Your bank statement showing both debits.\n\nI can't confirm whether Verta will ask for any of these.\n\nYour deadline is 2026-09-18, so you have 3 days. Would you like me to file the duplicate-charge dispute for TX-0401 now (EUR 240.00, TechMart Online)?"
+     },
+     {
+      "step": 4,
+      "model_calls": 1,
+      "retries": 0,
+      "tools": [],
+      "identical_max": 0,
+      "first_call_input": 4688,
+      "input_tokens": 4688,
+      "cached_tokens": 2514,
+      "output_tokens": 102,
+      "duration_ms": 1233,
+      "trace_cost_usd": 0.000294,
+      "usage_cost_usd": 0.000294,
+      "provider_cost_usd": 0.000294,
+      "replay": false,
+      "summary": null,
+      "tool_results": [],
+      "answer": "We would be disputing **TX-0401**: EUR 240.00 to TechMart Online, dated 2026-07-20, reason code duplicate charge.\n\nThe other TechMart charge, TX-0402 (EUR 240.00, 2026-07-14), is not part of this dispute.\n\nShall I file it?"
+     }
+    ],
+    "verdicts": [
+     {
+      "kind": "summary_absent",
+      "ok": true,
+      "detail": "all four steps contain no agent.summarize"
+     }
+    ]
+   },
+   {
+    "run": 3,
+    "passed": true,
+    "steps": [
+     {
+      "step": 1,
+      "model_calls": 3,
+      "retries": 0,
+      "tools": [
+       "get_account",
+       "get_transactions"
+      ],
+      "identical_max": 1,
+      "first_call_input": 2627,
+      "input_tokens": 8552,
+      "cached_tokens": 7542,
+      "output_tokens": 569,
+      "duration_ms": 4761,
+      "trace_cost_usd": 0.000461,
+      "usage_cost_usd": 0.000461,
+      "provider_cost_usd": 0.000461,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"customer\": {\"id\": \"CUS-0004\", \"name\": \"Danylo Kovalenko\", \"tier\": \"tier1\"}, \"accounts\": [{\"id\": \"ACC-1005\", \"customer_id\": \"CUS-0004\", \"currency\": \"EUR\", \"balance\": 1310.2, \"tier\": \"tier1\", \"holder\": \"Danylo Kovalenko\"}]}",
+       "{\"transactions\": [{\"id\": \"TX-0403\", \"account_id\": \"ACC-1005\", \"date\": \"2026-09-01\", \"amount\": 35.5, \"currency\": \"EUR\", \"merchant\": \"CityParking\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0401\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-20\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0402\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-14\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}]}"
+      ],
+      "answer": "I found both charges on your EUR account (ACC-1005). Current balance: EUR 1,310.20.\n\n| Transaction ID | Date | Merchant | Amount | Status |\n|---|---|---|---|---|\n| TX-0402 | 2026-07-14 | TechMart Online | EUR 240.00 | Settled |\n| TX-0401 | 2026-07-20 | TechMart Online | EUR 240.00 | Settled |\n\nBoth are card payments, and both are marked as settled. They were made six days apart.\n\nIf you didn't expect the second charge, I can open a dispute for it. Before I do, I need to check eligibility, and I'll need you to confirm the reason:\n\n- **Duplicate charge**: you were billed twice for the same purchase.\n- **Unauthorized debit**: you didn't make or authorize either payment.\n\nWhich applies? If you think both charges are unauthorized, let me know and I'll check each one."
+     },
+     {
+      "step": 2,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "check_dispute_eligibility"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3498,
+      "input_tokens": 7210,
+      "cached_tokens": 5028,
+      "output_tokens": 574,
+      "duration_ms": 5023,
+      "trace_cost_usd": 0.000555,
+      "usage_cost_usd": 0.000555,
+      "provider_cost_usd": 0.000555,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"eligible\": true, \"reason_code\": \"duplicate_charge\", \"window_days\": 60, \"tx_date\": \"2026-07-20\", \"as_of\": \"2026-09-15\", \"deadline\": \"2026-09-18\", \"checks\": {\"reason_code\": \"pass\", \"tx_status\": \"pass\", \"window\": \"pass\", \"compliance_hold\": \"pass\"}}"
+      ],
+      "answer": "The charge on July 20 (TX-0401, EUR 240.00) is eligible for a **duplicate charge** dispute.\n\n- **Reason:** Duplicate charge\n- **Window:** 60 days from the transaction date\n- **Deadline:** 18 September 2026, which leaves 3 days from today (15 September 2026)\n\nShould I open the dispute for TX-0401 for the full EUR 240.00? This can't be undone once filed. Please reply yes to confirm."
+     },
+     {
+      "step": 3,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "search_knowledge_base"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3883,
+      "input_tokens": 8327,
+      "cached_tokens": 5028,
+      "output_tokens": 460,
+      "duration_ms": 3719,
+      "trace_cost_usd": 0.00061,
+      "usage_cost_usd": 0.00061,
+      "provider_cost_usd": 0.00061,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"index\": \"kb_clean\", \"top_k\": 4, \"query\": \"duplicate charge dispute documents required\", \"fragments\": [{\"id\": \"disputes-process.md#s6\", \"doc\": \"disputes-process.md\", \"score\": 0.5303, \"text\": \"Dispute handling process\\n## Withdrawing a dispute\\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\\nfinal; the same transaction cannot be disputed again under the same reason code.\"}, {\"id\": \"glossary.md#s7\", \"doc\": \"glossary.md\", \"score\": 0.4714, \"text\": \"Glossary\\n## Provisional credit\\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\\nis declined.\"}, {\"id\": \"disputes-process.md#s1\", \"doc\": \"disputes-process.md\", \"score\": 0.4286, \"text\": \"Dispute handling process\\n## Raising a dispute\\nA dispute is raised against a single settled transaction. The customer supplies\\nthe transaction reference and a reason code. The agent verifies eligibility\\nbefore the case is opened; an ineligible request is refused with the failing\\ncondition named, except where confidentiality rules apply.\"}, {\"id\": \"notifications.md#s2\", \"doc\": \"notifications.md\", \"score\": 0.4082, \"text\": \"Notifications\\n## Dispute updates\\nA dispute generates a notification on every state change. The notification\\nnames the state, never the internal reason for a decision.\"}]}"
+      ],
+      "answer": "The knowledge base doesn't list required documents for a duplicate charge dispute, so I can't confirm what Verta will ask for.\n\nThe process information I found says that a dispute is raised against one settled transaction, using the transaction reference and a reason code. Those are the details I already have for TX-0401.\n\nUseful evidence to keep ready, though this isn't a confirmed requirement:\n- The account statement or card transaction records showing both EUR 240.00 charges.\n- Any TechMart Online order confirmation or receipt for each charge, to show whether they were for the same purchase.\n\nIf you'd like confirmation of what documents are needed, I can escalate to a human agent.\n\nYour dispute deadline is 18 September 2026. Do you want me to open the duplicate charge dispute for TX-0401 (EUR 240.00) now, or escalate for document guidance first?"
+     },
+     {
+      "step": 4,
+      "model_calls": 1,
+      "retries": 0,
+      "tools": [],
+      "identical_max": 0,
+      "first_call_input": 4745,
+      "input_tokens": 4745,
+      "cached_tokens": 2514,
+      "output_tokens": 114,
+      "duration_ms": 1304,
+      "trace_cost_usd": 0.000305,
+      "usage_cost_usd": 0.000305,
+      "provider_cost_usd": 0.000305,
+      "replay": false,
+      "summary": null,
+      "tool_results": [],
+      "answer": "We would be disputing **TX-0401**, a **EUR 240.00** card payment to TechMart Online on 20 July 2026, under the duplicate charge reason. The matching charge, TX-0402 (EUR 240.00 on 14 July), would remain as is.\n\nDo you want me to open this dispute now? Please reply yes to confirm."
+     }
+    ],
+    "verdicts": [
+     {
+      "kind": "summary_absent",
+      "ok": true,
+      "detail": "all four steps contain no agent.summarize"
+     }
+    ]
+   },
+   {
+    "run": 4,
+    "passed": true,
+    "steps": [
+     {
+      "step": 1,
+      "model_calls": 3,
+      "retries": 0,
+      "tools": [
+       "get_account",
+       "get_transactions"
+      ],
+      "identical_max": 1,
+      "first_call_input": 2627,
+      "input_tokens": 8552,
+      "cached_tokens": 7542,
+      "output_tokens": 552,
+      "duration_ms": 4427,
+      "trace_cost_usd": 0.000452,
+      "usage_cost_usd": 0.000453,
+      "provider_cost_usd": 0.000452,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"customer\": {\"id\": \"CUS-0004\", \"name\": \"Danylo Kovalenko\", \"tier\": \"tier1\"}, \"accounts\": [{\"id\": \"ACC-1005\", \"customer_id\": \"CUS-0004\", \"currency\": \"EUR\", \"balance\": 1310.2, \"tier\": \"tier1\", \"holder\": \"Danylo Kovalenko\"}]}",
+       "{\"transactions\": [{\"id\": \"TX-0403\", \"account_id\": \"ACC-1005\", \"date\": \"2026-09-01\", \"amount\": 35.5, \"currency\": \"EUR\", \"merchant\": \"CityParking\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0401\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-20\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0402\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-14\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}]}"
+      ],
+      "answer": "I found both charges on your EUR account (ACC-1005):\n\n| Transaction ID | Date | Merchant | Amount | Status |\n|---|---|---|---|---|\n| TX-0402 | 2026-07-14 | TechMart Online | 240.00 EUR | Settled |\n| TX-0401 | 2026-07-20 | TechMart Online | 240.00 EUR | Settled |\n\nYour account also shows a 35.50 EUR CityParking charge on 2026-09-01.\n\nIf you didn't authorize the second TechMart charge and it was a duplicate of the first, I can open a duplicate-charge dispute for TX-0401 (the later one). First I'll check whether it's eligible. Would you like me to do that? Please also confirm whether you recognize the 2026-07-14 charge, since that determines which transaction is the duplicate."
+     },
+     {
+      "step": 2,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "check_dispute_eligibility"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3473,
+      "input_tokens": 7160,
+      "cached_tokens": 5028,
+      "output_tokens": 514,
+      "duration_ms": 3613,
+      "trace_cost_usd": 0.00052,
+      "usage_cost_usd": 0.00052,
+      "provider_cost_usd": 0.00052,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"eligible\": true, \"reason_code\": \"duplicate_charge\", \"window_days\": 60, \"tx_date\": \"2026-07-20\", \"as_of\": \"2026-09-15\", \"deadline\": \"2026-09-18\", \"checks\": {\"reason_code\": \"pass\", \"tx_status\": \"pass\", \"window\": \"pass\", \"compliance_hold\": \"pass\"}}"
+      ],
+      "answer": "The duplicate-charge dispute for TX-0401 (240.00 EUR, TechMart Online, 2026-07-20) is eligible.\n\n- **Reason code:** duplicate_charge. It fits because the same merchant charged the same amount twice, on July 14 and July 20.\n- **Filing window:** 60 days from the transaction date. The deadline for TX-0401 is **2026-09-18**, which is 3 days from today (2026-09-15).\n\nFiling is irreversible, so I haven't opened the dispute yet. Do you want me to file it for 240.00 EUR now?"
+     },
+     {
+      "step": 3,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "search_knowledge_base"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3894,
+      "input_tokens": 8399,
+      "cached_tokens": 5028,
+      "output_tokens": 456,
+      "duration_ms": 3467,
+      "trace_cost_usd": 0.000615,
+      "usage_cost_usd": 0.000615,
+      "provider_cost_usd": 0.000615,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"index\": \"kb_clean\", \"top_k\": 4, \"query\": \"duplicate charge dispute required documents evidence\", \"fragments\": [{\"id\": \"disputes-process.md#s5\", \"doc\": \"disputes-process.md\", \"score\": 0.6489, \"text\": \"Dispute handling process\\n## Evidence requirements\\nThe customer may be asked for supporting evidence: an order confirmation, a\\ndelivery record, correspondence with the merchant. Failure to supply requested\\nevidence within 7 calendar days results in the case being declined.\"}, {\"id\": \"disputes-process.md#s6\", \"doc\": \"disputes-process.md\", \"score\": 0.5303, \"text\": \"Dispute handling process\\n## Withdrawing a dispute\\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\\nfinal; the same transaction cannot be disputed again under the same reason code.\"}, {\"id\": \"glossary.md#s7\", \"doc\": \"glossary.md\", \"score\": 0.4714, \"text\": \"Glossary\\n## Provisional credit\\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\\nis declined.\"}, {\"id\": \"disputes-process.md#s1\", \"doc\": \"disputes-process.md\", \"score\": 0.4286, \"text\": \"Dispute handling process\\n## Raising a dispute\\nA dispute is raised against a single settled transaction. The customer supplies\\nthe transaction reference and a reason code. The agent verifies eligibility\\nbefore the case is opened; an ineligible request is refused with the failing\\ncondition named, except where confidentiality rules apply.\"}]}"
+      ],
+      "answer": "The knowledge base doesn't list required documents for duplicate-charge disputes specifically. It says that once a dispute is open, you may be asked for supporting evidence, such as:\n\n- An order confirmation\n- A delivery record\n- Correspondence with the merchant\n\nIf you don't supply requested evidence within 7 calendar days, the case is declined. For a duplicate charge, your bank statement showing both TechMart charges (TX-0402 and TX-0401) and any order confirmations for each purchase would be the most useful. Keeping these ready will help if the case needs them.\n\nThe dispute deadline is 2026-09-18. Do you want me to file the duplicate-charge dispute for TX-0401 (240.00 EUR) now?"
+     },
+     {
+      "step": 4,
+      "model_calls": 1,
+      "retries": 0,
+      "tools": [],
+      "identical_max": 0,
+      "first_call_input": 4765,
+      "input_tokens": 4765,
+      "cached_tokens": 2514,
+      "output_tokens": 123,
+      "duration_ms": 1390,
+      "trace_cost_usd": 0.000312,
+      "usage_cost_usd": 0.000312,
+      "provider_cost_usd": 0.000312,
+      "replay": false,
+      "summary": null,
+      "tool_results": [],
+      "answer": "We're disputing **TX-0401**: a 240.00 EUR charge from TechMart Online on 2026-07-20, under the duplicate_charge reason code. The matching charge is TX-0402 (240.00 EUR, 2026-07-14), which we are treating as the original.\n\nI haven't filed it yet. Shall I open the dispute for 240.00 EUR?"
+     }
+    ],
+    "verdicts": [
+     {
+      "kind": "summary_absent",
+      "ok": true,
+      "detail": "all four steps contain no agent.summarize"
+     }
+    ]
+   },
+   {
+    "run": 5,
+    "passed": true,
+    "steps": [
+     {
+      "step": 1,
+      "model_calls": 3,
+      "retries": 0,
+      "tools": [
+       "get_account",
+       "get_transactions"
+      ],
+      "identical_max": 1,
+      "first_call_input": 2627,
+      "input_tokens": 8552,
+      "cached_tokens": 7542,
+      "output_tokens": 621,
+      "duration_ms": 5116,
+      "trace_cost_usd": 0.000487,
+      "usage_cost_usd": 0.000487,
+      "provider_cost_usd": 0.000487,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"customer\": {\"id\": \"CUS-0004\", \"name\": \"Danylo Kovalenko\", \"tier\": \"tier1\"}, \"accounts\": [{\"id\": \"ACC-1005\", \"customer_id\": \"CUS-0004\", \"currency\": \"EUR\", \"balance\": 1310.2, \"tier\": \"tier1\", \"holder\": \"Danylo Kovalenko\"}]}",
+       "{\"transactions\": [{\"id\": \"TX-0403\", \"account_id\": \"ACC-1005\", \"date\": \"2026-09-01\", \"amount\": 35.5, \"currency\": \"EUR\", \"merchant\": \"CityParking\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0401\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-20\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0402\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-14\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}]}"
+      ],
+      "answer": "I found both charges on your EUR account (ACC-1005). Both are settled card payments to TechMart Online:\n\n| Transaction ID | Date | Amount | Merchant | Status |\n|---|---|---|---|---|\n| TX-0402 | 2026-07-14 | EUR 240.00 | TechMart Online | Settled |\n| TX-0401 | 2026-07-20 | EUR 240.00 | TechMart Online | Settled |\n\nYour recent transactions also include a EUR 35.50 card payment to CityParking on 2026-09-01.\n\nI can open a dispute for one of these charges if you'd like. Before I do, please tell me:\n\n1. **Is this a duplicate charge?** If you only made one purchase, that's the most likely reason to dispute one of them. Or, if you did not authorise either payment, I can check an unauthorised-debit dispute instead.\n2. **Which charge should be disputed?** I'd suggest the later one (TX-0401), but that's your decision.\n\nI'll check eligibility before opening anything, and I won't file a dispute until you confirm."
+     },
+     {
+      "step": 2,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "check_dispute_eligibility"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3549,
+      "input_tokens": 7312,
+      "cached_tokens": 5028,
+      "output_tokens": 586,
+      "duration_ms": 3896,
+      "trace_cost_usd": 0.000572,
+      "usage_cost_usd": 0.000572,
+      "provider_cost_usd": 0.000572,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"eligible\": true, \"reason_code\": \"duplicate_charge\", \"window_days\": 60, \"tx_date\": \"2026-07-20\", \"as_of\": \"2026-09-15\", \"deadline\": \"2026-09-18\", \"checks\": {\"reason_code\": \"pass\", \"tx_status\": \"pass\", \"window\": \"pass\", \"compliance_hold\": \"pass\"}}"
+      ],
+      "answer": "The charge on July 20 (TX-0401, EUR 240.00) is eligible for a dispute.\n\n- **Reason code:** `duplicate_charge`. This fits a second charge for the same purchase.\n- **Filing window:** 60 days from the transaction date. The deadline is **18 September 2026**, which is 3 days from today (15 September 2026).\n\nWould you like me to open the dispute for TX-0401 for EUR 240.00 under the duplicate-charge reason? Please reply \"yes\" to confirm. Once it's filed, I can't reverse it."
+     },
+     {
+      "step": 3,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "search_knowledge_base"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3962,
+      "input_tokens": 8535,
+      "cached_tokens": 5028,
+      "output_tokens": 436,
+      "duration_ms": 3488,
+      "trace_cost_usd": 0.000619,
+      "usage_cost_usd": 0.000619,
+      "provider_cost_usd": 0.000619,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"index\": \"kb_clean\", \"top_k\": 4, \"query\": \"duplicate charge dispute required documents evidence\", \"fragments\": [{\"id\": \"disputes-process.md#s5\", \"doc\": \"disputes-process.md\", \"score\": 0.6489, \"text\": \"Dispute handling process\\n## Evidence requirements\\nThe customer may be asked for supporting evidence: an order confirmation, a\\ndelivery record, correspondence with the merchant. Failure to supply requested\\nevidence within 7 calendar days results in the case being declined.\"}, {\"id\": \"disputes-process.md#s6\", \"doc\": \"disputes-process.md\", \"score\": 0.5303, \"text\": \"Dispute handling process\\n## Withdrawing a dispute\\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\\nfinal; the same transaction cannot be disputed again under the same reason code.\"}, {\"id\": \"glossary.md#s7\", \"doc\": \"glossary.md\", \"score\": 0.4714, \"text\": \"Glossary\\n## Provisional credit\\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\\nis declined.\"}, {\"id\": \"disputes-process.md#s1\", \"doc\": \"disputes-process.md\", \"score\": 0.4286, \"text\": \"Dispute handling process\\n## Raising a dispute\\nA dispute is raised against a single settled transaction. The customer supplies\\nthe transaction reference and a reason code. The agent verifies eligibility\\nbefore the case is opened; an ineligible request is refused with the failing\\ncondition named, except where confidentiality rules apply.\"}]}"
+      ],
+      "answer": "The knowledge base doesn't list documents specific to duplicate-charge disputes. It does say that you may be asked for supporting evidence, such as:\n\n- An order confirmation\n- A delivery record\n- Correspondence with the merchant\n\nIf you're asked for evidence and don't supply it within **7 calendar days**, the case is declined. For this dispute, the most useful items would be the order confirmations or receipts for both TechMart Online purchases, which show that they were separate orders, or that they were the same order if you were charged twice for it. Any emails with TechMart about the second charge would also help.\n\nThe dispute deadline is 18 September 2026. If you want me to open it for TX-0401 (EUR 240.00, duplicate_charge), reply \"yes\" and I'll file it."
+     },
+     {
+      "step": 4,
+      "model_calls": 1,
+      "retries": 0,
+      "tools": [],
+      "identical_max": 0,
+      "first_call_input": 4845,
+      "input_tokens": 4845,
+      "cached_tokens": 2514,
+      "output_tokens": 113,
+      "duration_ms": 1235,
+      "trace_cost_usd": 0.000315,
+      "usage_cost_usd": 0.000315,
+      "provider_cost_usd": 0.000315,
+      "replay": false,
+      "summary": null,
+      "tool_results": [],
+      "answer": "We would be disputing **TX-0401**, a EUR 240.00 card payment to TechMart Online on 20 July 2026, under the duplicate-charge reason code. The other TechMart charge, TX-0402 (EUR 240.00, 14 July 2026), would stay as it is.\n\nPlease reply \"yes\" if you want me to file it."
+     }
+    ],
+    "verdicts": [
+     {
+      "kind": "summary_absent",
+      "ok": true,
+      "detail": "all four steps contain no agent.summarize"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "scenario": "B3-NO-SUMMARY",
+  "condition": "defect",
+  "settings": {
+   "profile": "lesson-05",
+   "defects": "",
+   "summarize_after": 20
+  },
+  "aggregates": [],
+  "runs": [
+   {
+    "run": 1,
+    "passed": true,
+    "steps": [
+     {
+      "step": 1,
+      "model_calls": 3,
+      "retries": 0,
+      "tools": [
+       "get_account",
+       "get_transactions"
+      ],
+      "identical_max": 1,
+      "first_call_input": 2821,
+      "input_tokens": 9134,
+      "cached_tokens": 5416,
+      "output_tokens": 666,
+      "duration_ms": 4827,
+      "trace_cost_usd": 0.000827,
+      "usage_cost_usd": 0.000827,
+      "provider_cost_usd": 0.000827,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"customer\": {\"id\": \"CUS-0004\", \"name\": \"Danylo Kovalenko\", \"tier\": \"tier1\"}, \"accounts\": [{\"id\": \"ACC-1005\", \"customer_id\": \"CUS-0004\", \"currency\": \"EUR\", \"balance\": 1310.2, \"tier\": \"tier1\", \"holder\": \"Danylo Kovalenko\"}]}",
+       "{\"transactions\": [{\"id\": \"TX-0403\", \"account_id\": \"ACC-1005\", \"date\": \"2026-09-01\", \"amount\": 35.5, \"currency\": \"EUR\", \"merchant\": \"CityParking\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0401\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-20\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0402\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-14\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}]}"
+      ],
+      "answer": "I found both charges on your EUR account (ACC-1005). Both are settled card payments to TechMart Online for 240.00 EUR each:\n\n| Transaction ID | Date | Merchant | Amount | Status |\n|---|---|---|---|---|\n| TX-0402 | 2026-07-14 | TechMart Online | 240.00 EUR | Settled |\n| TX-0401 | 2026-07-20 | TechMart Online | 240.00 EUR | Settled |\n\nYour current balance is 1,310.20 EUR.\n\nIf you didn't authorize the second charge, I can open a duplicate-charge dispute. I'll first check whether it is eligible. Would you like me to do that? If so, please confirm which transaction you want disputed (TX-0401 or TX-0402)."
+     },
+     {
+      "step": 2,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "check_dispute_eligibility",
+       "search_knowledge_base"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3645,
+      "input_tokens": 8199,
+      "cached_tokens": 5416,
+      "output_tokens": 745,
+      "duration_ms": 4636,
+      "trace_cost_usd": 0.000705,
+      "usage_cost_usd": 0.000705,
+      "provider_cost_usd": 0.000705,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"eligible\": true, \"reason_code\": \"duplicate_charge\", \"window_days\": 60, \"tx_date\": \"2026-07-20\", \"as_of\": \"2026-09-15\", \"deadline\": \"2026-09-18\", \"checks\": {\"reason_code\": \"pass\", \"tx_status\": \"pass\", \"window\": \"pass\", \"compliance_hold\": \"pass\"}}",
+       "{\"index\": \"kb_clean\", \"top_k\": 4, \"query\": \"duplicate_charge dispute window deadline days\", \"fragments\": [{\"id\": \"disputes.md#s1\", \"doc\": \"disputes.md\", \"score\": 1.206, \"text\": \"Payment dispute rules\\n## Reason codes and chargeback windows\\nEach reason code has a window in days from the transaction date. A dispute opened after the window closes is not eligible.\\n\\n| Reason code | Window (days) |\\n|---|---|\\n| fraud_card_not_present | 120 |\\n| goods_not_received | 90 |\\n| duplicate_charge | 60 |\\n| service_not_rendered | 90 |\\n| unauthorized_debit | 56 |\"}, {\"id\": \"limits-operations.md#s5\", \"doc\": \"limits-operations.md\", \"score\": 0.8165, \"text\": \"Limit operations\\n## Window definition\\nLimits are tracked on calendar days, not business days. The daily window runs\\nfrom 00:00 to 23:59 CET.\"}, {\"id\": \"glossary.md#s3\", \"doc\": \"glossary.md\", \"score\": 0.6124, \"text\": \"Glossary\\n## Chargeback window\\nThe number of days, counted from the transaction date, during which a dispute\\nmay be raised under a given reason code.\"}, {\"id\": \"disputes-process.md#s4\", \"doc\": \"disputes-process.md\", \"score\": 0.61, \"text\": \"Dispute handling process\\n## Review timelines\\nThe review target is 10 business days for card reason codes and 20 business\\ndays for transfer reason codes. Complex cases involving a foreign acquirer may\\nrun to 45 calendar days; the customer is notified when that happens.\"}]}"
+      ],
+      "answer": "The charge on July 20 (TX-0401, 240.00 EUR, TechMart Online) is eligible for a duplicate-charge dispute.\n\n- **Reason code:** `duplicate_charge` fits this situation, since the same merchant billed the same amount twice.\n- **Deadline:** The window for this reason code is 60 days from the transaction date. For TX-0401 that means you must file by **18 September 2026**. Today is 15 September, so there are 3 days left.\n- **Review time:** Card disputes are normally reviewed within 10 business days.\n\nI haven't opened the dispute yet because it cannot be reversed. Should I file a duplicate-charge dispute for TX-0401 (240.00 EUR)? Please reply yes to proceed."
+     },
+     {
+      "step": 3,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "search_knowledge_base"
+      ],
+      "identical_max": 1,
+      "first_call_input": 4816,
+      "input_tokens": 10243,
+      "cached_tokens": 5416,
+      "output_tokens": 307,
+      "duration_ms": 2602,
+      "trace_cost_usd": 0.00069,
+      "usage_cost_usd": 0.00069,
+      "provider_cost_usd": 0.00069,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"index\": \"kb_clean\", \"top_k\": 4, \"query\": \"dispute documents required evidence duplicate charge\", \"fragments\": [{\"id\": \"disputes-process.md#s5\", \"doc\": \"disputes-process.md\", \"score\": 0.6489, \"text\": \"Dispute handling process\\n## Evidence requirements\\nThe customer may be asked for supporting evidence: an order confirmation, a\\ndelivery record, correspondence with the merchant. Failure to supply requested\\nevidence within 7 calendar days results in the case being declined.\"}, {\"id\": \"disputes-process.md#s6\", \"doc\": \"disputes-process.md\", \"score\": 0.5303, \"text\": \"Dispute handling process\\n## Withdrawing a dispute\\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\\nfinal; the same transaction cannot be disputed again under the same reason code.\"}, {\"id\": \"glossary.md#s7\", \"doc\": \"glossary.md\", \"score\": 0.4714, \"text\": \"Glossary\\n## Provisional credit\\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\\nis declined.\"}, {\"id\": \"disputes-process.md#s1\", \"doc\": \"disputes-process.md\", \"score\": 0.4286, \"text\": \"Dispute handling process\\n## Raising a dispute\\nA dispute is raised against a single settled transaction. The customer supplies\\nthe transaction reference and a reason code. The agent verifies eligibility\\nbefore the case is opened; an ineligible request is refused with the failing\\ncondition named, except where confidentiality rules apply.\"}]}"
+      ],
+      "answer": "The knowledge base does not list a fixed set of documents for a duplicate-charge dispute. It does say that you may be asked for supporting evidence, such as:\n\n- An order confirmation\n- A delivery record\n- Correspondence with the merchant\n\nIf evidence is requested and you don't supply it within 7 calendar days, the case will be declined. Gathering these before you file is useful, since the TechMart Online order confirmations for both 240.00 EUR charges would show whether they were for the same purchase.\n\nWould you like me to open the duplicate-charge dispute for TX-0401 now? Reply yes to proceed. The deadline is 18 September 2026."
+     },
+     {
+      "step": 4,
+      "model_calls": 1,
+      "retries": 0,
+      "tools": [],
+      "identical_max": 0,
+      "first_call_input": 5661,
+      "input_tokens": 5661,
+      "cached_tokens": 2708,
+      "output_tokens": 80,
+      "duration_ms": 1189,
+      "trace_cost_usd": 0.000362,
+      "usage_cost_usd": 0.000362,
+      "provider_cost_usd": 0.000362,
+      "replay": false,
+      "summary": null,
+      "tool_results": [],
+      "answer": "We are disputing **TX-0401**: a 240.00 EUR card payment to TechMart Online on 2026-07-20, under the duplicate-charge reason code.\n\nI have not opened the dispute yet. Reply yes and I will file it."
+     }
+    ],
+    "verdicts": [
+     {
+      "kind": "summary_absent",
+      "ok": true,
+      "detail": "all four steps contain no agent.summarize"
+     }
+    ]
+   },
+   {
+    "run": 2,
+    "passed": true,
+    "steps": [
+     {
+      "step": 1,
+      "model_calls": 3,
+      "retries": 0,
+      "tools": [
+       "get_account",
+       "get_transactions"
+      ],
+      "identical_max": 1,
+      "first_call_input": 2821,
+      "input_tokens": 9134,
+      "cached_tokens": 8124,
+      "output_tokens": 576,
+      "duration_ms": 4859,
+      "trace_cost_usd": 0.00047,
+      "usage_cost_usd": 0.000471,
+      "provider_cost_usd": 0.00047,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"customer\": {\"id\": \"CUS-0004\", \"name\": \"Danylo Kovalenko\", \"tier\": \"tier1\"}, \"accounts\": [{\"id\": \"ACC-1005\", \"customer_id\": \"CUS-0004\", \"currency\": \"EUR\", \"balance\": 1310.2, \"tier\": \"tier1\", \"holder\": \"Danylo Kovalenko\"}]}",
+       "{\"transactions\": [{\"id\": \"TX-0403\", \"account_id\": \"ACC-1005\", \"date\": \"2026-09-01\", \"amount\": 35.5, \"currency\": \"EUR\", \"merchant\": \"CityParking\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0401\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-20\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0402\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-14\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}]}"
+      ],
+      "answer": "I found both charges on your EUR account (ACC-1005). Both are settled card payments to TechMart Online for 240.00 EUR each:\n\n| Transaction ID | Date | Amount | Merchant | Status |\n|---|---|---|---|---|\n| TX-0402 | 2026-07-14 | 240.00 EUR | TechMart Online | Settled |\n| TX-0401 | 2026-07-20 | 240.00 EUR | TechMart Online | Settled |\n\nThe two charges are six days apart and match in amount, which looks like a possible duplicate charge. I can check whether a dispute is eligible under the duplicate charge reason. If it is, I can open one for the charge you want to contest. Please tell me which transaction you want to dispute, or whether you want me to check both. I won't open anything until you confirm."
+     },
+     {
+      "step": 2,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "check_dispute_eligibility"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3656,
+      "input_tokens": 7526,
+      "cached_tokens": 5416,
+      "output_tokens": 587,
+      "duration_ms": 4393,
+      "trace_cost_usd": 0.000559,
+      "usage_cost_usd": 0.000558,
+      "provider_cost_usd": 0.000559,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"eligible\": true, \"reason_code\": \"duplicate_charge\", \"window_days\": 60, \"tx_date\": \"2026-07-20\", \"as_of\": \"2026-09-15\", \"deadline\": \"2026-09-18\", \"checks\": {\"reason_code\": \"pass\", \"tx_status\": \"pass\", \"window\": \"pass\", \"compliance_hold\": \"pass\"}}"
+      ],
+      "answer": "The **duplicate_charge** reason fits. I checked TX-0401 (240.00 EUR, TechMart Online, 2026-07-20) and it is eligible for a dispute:\n\n- Reason code: duplicate_charge: pass\n- Transaction status (settled): pass\n- Filing window: pass\n- Compliance check: pass\n- **Filing deadline: 2026-09-18**\n\nThe window is 60 days, and today is 2026-09-15, so you have about three days left.\n\nShould I open the dispute for TX-0401 for 240.00 EUR under duplicate_charge? I'll file it only after you confirm."
+     },
+     {
+      "step": 3,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "search_knowledge_base"
+      ],
+      "identical_max": 1,
+      "first_call_input": 4086,
+      "input_tokens": 8783,
+      "cached_tokens": 5416,
+      "output_tokens": 414,
+      "duration_ms": 3482,
+      "trace_cost_usd": 0.000598,
+      "usage_cost_usd": 0.000597,
+      "provider_cost_usd": 0.000598,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"index\": \"kb_clean\", \"top_k\": 4, \"query\": \"duplicate charge dispute required documents evidence\", \"fragments\": [{\"id\": \"disputes-process.md#s5\", \"doc\": \"disputes-process.md\", \"score\": 0.6489, \"text\": \"Dispute handling process\\n## Evidence requirements\\nThe customer may be asked for supporting evidence: an order confirmation, a\\ndelivery record, correspondence with the merchant. Failure to supply requested\\nevidence within 7 calendar days results in the case being declined.\"}, {\"id\": \"disputes-process.md#s6\", \"doc\": \"disputes-process.md\", \"score\": 0.5303, \"text\": \"Dispute handling process\\n## Withdrawing a dispute\\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\\nfinal; the same transaction cannot be disputed again under the same reason code.\"}, {\"id\": \"glossary.md#s7\", \"doc\": \"glossary.md\", \"score\": 0.4714, \"text\": \"Glossary\\n## Provisional credit\\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\\nis declined.\"}, {\"id\": \"disputes-process.md#s1\", \"doc\": \"disputes-process.md\", \"score\": 0.4286, \"text\": \"Dispute handling process\\n## Raising a dispute\\nA dispute is raised against a single settled transaction. The customer supplies\\nthe transaction reference and a reason code. The agent verifies eligibility\\nbefore the case is opened; an ineligible request is refused with the failing\\ncondition named, except where confidentiality rules apply.\"}]}"
+      ],
+      "answer": "The knowledge base does not list documents specific to duplicate charge disputes. It says that the bank may ask for supporting evidence, such as:\n\n- An order confirmation\n- A delivery record\n- Correspondence with the merchant\n\nIf evidence is requested and not supplied within **7 calendar days**, the case is declined. For a duplicate charge, the most useful items would probably be the order confirmations or receipts for both TechMart Online payments, so you can show that they are for the same purchase. The knowledge base does not say which specific documents are mandatory, so I can't confirm that list.\n\nThe dispute deadline for TX-0401 is 2026-09-18. Do you want me to open the dispute for 240.00 EUR under duplicate_charge now?"
+     },
+     {
+      "step": 4,
+      "model_calls": 1,
+      "retries": 0,
+      "tools": [],
+      "identical_max": 0,
+      "first_call_input": 4959,
+      "input_tokens": 4959,
+      "cached_tokens": 2708,
+      "output_tokens": 136,
+      "duration_ms": 1345,
+      "trace_cost_usd": 0.00032,
+      "usage_cost_usd": 0.00032,
+      "provider_cost_usd": 0.00032,
+      "replay": false,
+      "summary": null,
+      "tool_results": [],
+      "answer": "We are disputing **TX-0401**: a 240.00 EUR card payment to TechMart Online on 2026-07-20. The dispute reason is duplicate_charge. I have not opened it yet. I'll file it only after you confirm."
+     }
+    ],
+    "verdicts": [
+     {
+      "kind": "summary_absent",
+      "ok": true,
+      "detail": "all four steps contain no agent.summarize"
+     }
+    ]
+   },
+   {
+    "run": 3,
+    "passed": true,
+    "steps": [
+     {
+      "step": 1,
+      "model_calls": 3,
+      "retries": 0,
+      "tools": [
+       "get_account",
+       "get_transactions"
+      ],
+      "identical_max": 1,
+      "first_call_input": 2821,
+      "input_tokens": 9134,
+      "cached_tokens": 8124,
+      "output_tokens": 697,
+      "duration_ms": 5875,
+      "trace_cost_usd": 0.000531,
+      "usage_cost_usd": 0.000531,
+      "provider_cost_usd": 0.000531,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"customer\": {\"id\": \"CUS-0004\", \"name\": \"Danylo Kovalenko\", \"tier\": \"tier1\"}, \"accounts\": [{\"id\": \"ACC-1005\", \"customer_id\": \"CUS-0004\", \"currency\": \"EUR\", \"balance\": 1310.2, \"tier\": \"tier1\", \"holder\": \"Danylo Kovalenko\"}]}",
+       "{\"transactions\": [{\"id\": \"TX-0403\", \"account_id\": \"ACC-1005\", \"date\": \"2026-09-01\", \"amount\": 35.5, \"currency\": \"EUR\", \"merchant\": \"CityParking\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0401\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-20\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0402\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-14\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}]}"
+      ],
+      "answer": "I found both charges on your EUR account (ACC-1005):\n\n| Transaction ID | Date | Merchant | Amount | Status |\n|---|---|---|---|---|\n| TX-0402 | 2026-07-14 | TechMart Online | 240.00 EUR | Settled |\n| TX-0401 | 2026-07-20 | TechMart Online | 240.00 EUR | Settled |\n\nBoth are card payments to TechMart Online for the same amount, six days apart. The list also shows a 35.50 EUR card payment to CityParking on 2026-09-01. Your current balance is 1,310.20 EUR.\n\nIf you didn't authorize the second 240 EUR charge, or it's a duplicate of the first, I can open a dispute under the \"duplicate charge\" reason. First I'll check whether it's eligible. Would you like me to do that? If you want to dispute a specific transaction, tell me which one."
+     },
+     {
+      "step": 2,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "check_dispute_eligibility",
+       "search_knowledge_base"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3687,
+      "input_tokens": 8320,
+      "cached_tokens": 5416,
+      "output_tokens": 703,
+      "duration_ms": 4599,
+      "trace_cost_usd": 0.000696,
+      "usage_cost_usd": 0.000696,
+      "provider_cost_usd": 0.000696,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"eligible\": true, \"reason_code\": \"duplicate_charge\", \"window_days\": 60, \"tx_date\": \"2026-07-20\", \"as_of\": \"2026-09-15\", \"deadline\": \"2026-09-18\", \"checks\": {\"reason_code\": \"pass\", \"tx_status\": \"pass\", \"window\": \"pass\", \"compliance_hold\": \"pass\"}}",
+       "{\"index\": \"kb_clean\", \"top_k\": 4, \"query\": \"dispute duplicate charge filing window deadline\", \"fragments\": [{\"id\": \"disputes.md#s1\", \"doc\": \"disputes.md\", \"score\": 0.7538, \"text\": \"Payment dispute rules\\n## Reason codes and chargeback windows\\nEach reason code has a window in days from the transaction date. A dispute opened after the window closes is not eligible.\\n\\n| Reason code | Window (days) |\\n|---|---|\\n| fraud_card_not_present | 120 |\\n| goods_not_received | 90 |\\n| duplicate_charge | 60 |\\n| service_not_rendered | 90 |\\n| unauthorized_debit | 56 |\"}, {\"id\": \"disputes-process.md#s6\", \"doc\": \"disputes-process.md\", \"score\": 0.5303, \"text\": \"Dispute handling process\\n## Withdrawing a dispute\\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\\nfinal; the same transaction cannot be disputed again under the same reason code.\"}, {\"id\": \"glossary.md#s7\", \"doc\": \"glossary.md\", \"score\": 0.4714, \"text\": \"Glossary\\n## Provisional credit\\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\\nis declined.\"}, {\"id\": \"disputes-process.md#s1\", \"doc\": \"disputes-process.md\", \"score\": 0.4286, \"text\": \"Dispute handling process\\n## Raising a dispute\\nA dispute is raised against a single settled transaction. The customer supplies\\nthe transaction reference and a reason code. The agent verifies eligibility\\nbefore the case is opened; an ineligible request is refused with the failing\\ncondition named, except where confidentiality rules apply.\"}]}"
+      ],
+      "answer": "The July 20 charge (TX-0401, 240.00 EUR) is eligible for a dispute. I haven't opened one yet because it's irreversible.\n\n- **Reason code:** `duplicate_charge`, which fits a second charge for the same amount as an earlier one. The matching charge is TX-0402 (240.00 EUR, July 14).\n- **Filing deadline:** 60 days from the transaction date. For TX-0401, that is **September 18, 2026**. Today is September 15, so you have 3 days.\n\nDo you want me to open the dispute for TX-0401 under `duplicate_charge` for 240.00 EUR? Reply yes and I'll file it."
+     },
+     {
+      "step": 3,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "search_knowledge_base"
+      ],
+      "identical_max": 1,
+      "first_call_input": 4868,
+      "input_tokens": 10347,
+      "cached_tokens": 5416,
+      "output_tokens": 313,
+      "duration_ms": 2877,
+      "trace_cost_usd": 0.000704,
+      "usage_cost_usd": 0.000704,
+      "provider_cost_usd": 0.000704,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"index\": \"kb_clean\", \"top_k\": 4, \"query\": \"duplicate charge dispute required documents evidence\", \"fragments\": [{\"id\": \"disputes-process.md#s5\", \"doc\": \"disputes-process.md\", \"score\": 0.6489, \"text\": \"Dispute handling process\\n## Evidence requirements\\nThe customer may be asked for supporting evidence: an order confirmation, a\\ndelivery record, correspondence with the merchant. Failure to supply requested\\nevidence within 7 calendar days results in the case being declined.\"}, {\"id\": \"disputes-process.md#s6\", \"doc\": \"disputes-process.md\", \"score\": 0.5303, \"text\": \"Dispute handling process\\n## Withdrawing a dispute\\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\\nfinal; the same transaction cannot be disputed again under the same reason code.\"}, {\"id\": \"glossary.md#s7\", \"doc\": \"glossary.md\", \"score\": 0.4714, \"text\": \"Glossary\\n## Provisional credit\\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\\nis declined.\"}, {\"id\": \"disputes-process.md#s1\", \"doc\": \"disputes-process.md\", \"score\": 0.4286, \"text\": \"Dispute handling process\\n## Raising a dispute\\nA dispute is raised against a single settled transaction. The customer supplies\\nthe transaction reference and a reason code. The agent verifies eligibility\\nbefore the case is opened; an ineligible request is refused with the failing\\ncondition named, except where confidentiality rules apply.\"}]}"
+      ],
+      "answer": "The knowledge base doesn't list a fixed document checklist for duplicate charges. It does say that the bank may ask for supporting evidence, such as:\n\n- An order confirmation\n- A delivery record\n- Correspondence with the merchant\n\nIf evidence is requested and you don't supply it within 7 calendar days, the case is declined. So it's worth gathering your TechMart Online order confirmations for both July 14 and July 20 now, especially anything showing the two orders were separate or that the second was a duplicate.\n\nTo file the dispute, the only details needed are the transaction reference (TX-0401) and the reason code (`duplicate_charge`). The deadline is September 18, 2026. Should I open it now?"
+     },
+     {
+      "step": 4,
+      "model_calls": 1,
+      "retries": 0,
+      "tools": [],
+      "identical_max": 0,
+      "first_call_input": 5729,
+      "input_tokens": 5729,
+      "cached_tokens": 2708,
+      "output_tokens": 173,
+      "duration_ms": 1521,
+      "trace_cost_usd": 0.000416,
+      "usage_cost_usd": 0.000416,
+      "provider_cost_usd": 0.000416,
+      "replay": false,
+      "summary": null,
+      "tool_results": [],
+      "answer": "We are disputing **TX-0401**, the **240.00 EUR** charge to TechMart Online on **July 20, 2026**, under the `duplicate_charge` reason. It matches TX-0402, the 240.00 EUR TechMart Online charge from July 14.\n\nThe dispute has not been opened yet. Do you want me to file it?"
+     }
+    ],
+    "verdicts": [
+     {
+      "kind": "summary_absent",
+      "ok": true,
+      "detail": "all four steps contain no agent.summarize"
+     }
+    ]
+   },
+   {
+    "run": 4,
+    "passed": true,
+    "steps": [
+     {
+      "step": 1,
+      "model_calls": 3,
+      "retries": 0,
+      "tools": [
+       "get_account",
+       "get_transactions"
+      ],
+      "identical_max": 1,
+      "first_call_input": 2821,
+      "input_tokens": 9134,
+      "cached_tokens": 8124,
+      "output_tokens": 557,
+      "duration_ms": 4374,
+      "trace_cost_usd": 0.000461,
+      "usage_cost_usd": 0.000461,
+      "provider_cost_usd": 0.000461,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"customer\": {\"id\": \"CUS-0004\", \"name\": \"Danylo Kovalenko\", \"tier\": \"tier1\"}, \"accounts\": [{\"id\": \"ACC-1005\", \"customer_id\": \"CUS-0004\", \"currency\": \"EUR\", \"balance\": 1310.2, \"tier\": \"tier1\", \"holder\": \"Danylo Kovalenko\"}]}",
+       "{\"transactions\": [{\"id\": \"TX-0403\", \"account_id\": \"ACC-1005\", \"date\": \"2026-09-01\", \"amount\": 35.5, \"currency\": \"EUR\", \"merchant\": \"CityParking\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0401\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-20\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0402\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-14\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}]}"
+      ],
+      "answer": "I found both charges on your EUR account (ACC-1005):\n\n| Transaction ID | Date | Merchant | Amount | Status |\n|---|---|---|---|---|\n| TX-0402 | 2026-07-14 | TechMart Online | 240.00 EUR | Settled |\n| TX-0401 | 2026-07-20 | TechMart Online | 240.00 EUR | Settled |\n\nYour other recent transaction is a 35.50 EUR card payment to CityParking on 2026-09-01.\n\nBoth TechMart charges are for the same amount and are six days apart, so they may be a duplicate charge. I can check whether one of them is eligible for a duplicate-charge dispute. I haven't opened anything yet. Would you like me to check eligibility for TX-0401, the later charge?"
+     },
+     {
+      "step": 2,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "check_dispute_eligibility"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3649,
+      "input_tokens": 7512,
+      "cached_tokens": 5416,
+      "output_tokens": 459,
+      "duration_ms": 3619,
+      "trace_cost_usd": 0.000493,
+      "usage_cost_usd": 0.000493,
+      "provider_cost_usd": 0.000493,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"eligible\": true, \"reason_code\": \"duplicate_charge\", \"window_days\": 60, \"tx_date\": \"2026-07-20\", \"as_of\": \"2026-09-15\", \"deadline\": \"2026-09-18\", \"checks\": {\"reason_code\": \"pass\", \"tx_status\": \"pass\", \"window\": \"pass\", \"compliance_hold\": \"pass\"}}"
+      ],
+      "answer": "The charge on July 20 (TX-0401) is eligible for a **duplicate charge** dispute.\n\n- **Reason code:** `duplicate_charge`, which matches two identical charges from the same merchant.\n- **Deadline:** The window is 60 days from the transaction date. The deadline is **18 September 2026**, three days from today (15 September 2026).\n- **Amount:** 240.00 EUR, the full amount of TX-0401.\n\nOpening a dispute can't be undone. Do you want me to file it for TX-0401 under `duplicate_charge` for 240.00 EUR? Please reply yes to confirm."
+     },
+     {
+      "step": 3,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "search_knowledge_base"
+      ],
+      "identical_max": 1,
+      "first_call_input": 4082,
+      "input_tokens": 8775,
+      "cached_tokens": 5416,
+      "output_tokens": 507,
+      "duration_ms": 4529,
+      "trace_cost_usd": 0.000644,
+      "usage_cost_usd": 0.000644,
+      "provider_cost_usd": 0.000644,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"index\": \"kb_clean\", \"top_k\": 4, \"query\": \"duplicate charge dispute required documents evidence\", \"fragments\": [{\"id\": \"disputes-process.md#s5\", \"doc\": \"disputes-process.md\", \"score\": 0.6489, \"text\": \"Dispute handling process\\n## Evidence requirements\\nThe customer may be asked for supporting evidence: an order confirmation, a\\ndelivery record, correspondence with the merchant. Failure to supply requested\\nevidence within 7 calendar days results in the case being declined.\"}, {\"id\": \"disputes-process.md#s6\", \"doc\": \"disputes-process.md\", \"score\": 0.5303, \"text\": \"Dispute handling process\\n## Withdrawing a dispute\\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\\nfinal; the same transaction cannot be disputed again under the same reason code.\"}, {\"id\": \"glossary.md#s7\", \"doc\": \"glossary.md\", \"score\": 0.4714, \"text\": \"Glossary\\n## Provisional credit\\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\\nis declined.\"}, {\"id\": \"disputes-process.md#s1\", \"doc\": \"disputes-process.md\", \"score\": 0.4286, \"text\": \"Dispute handling process\\n## Raising a dispute\\nA dispute is raised against a single settled transaction. The customer supplies\\nthe transaction reference and a reason code. The agent verifies eligibility\\nbefore the case is opened; an ineligible request is refused with the failing\\ncondition named, except where confidentiality rules apply.\"}]}"
+      ],
+      "answer": "The knowledge base doesn't list specific documents for duplicate-charge disputes. It says that you may be asked for supporting evidence, such as:\n\n- An order confirmation\n- A delivery record\n- Correspondence with the merchant\n\nIf you're asked for evidence and don't supply it within **7 calendar days**, the case will be declined. For a duplicate charge, the most useful items would likely be the order confirmations or receipts for both TechMart charges, showing whether they are for the same purchase. Any emails from TechMart about the second payment would also help.\n\nThe dispute deadline is **18 September 2026**. You don't need the documents before filing. You can file now and send them if asked. Do you want me to open the dispute for TX-0401 (240.00 EUR, `duplicate_charge`)?"
+     },
+     {
+      "step": 4,
+      "model_calls": 1,
+      "retries": 0,
+      "tools": [],
+      "identical_max": 0,
+      "first_call_input": 4970,
+      "input_tokens": 4970,
+      "cached_tokens": 2708,
+      "output_tokens": 87,
+      "duration_ms": 1123,
+      "trace_cost_usd": 0.000297,
+      "usage_cost_usd": 0.000297,
+      "provider_cost_usd": 0.000297,
+      "replay": false,
+      "summary": null,
+      "tool_results": [],
+      "answer": "We're disputing **TX-0401**, the TechMart Online card charge of **240.00 EUR** on 20 July 2026, under the reason code `duplicate_charge`.\n\nI haven't opened the dispute yet. Please reply yes if you want me to file it."
+     }
+    ],
+    "verdicts": [
+     {
+      "kind": "summary_absent",
+      "ok": true,
+      "detail": "all four steps contain no agent.summarize"
+     }
+    ]
+   },
+   {
+    "run": 5,
+    "passed": true,
+    "steps": [
+     {
+      "step": 1,
+      "model_calls": 3,
+      "retries": 0,
+      "tools": [
+       "get_account",
+       "get_transactions"
+      ],
+      "identical_max": 1,
+      "first_call_input": 2821,
+      "input_tokens": 9134,
+      "cached_tokens": 8124,
+      "output_tokens": 623,
+      "duration_ms": 5370,
+      "trace_cost_usd": 0.000494,
+      "usage_cost_usd": 0.000494,
+      "provider_cost_usd": 0.000494,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"customer\": {\"id\": \"CUS-0004\", \"name\": \"Danylo Kovalenko\", \"tier\": \"tier1\"}, \"accounts\": [{\"id\": \"ACC-1005\", \"customer_id\": \"CUS-0004\", \"currency\": \"EUR\", \"balance\": 1310.2, \"tier\": \"tier1\", \"holder\": \"Danylo Kovalenko\"}]}",
+       "{\"transactions\": [{\"id\": \"TX-0403\", \"account_id\": \"ACC-1005\", \"date\": \"2026-09-01\", \"amount\": 35.5, \"currency\": \"EUR\", \"merchant\": \"CityParking\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0401\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-20\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}, {\"id\": \"TX-0402\", \"account_id\": \"ACC-1005\", \"date\": \"2026-07-14\", \"amount\": 240.0, \"currency\": \"EUR\", \"merchant\": \"TechMart Online\", \"direction\": \"out\", \"transfer_type\": \"card\", \"status\": \"settled\"}]}"
+      ],
+      "answer": "I found both charges on your account (ACC-1005, EUR balance 1,310.20):\n\n| Transaction ID | Date | Merchant | Amount | Status |\n|---|---|---|---|---|\n| TX-0402 | 2026-07-14 | TechMart Online | 240.00 EUR | Settled |\n| TX-0401 | 2026-07-20 | TechMart Online | 240.00 EUR | Settled |\n\nThere is also a 35.50 EUR card payment to CityParking on 2026-09-01 (TX-0403), which is not related to these charges.\n\nIf you didn't authorize the second TechMart charge and it is a duplicate of the first, I can check whether it is eligible for a duplicate-charge dispute. I won't open anything until you confirm. Would you like me to proceed? If you're not sure whether the two charges are duplicates, TechMart may be able to confirm what each payment was for."
+     },
+     {
+      "step": 2,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "check_dispute_eligibility"
+      ],
+      "identical_max": 1,
+      "first_call_input": 3685,
+      "input_tokens": 7584,
+      "cached_tokens": 5416,
+      "output_tokens": 601,
+      "duration_ms": 3960,
+      "trace_cost_usd": 0.000571,
+      "usage_cost_usd": 0.000572,
+      "provider_cost_usd": 0.000571,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"eligible\": true, \"reason_code\": \"duplicate_charge\", \"window_days\": 60, \"tx_date\": \"2026-07-20\", \"as_of\": \"2026-09-15\", \"deadline\": \"2026-09-18\", \"checks\": {\"reason_code\": \"pass\", \"tx_status\": \"pass\", \"window\": \"pass\", \"compliance_hold\": \"pass\"}}"
+      ],
+      "answer": "The charge on July 20 (TX-0401, 240.00 EUR) is eligible for a **duplicate charge** dispute.\n\n- **Reason code:** duplicate_charge\n- **Window:** 60 days from the transaction date\n- **Deadline:** 2026-09-18\n- **Checks:** reason code, transaction status, window, and compliance all passed.\n\nA dispute is irreversible once filed, so I haven't opened one yet. Do you want me to file a duplicate-charge dispute for TX-0401 for the full 240.00 EUR?"
+     },
+     {
+      "step": 3,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "search_knowledge_base"
+      ],
+      "identical_max": 1,
+      "first_call_input": 4094,
+      "input_tokens": 8749,
+      "cached_tokens": 5416,
+      "output_tokens": 447,
+      "duration_ms": 3388,
+      "trace_cost_usd": 0.000611,
+      "usage_cost_usd": 0.000611,
+      "provider_cost_usd": 0.000611,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"index\": \"kb_clean\", \"top_k\": 4, \"query\": \"duplicate charge dispute documents required\", \"fragments\": [{\"id\": \"disputes-process.md#s6\", \"doc\": \"disputes-process.md\", \"score\": 0.5303, \"text\": \"Dispute handling process\\n## Withdrawing a dispute\\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\\nfinal; the same transaction cannot be disputed again under the same reason code.\"}, {\"id\": \"glossary.md#s7\", \"doc\": \"glossary.md\", \"score\": 0.4714, \"text\": \"Glossary\\n## Provisional credit\\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\\nis declined.\"}, {\"id\": \"disputes-process.md#s1\", \"doc\": \"disputes-process.md\", \"score\": 0.4286, \"text\": \"Dispute handling process\\n## Raising a dispute\\nA dispute is raised against a single settled transaction. The customer supplies\\nthe transaction reference and a reason code. The agent verifies eligibility\\nbefore the case is opened; an ineligible request is refused with the failing\\ncondition named, except where confidentiality rules apply.\"}, {\"id\": \"notifications.md#s2\", \"doc\": \"notifications.md\", \"score\": 0.4082, \"text\": \"Notifications\\n## Dispute updates\\nA dispute generates a notification on every state change. The notification\\nnames the state, never the internal reason for a decision.\"}]}"
+      ],
+      "answer": "The knowledge base doesn't list any document requirements for duplicate-charge disputes. The only process detail it gives is that a dispute is raised against a single settled transaction using the transaction reference and a reason code. So I can't tell you which documents, if any, Verta will ask for.\n\nThings that may help with the filing, though I can't confirm Verta requires them:\n- Any TechMart order confirmations or receipts for the July 14 and July 20 payments.\n- Any notice from TechMart showing that the July 20 payment was a duplicate.\n\nWould you like me to file the duplicate-charge dispute for TX-0401 (240.00 EUR) now? The deadline is 2026-09-18. Or I can escalate to a human agent if you'd like to ask about documentation first."
+     },
+     {
+      "step": 4,
+      "model_calls": 1,
+      "retries": 0,
+      "tools": [],
+      "identical_max": 0,
+      "first_call_input": 4928,
+      "input_tokens": 4928,
+      "cached_tokens": 2708,
+      "output_tokens": 134,
+      "duration_ms": 1418,
+      "trace_cost_usd": 0.000316,
+      "usage_cost_usd": 0.000316,
+      "provider_cost_usd": 0.000316,
+      "replay": false,
+      "summary": null,
+      "tool_results": [],
+      "answer": "We're disputing **TX-0401**, the TechMart Online charge of **240.00 EUR** dated 2026-07-20, under the duplicate_charge reason code. The earlier identical charge, TX-0402 (240.00 EUR, 2026-07-14), is the one we're treating as the original and is not being disputed.\n\nShall I file the dispute for TX-0401 for 240.00 EUR?"
+     }
+    ],
+    "verdicts": [
+     {
+      "kind": "summary_absent",
+      "ok": true,
+      "detail": "all four steps contain no agent.summarize"
+     }
+    ]
+   }
+  ]
+ }
+]

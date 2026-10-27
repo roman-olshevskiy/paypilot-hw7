@@ -17,7 +17,7 @@ def main():
  'Сесія f7146bdde3cf:7 кроків, Langfuse exact generation sum USD0.00445066; UI сесії округлює до USD0.004, [колонка Total Cost](screenshots/c07-total-cost-column.png) — до USD0.004451. Це repeat1, а таблиці нижче — медіани5. [Raw Langfuse](../evidence/langfuse/session-f7146bdde3cf.json).',
  '| Сліпа зона | Що пропущено | Джерело перевірки |','|---|---|---|',
  '| usage.cost_usd за D14 | Приховані повтори моделі;8 однакових get_transactions | Provider cost і всі llm.call spans |',
- '| Langfuse без model definition | Ціна Haiku відсутня на старих сесіях | [Скриншот до налаштування](screenshots/sessions-before-haiku-pricing.png) |',
+ '| Langfuse без model definition | Ціна Haiku відсутня на старих сесіях | [Сесії, записані до definition](screenshots/sessions-before-haiku-pricing.png) |',
  '| Лише input/output prices | Cache buckets без ціни занижують суму | [Повне визначення](screenshots/haiku-model-definition.png), usage breakdown |',
  '| llm.call sum / root usage | Summary generation не включена | agent.summarize usage + provider total |',
  'Для сесії f7146bdde3cf лише input/output prices дали б USD0.00340920 замість USD0.00445066; cache buckets пояснюють різницю. Reasoning high не запускався; нуль reasoning у цих сесіях не доводить відсутність витрат за інших налаштувань.',
@@ -67,7 +67,12 @@ def main():
  '**Бюджети в кейсах:** [sets/l05_dialogs.jsonl](../sets/l05_dialogs.jsonl): BUD-H01/H02/H04/D15 — release5; BUD-D14/READ — daily1. Пороги frozen після окремого calibration, до фінальних умов. [Native L03 reports](../reports), [метод](measurement-scope.md).',
  '### Калібрування tokens_total · BUD-D15',
  '| Варіант | Поріг | Clean median/verdict | Lesson-08 median/verdict |','|---|---|---|---|']
- for c in a['calibration']:lines.append(f"| {c['label']} | {c['threshold']} | {c['clean_median']} / {'PASS' if c['clean_pass'] else 'FAIL'} | {c['defect_median']} / {'PASS' if c['defect_pass'] else 'FAIL'} |")
+ for c in a['calibration']:lines.append(f"| {dict(too_loose='Занадто вільний',too_tight='Занадто тісний',chosen='Обраний')[c['label']]} | {c['threshold']} | {c['clean_median']} / {'PASS' if c['clean_pass'] else 'FAIL'} | {c['defect_median']} / {'PASS' if c['defect_pass'] else 'FAIL'} |")
+ lines += ['### Фінальні власні бюджети · Docker V2','| Кейс | Clean | Lesson-08 |','|---|---|---|']
+ for clean_case,def_case in zip(a['budget_reports']['clean']['cases'],a['budget_reports']['lesson-08']['cases']):
+  lines.append('| '+clean_case['id']+' | '+('PASS' if clean_case['verdict']['passed'] else 'FAIL')+' | '+('PASS' if def_case['verdict']['passed'] else 'FAIL')+' |')
+ lines += ['H04 V1 мав лише11 токенів запасу на held-out clean. Розширення clean-вибірки до10 зареєстровано до власної defect-серії; V2 frozen до незалежного Docker. Поріг65935 зменшує ризик false positive, але пропускає D15 у H04. D15 виявляють H01/H02/BUD-D15. Це свідомо зафіксована втрата чутливості, не загальна гарантія покриття. [Хронологія](../evidence/calibration-amendment-intent.json), [V1/V2 і samples](../evidence/budget-calibration.json).',
+ 'Контроль без summary: provider median clean USD0.00193182, lesson-05 USD0.00199224; із summary2 — USD0.00283646/0.00298998. По5 незалежних повторів. На цих коротких діалогах summary не заощаджує кошти; довші діалоги не вимірювалися. [Звірка4 прогнозів](forecast-review.md).']
  lines += ['Вільний/тісний варіанти — retrospective re-evaluation тих самих captures, не нові генерації. Обраний поріг frozen до final clean/lesson-08; запас5% від незалежного calibration baseline. [Усі samples і запас](../evidence/budget-calibration.json).',
  '**Залишковий ризик:** latency пороги залежать від локального instrumentation; місячний mix — припущення;5 повторів не доводять універсальність. Перезняти при зміні моделі/оточення. Semantic L09 і production capacity/hosting не вимірювалися. Точні raw докази зберігаються окремо.']
  (ROOT/'l08/observability-cost-report.md').write_text('\n\n'.join(lines).replace('|\n\n|','|\n|')+'\n',encoding='utf-8')
