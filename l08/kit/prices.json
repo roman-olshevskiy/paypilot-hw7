@@ -15,7 +15,7 @@
     "google/gemini-2.5-flash": {
       "input": 0.3,
       "output": 2.5,
-      "cache_write_factor": 0.2777777777777777,
+      "cache_write_factor": 0.3777777777777778,
       "cache_write_inside_read": true
     }
   }

@@ -1,0 +1,78 @@
+[
+ {
+  "scenario": "B1",
+  "condition": "baseline",
+  "settings": {
+   "profile": "clean",
+   "defects": "",
+   "model": "google/gemini-2.5-flash"
+  },
+  "aggregates": [],
+  "runs": [
+   {
+    "run": 1,
+    "passed": true,
+    "steps": [
+     {
+      "step": 1,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "get_account"
+      ],
+      "identical_max": 1,
+      "first_call_input": 1490,
+      "input_tokens": 3091,
+      "cached_tokens": 2962,
+      "output_tokens": 39,
+      "duration_ms": 2792,
+      "trace_cost_usd": 0.000304,
+      "usage_cost_usd": 0.000349,
+      "provider_cost_usd": 0.000348,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"customer\": {\"id\": \"CUS-0003\", \"name\": \"Clara Fischer\", \"tier\": \"tier3\"}, \"accounts\": [{\"id\": \"ACC-1004\", \"customer_id\": \"CUS-0003\", \"currency\": \"EUR\", \"balance\": 145000.0, \"tier\": \"tier3\", \"holder\": \"Clara Fischer\"}]}"
+      ],
+      "answer": "You have one account, ACC-1004, denominated in EUR, with a balance of 145,000 EUR.\n"
+     },
+     {
+      "step": 2,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "get_transactions"
+      ],
+      "identical_max": 1,
+      "first_call_input": 1640,
+      "input_tokens": 3316,
+      "cached_tokens": 2962,
+      "output_tokens": 40,
+      "duration_ms": 1687,
+      "trace_cost_usd": 0.000295,
+      "usage_cost_usd": 0.000295,
+      "provider_cost_usd": 0.000295,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"transactions\": []}"
+      ],
+      "answer": "I couldn't retrieve any recent transactions for your account ACC-1004."
+     }
+    ],
+    "verdicts": [
+     {
+      "kind": "tool_called",
+      "ok": true,
+      "detail": "get_transactions called on step(s) [2]"
+     },
+     {
+      "kind": "identical_tool_calls_max",
+      "ok": true,
+      "detail": "step 1: 1 identical call(s), max 1"
+     }
+    ]
+   }
+  ]
+ }
+]

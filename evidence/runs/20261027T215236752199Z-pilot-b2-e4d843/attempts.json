@@ -1,0 +1,240 @@
+[
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "bb852f19cb9141bb"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "d68e469c631d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "df5205f40de14de3"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "d68e469c631d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f12c4cc7dafd4f06"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "d68e469c631d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "7c45ddea197e45d9"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "d68e469c631d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "27537f8071144718"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "d68e469c631d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "dc94482f696d4a98"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "d68e469c631d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "84f055ff71da4709"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "dc12b2b2146945cd"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "d3c16c17c1a9",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b3fb51d7aff54f9c"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "d3c16c17c1a9",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "dd7e7615dbaa4905"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "d3c16c17c1a9",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "90b4d40bba034ef0"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "d3c16c17c1a9",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a04a46d7558840b2"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "d3c16c17c1a9",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "7c4b79ba24a04ef8"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "d3c16c17c1a9",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d90cceecc3d248e9"
+  }
+]

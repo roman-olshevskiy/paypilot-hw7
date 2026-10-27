@@ -1,0 +1,70 @@
+[
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "3c21712d16974388"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": ""
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "ea08c60cd48c",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "360141a05a0045f1"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "16ed788ae2984798"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "99ee4f26a158",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "131d26b775984821"
+  }
+]

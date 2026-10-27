@@ -1,0 +1,166 @@
+[
+ {
+  "scenario": "B1",
+  "condition": "baseline",
+  "settings": {
+   "profile": "clean",
+   "defects": ""
+  },
+  "aggregates": [],
+  "runs": [
+   {
+    "run": 1,
+    "passed": true,
+    "steps": [
+     {
+      "step": 1,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "get_account"
+      ],
+      "identical_max": 1,
+      "first_call_input": 2601,
+      "input_tokens": 5349,
+      "cached_tokens": 2514,
+      "output_tokens": 114,
+      "duration_ms": 2436,
+      "trace_cost_usd": 0.000428,
+      "usage_cost_usd": 0.000429,
+      "provider_cost_usd": 0.000428,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"customer\": {\"id\": \"CUS-0003\", \"name\": \"Clara Fischer\", \"tier\": \"tier3\"}, \"accounts\": [{\"id\": \"ACC-1004\", \"customer_id\": \"CUS-0003\", \"currency\": \"EUR\", \"balance\": 145000.0, \"tier\": \"tier3\", \"holder\": \"Clara Fischer\"}]}"
+      ],
+      "answer": "Hello Clara, you have one account with Verta:\n\n- **Account ID:** ACC-1004\n- **Currency:** EUR\n- **Balance:** EUR 145,000.00\n- **Tier:** tier3\n\nIs there anything you'd like to do with this account?"
+     },
+     {
+      "step": 2,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "get_transactions"
+      ],
+      "identical_max": 1,
+      "first_call_input": 2851,
+      "input_tokens": 5771,
+      "cached_tokens": 5028,
+      "output_tokens": 217,
+      "duration_ms": 2626,
+      "trace_cost_usd": 0.000233,
+      "usage_cost_usd": 0.000233,
+      "provider_cost_usd": 0.000233,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"transactions\": []}"
+      ],
+      "answer": "I couldn't find any recent transactions on your EUR account (ACC-1004). The system returned an empty list, which may mean there's no activity on the account or that the history is temporarily unavailable.\n\nIf you expected to see activity, I can try retrieving the history again, or I can escalate the matter to a human support agent to check it."
+     }
+    ],
+    "verdicts": [
+     {
+      "kind": "tool_called",
+      "ok": true,
+      "detail": "get_transactions called on step(s) [2]"
+     },
+     {
+      "kind": "identical_tool_calls_max",
+      "ok": true,
+      "detail": "step 1: 1 identical call(s), max 1"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "scenario": "B1",
+  "condition": "defect",
+  "settings": {
+   "profile": "clean",
+   "defects": "D14"
+  },
+  "aggregates": [],
+  "runs": [
+   {
+    "run": 1,
+    "passed": false,
+    "steps": [
+     {
+      "step": 1,
+      "model_calls": 2,
+      "retries": 0,
+      "tools": [
+       "get_account"
+      ],
+      "identical_max": 1,
+      "first_call_input": 2601,
+      "input_tokens": 5349,
+      "cached_tokens": 5028,
+      "output_tokens": 109,
+      "duration_ms": 2120,
+      "trace_cost_usd": 0.000137,
+      "usage_cost_usd": 0.000137,
+      "provider_cost_usd": 0.000137,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"customer\": {\"id\": \"CUS-0003\", \"name\": \"Clara Fischer\", \"tier\": \"tier3\"}, \"accounts\": [{\"id\": \"ACC-1004\", \"customer_id\": \"CUS-0003\", \"currency\": \"EUR\", \"balance\": 145000.0, \"tier\": \"tier3\", \"holder\": \"Clara Fischer\"}]}"
+      ],
+      "answer": "Hello Clara. You have one account on file:\n\n- **Account ID:** ACC-1004\n- **Currency:** EUR\n- **Balance:** €145,000.00\n- **Tier:** tier3\n\nIs there anything you'd like to do with this account?"
+     },
+     {
+      "step": 2,
+      "model_calls": 9,
+      "retries": 7,
+      "tools": [
+       "get_transactions",
+       "get_transactions",
+       "get_transactions",
+       "get_transactions",
+       "get_transactions",
+       "get_transactions",
+       "get_transactions",
+       "get_transactions"
+      ],
+      "identical_max": 8,
+      "first_call_input": 2846,
+      "input_tokens": 28098,
+      "cached_tokens": 22626,
+      "output_tokens": 1834,
+      "duration_ms": 17609,
+      "trace_cost_usd": 0.00169,
+      "usage_cost_usd": 0.000339,
+      "provider_cost_usd": 0.00169,
+      "replay": false,
+      "summary": null,
+      "tool_results": [
+       "{\"transactions\": []}",
+       "{\"transactions\": []}",
+       "{\"transactions\": []}",
+       "{\"transactions\": []}",
+       "{\"transactions\": []}",
+       "{\"transactions\": []}",
+       "{\"transactions\": []}",
+       "{\"transactions\": []}"
+      ],
+      "answer": "I couldn't retrieve any transactions for account ACC-1004. The system returned an empty list each time I checked, so I can't tell whether the account has no recent activity or whether the transaction data is unavailable.\n\nYour options:\n- **Send a statement:** I can email an account statement to the address registered to your account. I don't have that address on file in this session, so please confirm it, or I can use the one already registered.\n- **Escalate:** I can pass this to a human support agent to check the transaction history.\n\nWhich would you like?"
+     }
+    ],
+    "verdicts": [
+     {
+      "kind": "tool_called",
+      "ok": true,
+      "detail": "get_transactions called on step(s) [2]"
+     },
+     {
+      "kind": "identical_tool_calls_max",
+      "ok": false,
+      "detail": "step 2: 8 identical call(s), max 1"
+     }
+    ]
+   }
+  ]
+ }
+]

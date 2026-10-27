@@ -1,0 +1,38 @@
+[
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "b83bbabf4d0440f5"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "2e6b21681041",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "6c6b9073e9614ac0"
+  }
+]
