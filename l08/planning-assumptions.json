@@ -1,0 +1,7 @@
+{
+  "active_users": 800,
+  "dialogs_per_user_per_month": 20,
+  "scenario_mix": {"B1": 0.3, "B2": 0.7},
+  "source": {"active_users": "HW7 assignment scale", "dialogs_per_user_per_month": "Explicit illustrative planning assumption; no measured production traffic", "scenario_mix": "Explicit illustrative planning assumption; no measured production distribution"},
+  "scaling": "At fixed dialogue length/mix, total cost is linear in N. Superlinear growth requires a changing dialogue length/context/concurrency distribution, not N alone."
+}

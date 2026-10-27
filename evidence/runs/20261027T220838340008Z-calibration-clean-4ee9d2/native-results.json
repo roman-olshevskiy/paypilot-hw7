@@ -1,0 +1,254 @@
+{
+  "prompt_version": "base.v1",
+  "set_hash": "d475a1659ffb",
+  "profile": "clean",
+  "judge_model": "not-used",
+  "rubric_version": "rubric.v1",
+  "elapsed": 419.5,
+  "set": "l05_dialogs",
+  "gate": "release",
+  "ran_at": "2026-10-27T22:15:37.926721+00:00",
+  "passed": 4,
+  "total": 4,
+  "skipped": 0,
+  "by_layer": {
+    "orchestration": {
+      "passed": 4,
+      "total": 4
+    }
+  },
+  "coverage": {
+    "cases": 4,
+    "layers": {
+      "orchestration": 4
+    },
+    "oracles": {
+      "human": 4
+    },
+    "sources": {
+      "new own HW7 dialogue; D15 requires tools history and no summary": 1,
+      "own HW4 dialogue, separate budget assertion": 3
+    },
+    "severities": {
+      "high": 4
+    },
+    "ladder_levels": [
+      2
+    ],
+    "gates": {
+      "release": 4
+    },
+    "human_oracle_pct": 100.0,
+    "severity_filled_pct": 100.0
+  },
+  "cases": [
+    {
+      "skipped": false,
+      "id": "BUD-H01",
+      "layer": "orchestration",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "release",
+      "runs": 5,
+      "verdict": {
+        "passed": true,
+        "level": 2,
+        "assertion": "budget",
+        "detail": "per run: tokens [46100, 55935, 55715, 55634, 46996], identical calls [1, 1, 1, 1, 1], latency [18037, 20405, 22232, 20218, 18495]ms"
+      },
+      "answers": [
+        "The filing window for goods_not_received is **90 days** from the transaction date (2026-07-20).\n\nThe exact filing deadline is **2026-10-18**. As of today (2026-09-15), you still have time, with 33 days remaining. Nothing has been filed.",
+        "The filing window for `goods_not_received` is **90 days** from the transaction date (2026-07-20). The exact deadline is **2026-10-18**.\n\nAs of today (2026-09-15), you still have time, about 33 days. Nothing has been filed.",
+        "Yes, you still have time.\n\n- **Filing window:** 90 days from the transaction date (2026-07-20)\n- **Filing deadline:** 2026-10-18\n- **Time remaining:** 33 days as of today (2026-09-15)\n\nNothing has been filed.",
+        "The filing window for `goods_not_received` is **90 days** from the transaction date (2026-07-20). The exact filing deadline is **2026-10-18**.\n\nAs of 2026-09-15, you have **33 days** left. Nothing has been filed.",
+        "The filing window for TX-0401 under `goods_not_received` is **90 days** from the transaction date.\n\n- **Transaction date:** 2026-07-20\n- **Exact filing deadline:** **2026-10-18**\n- **Today (as of 2026-09-15):** you are within the window, with about 33 days left.\n\nNothing has been filed."
+      ],
+      "latency_ms": 20218,
+      "budget_samples": [
+        {
+          "dialog_tokens": 46100,
+          "latency_ms": 18037,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 55935,
+          "latency_ms": 20405,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 55715,
+          "latency_ms": 22232,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 55634,
+          "latency_ms": 20218,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 46996,
+          "latency_ms": 18495,
+          "identical_max": 1
+        }
+      ],
+      "tokens": 260380,
+      "tool_calls": []
+    },
+    {
+      "skipped": false,
+      "id": "BUD-H02",
+      "layer": "orchestration",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "release",
+      "runs": 5,
+      "verdict": {
+        "passed": true,
+        "level": 2,
+        "assertion": "budget",
+        "detail": "per run: tokens [38795, 38744, 38578, 39547, 38357], identical calls [1, 1, 1, 1, 1], latency [18293, 16593, 17127, 17709, 16753]ms"
+      },
+      "answers": [
+        "The filing window for `goods_not_received` is **90 days** from the transaction date (2026-07-20). The exact filing deadline is **2026-10-18**.\n\nYes, you still have time. As of 2026-09-15, there are **33 days** left. Nothing has been filed.",
+        "**Filing window:** 90 days from the transaction date (2026-07-20).\n**Exact deadline:** 2026-10-18.\n\nYes, you still have time. As of 2026-09-15, there are 33 days left. Nothing has been filed.",
+        "**TX-0401 (240.00 EUR, goods_not_received):**\n- **Filing window:** 90 days from the transaction date (2026-07-20).\n- **Exact filing deadline:** 2026-10-18.\n- **Time remaining:** Yes. As of today, 2026-09-15, the window is open with 33 days left.\n\nNothing has been filed.",
+        "- **Filing window:** 90 days from the transaction date (2026-07-20)\n- **Exact filing deadline:** 2026-10-18\n- **Time remaining:** Yes. As of 2026-09-15, there are 33 days left.\n\nNothing has been filed.",
+        "The filing window for `goods_not_received` is 90 days from the transaction date (2026-07-20). The filing deadline is **2026-10-18**.\n\nAs of 2026-09-15, the date of the eligibility check, you still have time. That leaves 33 days to file.\n\nNothing has been filed."
+      ],
+      "latency_ms": 17127,
+      "budget_samples": [
+        {
+          "dialog_tokens": 38795,
+          "latency_ms": 18293,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 38744,
+          "latency_ms": 16593,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 38578,
+          "latency_ms": 17127,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 39547,
+          "latency_ms": 17709,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 38357,
+          "latency_ms": 16753,
+          "identical_max": 1
+        }
+      ],
+      "tokens": 194021,
+      "tool_calls": []
+    },
+    {
+      "skipped": false,
+      "id": "BUD-H04",
+      "layer": "orchestration",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "release",
+      "runs": 5,
+      "verdict": {
+        "passed": true,
+        "level": 2,
+        "assertion": "budget",
+        "detail": "per run: tokens [58591, 50041, 56860, 49713, 49843], identical calls [1, 1, 1, 1, 1], latency [21970, 21490, 23164, 26370, 26025]ms"
+      },
+      "answers": [
+        "The filing window for `goods_not_received` is **90 days** from the transaction date (2026-07-20). The exact filing deadline is **2026-10-18**.\n\nBased on the eligibility check, which used a current date of 2026-09-15, you still have time: about 33 days remain. Nothing has been filed.",
+        "The filing window for TX-0401 (goods_not_received) is **90 days** from the transaction date of 2026-07-20. The exact filing deadline is **2026-10-18**.\n\nThe eligibility check was run as of 2026-09-15, which leaves about 33 days. Based on that date, you still have time. If today is later than 2026-09-15, please confirm the current date, because the deadline does not move.\n\nNothing has been filed.",
+        "The filing window for goods_not_received is **90 days** from the transaction date (2026-07-20), so the **filing deadline is 2026-10-18**.\n\nAs of 2026-09-15, the date of the eligibility check, you have **33 days** left. I have not filed anything.",
+        "The filing window for TX-0401 is **90 days** from the transaction date (2026-07-20). The exact filing deadline is **2026-10-18**.\n\nThe eligibility check was run as of 2026-09-15, and the window was open on that date, so you still have time. The deadline is based on the check's date, so file before 2026-10-18 to be safe. Nothing has been filed.",
+        "The filing window for TX-0401 under goods_not_received is **90 days** from the transaction date (2026-07-20). The exact filing deadline is **2026-10-18**.\n\nBased on the eligibility check, which used a reference date of 2026-09-15, you still have time: about 33 days remain. The check passed all of its criteria. Nothing has been filed."
+      ],
+      "latency_ms": 23164,
+      "budget_samples": [
+        {
+          "dialog_tokens": 58591,
+          "latency_ms": 21970,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 50041,
+          "latency_ms": 21490,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 56860,
+          "latency_ms": 23164,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 49713,
+          "latency_ms": 26370,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 49843,
+          "latency_ms": 26025,
+          "identical_max": 1
+        }
+      ],
+      "tokens": 265048,
+      "tool_calls": []
+    },
+    {
+      "skipped": false,
+      "id": "BUD-D15",
+      "layer": "orchestration",
+      "oracle": "human",
+      "severity": "high",
+      "gate": "release",
+      "runs": 5,
+      "verdict": {
+        "passed": true,
+        "level": 2,
+        "assertion": "budget",
+        "detail": "per run: tokens [44382, 45647, 45113, 44199, 45001], identical calls [1, 1, 1, 1, 1], latency [21540, 21159, 25724, 20829, 22151]ms"
+      },
+      "answers": [
+        "For **TX-0401** (TechMart Online, EUR 240.00, 20 July 2026), the duplicate-charge dispute is eligible but not yet open. The deadline is **18 September 2026**, and today is 15 September.\n\n1. **Confirm the duplicate.** Compare TX-0401 with TX-0402 (14 July 2026, EUR 240.00). Check whether they were for the same purchase or whether one was a separate order.\n2. **Gather evidence.** Collect order confi",
+        "Here are your next steps for TX-0401. I haven't opened or submitted anything.\n\n1. **Decide whether TX-0401 is a duplicate.** It is a €240.00 card payment to TechMart Online on 20 July 2026. TX-0402 is also €240.00 to TechMart Online, on 14 July 2026. If you only intended one purchase, TX-0401 may be the duplicate. If you bought two items, a dispute would not apply.\n2. **Gather your evidence.** Col",
+        "Here are your options for TX-0401. I haven't opened or submitted anything.\n\n1. **Confirm the charge is a duplicate.** TX-0401 (EUR 240.00, TechMart Online, 2026-07-20) and TX-0402 (EUR 240.00, TechMart Online, 2026-07-14) have the same amount and merchant. I can't confirm from the records whether they are a duplicate or two separate purchases, so check your own order history or the merchant's reco",
+        "Here are your options for TX-0401. I haven't opened or submitted anything.\n\n1. **Confirm the charge.** Check whether TX-0401 (EUR 240.00, TechMart Online, 2026-07-20) and TX-0402 (EUR 240.00, TechMart Online, 2026-07-14) are two separate purchases or a duplicate. Your records or the merchant's order history can show this.\n2. **Gather evidence.** I couldn't find the required documents in the knowle",
+        "To keep your options open for TX-0401, here are the next steps. I haven't opened a dispute.\n\n1. **Decide whether to dispute.** Confirm that the €240.00 TechMart Online charge on 20 July 2026 duplicates the €240.00 charge on 14 July 2026 (TX-0402). Only you can make that call, so check the merchant records or your order history.\n2. **Gather your evidence.** Collect order confirmations, receipts, an"
+      ],
+      "latency_ms": 21540,
+      "budget_samples": [
+        {
+          "dialog_tokens": 44382,
+          "latency_ms": 21540,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 45647,
+          "latency_ms": 21159,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 45113,
+          "latency_ms": 25724,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 44199,
+          "latency_ms": 20829,
+          "identical_max": 1
+        },
+        {
+          "dialog_tokens": 45001,
+          "latency_ms": 22151,
+          "identical_max": 1
+        }
+      ],
+      "tokens": 224342,
+      "tool_calls": []
+    }
+  ]
+}

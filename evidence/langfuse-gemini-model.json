@@ -1,0 +1,47 @@
+{
+  "id": "cmvr8bvvr000kpg34x87j8mys",
+  "createdAt": "2026-10-27T22:00:40.743Z",
+  "modelName": "hw7-gemini-2.5-flash",
+  "matchPattern": "(?i)^google/gemini-2\\.5-flash$",
+  "startDate": null,
+  "tokenizerId": null,
+  "tokenizerConfig": null,
+  "unit": "TOKENS",
+  "inputPrice": 3e-07,
+  "outputPrice": 2.5e-06,
+  "totalPrice": null,
+  "prices": {
+    "input": {
+      "price": 3e-07
+    },
+    "output": {
+      "price": 2.5e-06
+    },
+    "input_cached_tokens": {
+      "price": 3e-08
+    },
+    "input_cache_creation_tokens": {
+      "price": 1.1333333333333333e-07
+    },
+    "output_reasoning_tokens": {
+      "price": 2.5e-06
+    }
+  },
+  "isLangfuseManaged": false,
+  "pricingTiers": [
+    {
+      "id": "cmvr8bvvw000mpg349okyz520",
+      "name": "Standard",
+      "isDefault": true,
+      "priority": 0,
+      "conditions": [],
+      "prices": {
+        "input": 3e-07,
+        "output": 2.5e-06,
+        "input_cached_tokens": 3e-08,
+        "input_cache_creation_tokens": 1.1333333333333333e-07,
+        "output_reasoning_tokens": 2.5e-06
+      }
+    }
+  ]
+}

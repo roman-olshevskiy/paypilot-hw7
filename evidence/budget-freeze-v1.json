@@ -1,0 +1,5 @@
+{
+  "sha256": "bb27a1b2f7cdbc97af3e91f117a4cc8633f294f11e1a38a6e8b6b65610256e35",
+  "method": "Independent clean calibration; tokens median+5% for D15, +15% for other cases; latency median+100%, fixed before final clean and defect",
+  "calibration_folder": "evidence/runs/20261027T220838340008Z-calibration-clean-4ee9d2"
+}

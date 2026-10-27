@@ -101,14 +101,28 @@
         "identical_max": 1
       }
     ],
-    "median_tokens": 50041,
+    "median_tokens": 57334.0,
     "median_latency_ms": 23164,
     "thresholds": {
-      "tokens_total": 57548,
+      "tokens_total": 65935,
       "latency_ms": 46328
     },
     "token_margin_percent": 15.0,
-    "latency_margin_percent": 100
+    "latency_margin_percent": 100,
+    "initial_median_tokens": 50041,
+    "token_samples_v2": [
+      58591,
+      50041,
+      56860,
+      49713,
+      49843,
+      57537,
+      57543,
+      58067,
+      57346,
+      57322
+    ],
+    "method_v2": "Tokens median of10 clean dialogues plus15%; latency retains original5-sample median plus100%. Intent registered before first own defect results."
   },
   "BUD-D15": {
     "samples": [

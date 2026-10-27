@@ -1,5 +1,7 @@
 {
-  "sha256": "bb27a1b2f7cdbc97af3e91f117a4cc8633f294f11e1a38a6e8b6b65610256e35",
-  "method": "Independent clean calibration; tokens median+5% for D15, +15% for other cases; latency median+100%, fixed before final clean and defect",
-  "calibration_folder": "evidence/runs/20261027T220838340008Z-calibration-clean-4ee9d2"
+  "version": 2,
+  "sha256": "a82116fe9e5b3fb6819354b6b6b98be6eb2e4381acda1b15253ae8ee8fb3cbd0",
+  "method": "H04 clean-only expansion pre-registered in calibration-amendment-intent; other budgets unchanged; frozen before independent Docker confirmation",
+  "previous_version": "evidence/budget-freeze-v1.json",
+  "original_host_series_scope": "V1 host runs are validation diagnostics, not final V2 confirmation"
 }

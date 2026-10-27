@@ -1,0 +1,3242 @@
+[
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "9475f47c1c7d4064"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "85fd20f0cd72",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "1572cdbcc03349c4"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "041e75b23b9746a2"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "72e2329df186",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "38a76d86a8644db7"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "c0fc4fe9a82a4a69"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "395bb3f71f0e",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "9de44d8f1c184224"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "8ca839fdea2d4ffd"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "f187bc4613ff",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "660bc47dca484a2e"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "dbd31d3957fd451b"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "5374aac9b7eb",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "ace7ca9009ce41bf"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "52f75c2b7a354508"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "c0cebb5273c8",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "2a11be2fd6ab47d2"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "388563e12b234943"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "44d70eb25a5e",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "048ec74044d446f4"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "4825919a96ca405d"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "6dd4b1f08718",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "db9cfe100f8a4f53"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "0533339ec72e41f2"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "24d692e859f0",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "eb00d47904c34ec2"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "155561e9ad32470e"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "6a4334745378",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "06cb5acb9c2941aa"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "abef9b6d54a84ef7"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "fc15238e7313",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "314f739f17034f4f"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "fc15238e7313",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "98b5fd9cdd92454a"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "fc15238e7313",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "fec2ba98af7a43ed"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "fc15238e7313",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "cfc9a00cffb749a7"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "fc15238e7313",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "9003835155e444b2"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "fc15238e7313",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b02a84f9987b4ccd"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "e16a38d54d0b478c"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "8446f8531f8a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "6cec0de0b5184870"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "8446f8531f8a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "e56eb5de1ceb41a0"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "8446f8531f8a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "14152d21446d4323"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "8446f8531f8a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "c25e61cd0105442f"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "8446f8531f8a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "3d55bfab24f74974"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "8446f8531f8a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "fca1602808a84d26"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "2826e919d99c4804"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "fd9ed47d0e88",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "cc5141c110df46ea"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "fd9ed47d0e88",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "1e692f87ba9f445c"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "fd9ed47d0e88",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "582bebf321a14a7a"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "fd9ed47d0e88",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "9268b1fd05b44ad9"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "fd9ed47d0e88",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d84e5b7e838c43b3"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "fd9ed47d0e88",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "155898555d8f4ccd"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "460c651329ad4928"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "e4c270a3739c",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "c529dea0fa2a42df"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "e4c270a3739c",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "2d8b2bbd68b6462f"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "e4c270a3739c",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d7bae1ceb8104a9d"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "e4c270a3739c",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "45689ddf4cce4210"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "e4c270a3739c",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "9f564a78e0874685"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "e4c270a3739c",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a4ea206cb18b439f"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "570b982bb7fa4518"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "f4e320e186bd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "7955cd3d00154c55"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "f4e320e186bd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "db2ed57ea3e64eca"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "f4e320e186bd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "76614f73fe44411f"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "f4e320e186bd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "ead75fb8ac75402f"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "f4e320e186bd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "c64969c2918b4fcc"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "f4e320e186bd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "140af96812224dc0"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "096461efc07f48c2"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "10fa942ab236",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d408963632f74f02"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "10fa942ab236",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "95440932a8924f3b"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "10fa942ab236",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "ad3ce83a22764cc7"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "10fa942ab236",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "bce5731736694d74"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "10fa942ab236",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "aa9efea89c6144ad"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 1,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "10fa942ab236",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a28c92d31b014d2e"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "af71e0d43b844a23"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "2502b937614a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a0873c2e1ec14e23"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "2502b937614a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "998612d281c54617"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "2502b937614a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "771d135dd3d54cd7"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "2502b937614a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f1213adc0b3c4992"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "2502b937614a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "56f7b86c77284779"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 2,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "2502b937614a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b0ba46c7b2f6479c"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "82fb0da6b2e849be"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "ebc4a31c94cc",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "04eccf34c2bc4adf"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "ebc4a31c94cc",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "6b89795e7e7d438a"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "ebc4a31c94cc",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "9a1f4d71cbfc4302"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "ebc4a31c94cc",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "3ba607645b654299"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "ebc4a31c94cc",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "e1a527cbf8cb4e0f"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 3,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "ebc4a31c94cc",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "2a6c891095194bb3"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d371118c525b4f27"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "7158712e7343",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "727b16c74ac74b02"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "7158712e7343",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "cbc6fd0e5dd34dbe"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "7158712e7343",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f2e5dd28c6bf4184"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "7158712e7343",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "fea20b43f7674552"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "7158712e7343",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a95a6abadeb745e9"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 4,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "7158712e7343",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "9a0c73af4dc749e8"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "2630694f74574565"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "78e2c84fe5cf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "db08d47971a64ee6"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "78e2c84fe5cf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "18b1c63347994602"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "78e2c84fe5cf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "dbd4b91061d64328"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "78e2c84fe5cf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "e3c85de81728427c"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "78e2c84fe5cf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "16e45ebf4e724547"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "google/gemini-2.5-flash"
+    },
+    "repeat": 5,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "78e2c84fe5cf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b51450b07ceb462e"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "479207bf5b554193"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "94d0bf309cc3",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "983d7e78080346f1"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "84603d50de234250"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "3173c3ed219f",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "fc460ad288e94aa6"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "a6c7283c62cb4938"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "e135967e7239",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "03d96f706a7f47aa"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "1b25cfef835b4e3e"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "913391e90668",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "07e4bf7178bd484d"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "b6dccf2e174e40b7"
+  },
+  {
+    "scenario": "B1",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "57b880e556e6",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "e4806bd64ad4426c"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "c7ddb34c86c74026"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "05ab71bfce33",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "0312351fc6064221"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "50034f3e4f5f458d"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "d88da5060a2a",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "64db162f82d14a99"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "4386a7503e6747d4"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "5539a29fc683",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "3a76b4531dc54b5e"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "b44697ffa9354ef2"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "d80c4faff514",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "97eb9819968e4302"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 1,
+    "request": {
+      "message": "Hi, which accounts do I have?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "798d433ba0c14121"
+  },
+  {
+    "scenario": "B1",
+    "condition": "defect",
+    "settings": {
+      "profile": "clean",
+      "defects": "D14",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 2,
+    "request": {
+      "message": "Can you show my recent transactions?",
+      "session_id": "07ed364acefa",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "e1e477bb57ca4169"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "fbcc87e61fde40e3"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "f7146bdde3cf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "0437095546f147ee"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "f7146bdde3cf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f1667dfc03b446bc"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "f7146bdde3cf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "667ed2e37dd04795"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "f7146bdde3cf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "4095b4fe4cf44f3d"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "f7146bdde3cf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "bdf782fd1c9a4bd5"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "f7146bdde3cf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "6aa56c1fea3e4a23"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "7097548708cd452f"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "f42cceb91ca3",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "3ac501efa81840d4"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "f42cceb91ca3",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "bfd73199ed1a4a53"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "f42cceb91ca3",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "dfa032c424304d83"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "f42cceb91ca3",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b350e00f69e94e82"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "f42cceb91ca3",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f40537abe3f54598"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "f42cceb91ca3",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d32119ee1b004f8a"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d9664c229fa346ca"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "b11b1cdbfe40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "bb4ff6f338ec49ef"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "b11b1cdbfe40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "86f9dad7f8ae47fb"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "b11b1cdbfe40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "74573b03745e4906"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "b11b1cdbfe40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b94f41801a6a4018"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "b11b1cdbfe40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "3eca12a650ca4be2"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "b11b1cdbfe40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "9c63f0bc75e04650"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b35cb8bbb4774ed4"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "b477d64f65f8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "7f0c1ade49f34ca3"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "b477d64f65f8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "6c672b0808954aba"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "b477d64f65f8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "4aea3b5a48d14031"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "b477d64f65f8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "788f6e96f60a420d"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "b477d64f65f8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "6cc781f503ac4245"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "b477d64f65f8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b85eb05fa93e4578"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a7d3baa380dd4e6c"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "8e5477da863d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "09e60cb6abed47f7"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "8e5477da863d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "35da371514e04bd3"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "8e5477da863d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "0c4b8fb774b7427d"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "8e5477da863d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "22f56360236e436e"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "8e5477da863d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "9a1c67d717a24716"
+  },
+  {
+    "scenario": "B2",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "8e5477da863d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "9100dbae17274b2c"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "479afb60525e419c"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "07703d678908",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "23f7e4cbb36a43fe"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "07703d678908",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "1f453f82b4fd41fe"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "07703d678908",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "3643202a99eb4700"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "07703d678908",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "084d5220a2c048ab"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "07703d678908",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f1fc259703d54cd2"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "07703d678908",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "2bb6209e48314773"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "41daaedaabb745ec"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "9a080d8c159e",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "62b5883f77b240ff"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "9a080d8c159e",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "83f63441179e4975"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "9a080d8c159e",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a8084aa1807c4547"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "9a080d8c159e",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a38b6948539b4054"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "9a080d8c159e",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a56c779a2ffa4cd0"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "9a080d8c159e",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "2d6b453ff761437a"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "6c62896529284579"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "67e1d7a899c2",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "eb1c639e2a724c50"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "67e1d7a899c2",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f27887b75fe54671"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "67e1d7a899c2",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "68909a3609a74942"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "67e1d7a899c2",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "13dd6967cb9e45f3"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "67e1d7a899c2",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "0b328b41e6434b3d"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "67e1d7a899c2",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "09f8112a2acb468e"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "0a06247da8ec4a20"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "a8a3fe3234d8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "59e30b1b652e4614"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "a8a3fe3234d8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "7802df6c5a2c4833"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "a8a3fe3234d8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "e89b1371563e4ee9"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "a8a3fe3234d8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "54d09d63570c45e9"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "a8a3fe3234d8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "0a4eb18ee4294896"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "a8a3fe3234d8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "152686c1383040a2"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b74a9b8b543c45a6"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "27b20f191f69",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a02c7fe5c80646be"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "27b20f191f69",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "bc1b04fcd6b440f9"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 4,
+    "request": {
+      "message": "Is my card still safe to use meanwhile?",
+      "session_id": "27b20f191f69",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f6d03c50326942c4"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 5,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "27b20f191f69",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "e08542ddb3c9489f"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 6,
+    "request": {
+      "message": "And what was the filing window again?",
+      "session_id": "27b20f191f69",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "75000a3d37d7426b"
+  },
+  {
+    "scenario": "B2",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-08",
+      "defects": "",
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 7,
+    "request": {
+      "message": "OK, please open the dispute.",
+      "session_id": "27b20f191f69",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "598039a8249e4698"
+  }
+]

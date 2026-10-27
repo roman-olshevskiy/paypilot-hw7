@@ -1,0 +1,722 @@
+[
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d1eee7730e5c4588"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "8effaeef321d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "cd068bb926254dd9"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 1,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "8effaeef321d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "8fa74a4b3cdc4098"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 1,
+    "step": 4,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "8effaeef321d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "97e40b779aff4f4b"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 2,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "7f0013b945d64e4e"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 2,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "658cbfa016b8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d341717579914c70"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 2,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "658cbfa016b8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "27978fddf0d44525"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 2,
+    "step": 4,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "658cbfa016b8",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "4437d72651e94fcc"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 3,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "0db5e8da59c141fb"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 3,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "a8d7c0589517",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "88cf199333fa44ef"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 3,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "a8d7c0589517",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "24593ca0e2e54261"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 3,
+    "step": 4,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "a8d7c0589517",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "9cf48399f7434ef6"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 4,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "236d1980b6c6496d"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 4,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "a0fcf23b9d1f",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f8b91a1d92214aa3"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 4,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "a0fcf23b9d1f",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "aae5471d06cf4d24"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 4,
+    "step": 4,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "a0fcf23b9d1f",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "435873ffad014a54"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 5,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b70488e71d624d52"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 5,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "8609f8994ecf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "4564c779a95040c6"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 5,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "8609f8994ecf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a65a7fd9d1444da9"
+  },
+  {
+    "scenario": "B3",
+    "condition": "baseline",
+    "settings": {
+      "profile": "clean",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 5,
+    "step": 4,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "8609f8994ecf",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "58064240ba2e4b7b"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "cc1095f4eff14c87"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "b4bc46f7ca35",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "0855214a839c4471"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 1,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "b4bc46f7ca35",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "be76758850634a04"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 1,
+    "step": 4,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "b4bc46f7ca35",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "1e9eb86120c14f8c"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 2,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "bba52b3c59e74774"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 2,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "bf9eef73b800",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "68bf9d88239b4255"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 2,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "bf9eef73b800",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "baa778f48bb04937"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 2,
+    "step": 4,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "bf9eef73b800",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d2b108004b1f45f1"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 3,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "9467ed9a64b04acb"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 3,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "09640739b49f",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "58e5957edfdf4847"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 3,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "09640739b49f",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "77e64f9e43a143c2"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 3,
+    "step": 4,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "09640739b49f",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "6a6e23a78a104459"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 4,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "ad67d0c341d64791"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 4,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "c8172b36cb26",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "ba545391c27b497c"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 4,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "c8172b36cb26",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f430ca577ee6451c"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 4,
+    "step": 4,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "c8172b36cb26",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "42da96ec3a5540b1"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 5,
+    "step": 1,
+    "request": {
+      "message": "Hi, I see two charges of 240 EUR from TechMart Online on my account. Can you check my recent transactions?",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "1f216d234fbe4676"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 5,
+    "step": 2,
+    "request": {
+      "message": "Yes, the one on July 20 looks like a duplicate of the one on July 14. What dispute reason fits and how long do I have to file?",
+      "session_id": "43b1b00ed13a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "69f4a19445354e06"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 5,
+    "step": 3,
+    "request": {
+      "message": "What documents do I need for that?",
+      "session_id": "43b1b00ed13a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "5459f4b6f39e4ac0"
+  },
+  {
+    "scenario": "B3",
+    "condition": "defect",
+    "settings": {
+      "profile": "lesson-05",
+      "defects": "",
+      "summarize_after": 2
+    },
+    "repeat": 5,
+    "step": 4,
+    "request": {
+      "message": "Remind me, which transaction are we disputing and for how much?",
+      "session_id": "43b1b00ed13a",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "352a6d09602541a5"
+  }
+]

@@ -8,7 +8,7 @@ x-eval: &eval
       required: false
   volumes:
     - .:/course/solutions/evals
-    - ${STAND_DIR:-../paypilot-stand}/app:/course/app:ro
+    - ${STAND_DIR:-../paypilot-stand-shared}/app:/course/app:ro
 
 x-eval-env: &eval-env
   SET: ${SET:-l03}

@@ -1,0 +1,2414 @@
+[
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d6ac532640d84ac4"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "8e5fb9011827",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "10e6cf4d667f48e9"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 3,
+    "request": {
+      "message": "What is my daily card limit?",
+      "session_id": "8e5fb9011827",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "04944b0bef474737"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 4,
+    "request": {
+      "message": "And the FX spread if I pay in USD?",
+      "session_id": "8e5fb9011827",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d6e595452fcb4a3a"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 5,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "8e5fb9011827",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "ff1eadd28f314924"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 6,
+    "request": {
+      "message": "The amount is 240 euro, as I said at the start.",
+      "session_id": "8e5fb9011827",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "41489464b71b485a"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 7,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "8e5fb9011827",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "7157a4a006a74b8c"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "8581ca3b2dbb4124"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "6e1a019c8707",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "28dc1c8845eb449f"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 3,
+    "request": {
+      "message": "What is my daily card limit?",
+      "session_id": "6e1a019c8707",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "537685080bc847ad"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 4,
+    "request": {
+      "message": "And the FX spread if I pay in USD?",
+      "session_id": "6e1a019c8707",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "1f14165e0cc14e31"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 5,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "6e1a019c8707",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "13823f777f0247c5"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 6,
+    "request": {
+      "message": "The amount is 240 euro, as I said at the start.",
+      "session_id": "6e1a019c8707",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a0b694870ef94948"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 7,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "6e1a019c8707",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "0b022ef6fb6c469f"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "409afc7d862b4dff"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "d4e8ca004ed0",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b23fe194d67844db"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 3,
+    "request": {
+      "message": "What is my daily card limit?",
+      "session_id": "d4e8ca004ed0",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "759c2f2febb54a01"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 4,
+    "request": {
+      "message": "And the FX spread if I pay in USD?",
+      "session_id": "d4e8ca004ed0",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "5dbc6154bbb54ba2"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 5,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "d4e8ca004ed0",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d2fafb79c5d74174"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 6,
+    "request": {
+      "message": "The amount is 240 euro, as I said at the start.",
+      "session_id": "d4e8ca004ed0",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "351e55223f564a29"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 7,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "d4e8ca004ed0",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f8bd0b48cfee444f"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "2468bf9082e04a99"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "40bbebf58ba4",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d8c4813360c24318"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 3,
+    "request": {
+      "message": "What is my daily card limit?",
+      "session_id": "40bbebf58ba4",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "6147d0bd120b4e45"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 4,
+    "request": {
+      "message": "And the FX spread if I pay in USD?",
+      "session_id": "40bbebf58ba4",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "1a75b50d6d174a2e"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 5,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "40bbebf58ba4",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "c91a5677a595404d"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 6,
+    "request": {
+      "message": "The amount is 240 euro, as I said at the start.",
+      "session_id": "40bbebf58ba4",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "8c54759f79f146fe"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 7,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "40bbebf58ba4",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a73c66a9311c4cfc"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "353aa3c0dc99403b"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "027be34f7b40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a3733632268748b0"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 3,
+    "request": {
+      "message": "What is my daily card limit?",
+      "session_id": "027be34f7b40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "0c434ae46d6e48d0"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 4,
+    "request": {
+      "message": "And the FX spread if I pay in USD?",
+      "session_id": "027be34f7b40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d9a9f8009c0044c1"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 5,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "027be34f7b40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "2ac2ad0a4df14ea9"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 6,
+    "request": {
+      "message": "The amount is 240 euro, as I said at the start.",
+      "session_id": "027be34f7b40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "2b71d89002c44183"
+  },
+  {
+    "scenario": "BUD-H01",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 7,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "027be34f7b40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "68b3135754914049"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "392f69d332f6441f"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "906abad903fe",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "0f2a60df1e4f464a"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 3,
+    "request": {
+      "message": "What are my daily card limit and FX spread for USD payments?",
+      "session_id": "906abad903fe",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "ba5869d86d79457f"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 4,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "906abad903fe",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "1278f2113c974304"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 5,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "906abad903fe",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "7c0cef83c78343f6"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "327e7c5bb7e34299"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "6bf536c6f089",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "405cff5362414f9b"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 3,
+    "request": {
+      "message": "What are my daily card limit and FX spread for USD payments?",
+      "session_id": "6bf536c6f089",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f1403bf73f894417"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 4,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "6bf536c6f089",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "77d650a618104039"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 5,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "6bf536c6f089",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "26870e4e52ff4a70"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "fb6437624d624a47"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "620ed900a961",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "34ec9df53ee54352"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 3,
+    "request": {
+      "message": "What are my daily card limit and FX spread for USD payments?",
+      "session_id": "620ed900a961",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "924e8161cf0549c9"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 4,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "620ed900a961",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "e9b24fe3ad704ce4"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 5,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "620ed900a961",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b1d09c66bf504ee7"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "8f77bf5c81b64961"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "211ab075659c",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "c285134497e04676"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 3,
+    "request": {
+      "message": "What are my daily card limit and FX spread for USD payments?",
+      "session_id": "211ab075659c",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "ab96906d3f3843bf"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 4,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "211ab075659c",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "0270960e2ef744a2"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 5,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "211ab075659c",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "59a6d0194aff41ca"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "c198819020634bc5"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "b39bcf0b7051",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "de8f25249a88492f"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 3,
+    "request": {
+      "message": "What are my daily card limit and FX spread for USD payments?",
+      "session_id": "b39bcf0b7051",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "35c5ea9edbd54c31"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 4,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "b39bcf0b7051",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "8df28939074b4acd"
+  },
+  {
+    "scenario": "BUD-H02",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 5,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "b39bcf0b7051",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "ce3aad6ed96249c5"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f98055d515144e4e"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "14cf53974a40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a2096d9012ee4d9b"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 3,
+    "request": {
+      "message": "For this same charge, what evidence of non-delivery should I keep?",
+      "session_id": "14cf53974a40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "46115a540f3c4ed0"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 4,
+    "request": {
+      "message": "What information about this same charge would be needed to review a dispute?",
+      "session_id": "14cf53974a40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "73827aa30a5c41de"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 5,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "14cf53974a40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "1a8786ca950f436e"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 6,
+    "request": {
+      "message": "The amount is 240 euro, as I said at the start.",
+      "session_id": "14cf53974a40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "49d4063850574fd7"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 7,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "14cf53974a40",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "47204426c0134940"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "00c3996b09d541dc"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "5d68ebfb203f",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "7a3a30f6d397432a"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 3,
+    "request": {
+      "message": "For this same charge, what evidence of non-delivery should I keep?",
+      "session_id": "5d68ebfb203f",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "e71e7818ec254d3f"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 4,
+    "request": {
+      "message": "What information about this same charge would be needed to review a dispute?",
+      "session_id": "5d68ebfb203f",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "308e9384a6314a2a"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 5,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "5d68ebfb203f",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "443de68bcb3d495d"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 6,
+    "request": {
+      "message": "The amount is 240 euro, as I said at the start.",
+      "session_id": "5d68ebfb203f",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "33888c43685d4a82"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 7,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "5d68ebfb203f",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "cd819509680e43a9"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "1740960b48f845e3"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "16ff81f48e0b",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "2b72a7d9e1534f30"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 3,
+    "request": {
+      "message": "For this same charge, what evidence of non-delivery should I keep?",
+      "session_id": "16ff81f48e0b",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "325d2a65d15a4ddc"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 4,
+    "request": {
+      "message": "What information about this same charge would be needed to review a dispute?",
+      "session_id": "16ff81f48e0b",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "3a42deaecfe84ce4"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 5,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "16ff81f48e0b",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "e6cd914f0f2e4002"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 6,
+    "request": {
+      "message": "The amount is 240 euro, as I said at the start.",
+      "session_id": "16ff81f48e0b",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f10d34beda9d414a"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 7,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "16ff81f48e0b",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "f485cec462de430a"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b805106a31804840"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "036b4cf77837",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "1667df836d7e4b61"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 3,
+    "request": {
+      "message": "For this same charge, what evidence of non-delivery should I keep?",
+      "session_id": "036b4cf77837",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "64a38a606aa14e96"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 4,
+    "request": {
+      "message": "What information about this same charge would be needed to review a dispute?",
+      "session_id": "036b4cf77837",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "e172eed72cfd4fc8"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 5,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "036b4cf77837",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "40f988a1b7d243cb"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 6,
+    "request": {
+      "message": "The amount is 240 euro, as I said at the start.",
+      "session_id": "036b4cf77837",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "8c6bafb628ce4db4"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 7,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "036b4cf77837",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "8a3edbfb2fdb45a5"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 1,
+    "request": {
+      "message": "Transaction TX-0401, 240.00 EUR: the goods never arrived. Confirm its amount and currency and name the single applicable reason code. We are only discussing this charge; do not create or submit a dispute.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d93b3e459a8c4ee4"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 2,
+    "request": {
+      "message": "Can I dispute that charge? State the applicable reason code and filing window in days; do not file anything.",
+      "session_id": "422aa09917b7",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "6ab3e1efe09f43a0"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 3,
+    "request": {
+      "message": "For this same charge, what evidence of non-delivery should I keep?",
+      "session_id": "422aa09917b7",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "c20c79d8be694de2"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 4,
+    "request": {
+      "message": "What information about this same charge would be needed to review a dispute?",
+      "session_id": "422aa09917b7",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "ad3ef212b9154ead"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 5,
+    "request": {
+      "message": "Back to the original charge: repeat its exact amount, currency and reason code, then explain the next step. Do not file anything.",
+      "session_id": "422aa09917b7",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "3189fd21816a48ec"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 6,
+    "request": {
+      "message": "The amount is 240 euro, as I said at the start.",
+      "session_id": "422aa09917b7",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "5cb5e59912eb4d2c"
+  },
+  {
+    "scenario": "BUD-H04",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 7,
+    "request": {
+      "message": "For that original charge, state its applicable filing window in days and the exact filing deadline. Do I still have time? Do not file anything.",
+      "session_id": "422aa09917b7",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "5eca36e4a4c3412b"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Please list my accounts and identify my card account.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "191eadee40614797"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "Show the July 20 transaction TX-0401 and its original amount.",
+      "session_id": "f3ea2f749ccd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "cfba8199b8b14568"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 3,
+    "request": {
+      "message": "Tell me the dispute window for duplicate_charge for that transaction, without opening a dispute.",
+      "session_id": "f3ea2f749ccd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "e0424c5d45f542ab"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 4,
+    "request": {
+      "message": "What supporting documents should I prepare for that dispute?",
+      "session_id": "f3ea2f749ccd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "82cdce6951fa49b1"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 5,
+    "request": {
+      "message": "Summarize which transaction we are discussing, but do not create anything.",
+      "session_id": "f3ea2f749ccd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "0411349d514a4141"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 6,
+    "request": {
+      "message": "Remind me of the original amount and reason code from this conversation.",
+      "session_id": "f3ea2f749ccd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "635d0e5911244510"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 7,
+    "request": {
+      "message": "Explain my next steps for that same transaction; do not submit or open a dispute.",
+      "session_id": "f3ea2f749ccd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "80c222c7350a4985"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 1,
+    "request": {
+      "message": "Please list my accounts and identify my card account.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "76a6e50f25544427"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 2,
+    "request": {
+      "message": "Show the July 20 transaction TX-0401 and its original amount.",
+      "session_id": "88ac54e92c04",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b571498415ce4e61"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 3,
+    "request": {
+      "message": "Tell me the dispute window for duplicate_charge for that transaction, without opening a dispute.",
+      "session_id": "88ac54e92c04",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "5333fdf80c2a4cd4"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 4,
+    "request": {
+      "message": "What supporting documents should I prepare for that dispute?",
+      "session_id": "88ac54e92c04",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "9dbb90c7a9004e0a"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 5,
+    "request": {
+      "message": "Summarize which transaction we are discussing, but do not create anything.",
+      "session_id": "88ac54e92c04",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "0f2e1211e5624cc4"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 6,
+    "request": {
+      "message": "Remind me of the original amount and reason code from this conversation.",
+      "session_id": "88ac54e92c04",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d622573c8c7e48cd"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 2,
+    "step": 7,
+    "request": {
+      "message": "Explain my next steps for that same transaction; do not submit or open a dispute.",
+      "session_id": "88ac54e92c04",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "de885970b01b46cf"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 1,
+    "request": {
+      "message": "Please list my accounts and identify my card account.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "b623457cc8d9418b"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 2,
+    "request": {
+      "message": "Show the July 20 transaction TX-0401 and its original amount.",
+      "session_id": "c8a618acc9ff",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "c849df59e7864d94"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 3,
+    "request": {
+      "message": "Tell me the dispute window for duplicate_charge for that transaction, without opening a dispute.",
+      "session_id": "c8a618acc9ff",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a44df440389a4c3b"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 4,
+    "request": {
+      "message": "What supporting documents should I prepare for that dispute?",
+      "session_id": "c8a618acc9ff",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "e5ecaee7eeae45dd"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 5,
+    "request": {
+      "message": "Summarize which transaction we are discussing, but do not create anything.",
+      "session_id": "c8a618acc9ff",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "660b1cecb9b042be"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 6,
+    "request": {
+      "message": "Remind me of the original amount and reason code from this conversation.",
+      "session_id": "c8a618acc9ff",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "c19deded375345a2"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 3,
+    "step": 7,
+    "request": {
+      "message": "Explain my next steps for that same transaction; do not submit or open a dispute.",
+      "session_id": "c8a618acc9ff",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "8e5c4d3e4fe844ce"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 1,
+    "request": {
+      "message": "Please list my accounts and identify my card account.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a5a3794f0af24cca"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 2,
+    "request": {
+      "message": "Show the July 20 transaction TX-0401 and its original amount.",
+      "session_id": "db728d8733c3",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "645b542406eb41c0"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 3,
+    "request": {
+      "message": "Tell me the dispute window for duplicate_charge for that transaction, without opening a dispute.",
+      "session_id": "db728d8733c3",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "167f143ab64c4f63"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 4,
+    "request": {
+      "message": "What supporting documents should I prepare for that dispute?",
+      "session_id": "db728d8733c3",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "edd286b20ffb4f8e"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 5,
+    "request": {
+      "message": "Summarize which transaction we are discussing, but do not create anything.",
+      "session_id": "db728d8733c3",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "a64463bfe0494c16"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 6,
+    "request": {
+      "message": "Remind me of the original amount and reason code from this conversation.",
+      "session_id": "db728d8733c3",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "099b8315664148c6"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 4,
+    "step": 7,
+    "request": {
+      "message": "Explain my next steps for that same transaction; do not submit or open a dispute.",
+      "session_id": "db728d8733c3",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "4f089490d5d8450d"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 1,
+    "request": {
+      "message": "Please list my accounts and identify my card account.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "1b7df518cacf4053"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 2,
+    "request": {
+      "message": "Show the July 20 transaction TX-0401 and its original amount.",
+      "session_id": "7ab012be21fd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "e673d8cb51f94e86"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 3,
+    "request": {
+      "message": "Tell me the dispute window for duplicate_charge for that transaction, without opening a dispute.",
+      "session_id": "7ab012be21fd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "d100846375504ffc"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 4,
+    "request": {
+      "message": "What supporting documents should I prepare for that dispute?",
+      "session_id": "7ab012be21fd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "029a1108ae3a47a6"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 5,
+    "request": {
+      "message": "Summarize which transaction we are discussing, but do not create anything.",
+      "session_id": "7ab012be21fd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "04567ae879a34c20"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 6,
+    "request": {
+      "message": "Remind me of the original amount and reason code from this conversation.",
+      "session_id": "7ab012be21fd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "ddf61e0c7c5d4391"
+  },
+  {
+    "scenario": "BUD-D15",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 5,
+    "step": 7,
+    "request": {
+      "message": "Explain my next steps for that same transaction; do not submit or open a dispute.",
+      "session_id": "7ab012be21fd",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "368a2a2454464d7d"
+  },
+  {
+    "scenario": "BUD-D14",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Which account belongs to me?",
+      "session_id": null,
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "1099a68a521846ce"
+  },
+  {
+    "scenario": "BUD-D14",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "List the recent transactions on that account, including an empty result if there are none.",
+      "session_id": "be2fd626ca9b",
+      "customer_id": "CUS-0003"
+    },
+    "status": "response_received",
+    "request_id": "b42535da46fc4d8f"
+  },
+  {
+    "scenario": "BUD-READ",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 1,
+    "request": {
+      "message": "Show my accounts.",
+      "session_id": null,
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "be5ad1c200d44918"
+  },
+  {
+    "scenario": "BUD-READ",
+    "condition": "budget-clean",
+    "settings": {
+      "clock": "2026-09-15T10:00:00Z",
+      "summarize_after": 20,
+      "model": "anthropic/claude-haiku-5.5"
+    },
+    "repeat": 1,
+    "step": 2,
+    "request": {
+      "message": "What is my current daily card limit?",
+      "session_id": "457df52ee01d",
+      "customer_id": "CUS-0004"
+    },
+    "status": "response_received",
+    "request_id": "9330c2c299f14544"
+  }
+]
