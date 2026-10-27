@@ -9,9 +9,9 @@ def main():
  clean=a['budget_reports']['clean'];defect=a['budget_reports']['lesson-08']
  settings=json.dumps({'model':'anthropic/claude-haiku-5.5','summarize_after':20,'clock':'2026-09-15T10:00:00Z'})
  lines=['# ДЗ №7 · Observability & Cost Report',
- 'Готово до здачі. Повна копія актуального L03, власні бюджетні кейси й pinned L08. [Артефакти](SUBMISSION.md). [Оригінальний README L03](sources/L03-README.md).',
+ 'На перевірці. Надіслано в LMS 2026-10-28. Повна копія актуального L03, власні бюджетні кейси й pinned L08. [Артефакти](SUBMISSION.md). [Оригінальний README L03](sources/L03-README.md).',
  '## L08 · Observability & Cost Report',
- '- [Звіт:3 слайди](l08/observability-cost-report.md) · [порожня форма](l08/observability-cost-report.template.md).\n- [Інцидент B3](l08/incident-summary.md) · [B4](l08/b4.json) · [витрати](evidence/billing-reconciliation.json).\n- [Межі вимірювання](l08/measurement-scope.md) · [зміни кіта](l08/capture-and-runner-changes.md).',
+ '- [Звіт: 3 розділи](l08/observability-cost-report.md) · [порожня форма](l08/observability-cost-report.template.md).\n- [Інцидент B3](l08/incident-summary.md) · [B4](l08/b4.json) · [витрати](evidence/billing-reconciliation.json).\n- [Межі вимірювання](l08/measurement-scope.md) · [зміни кіта](l08/capture-and-runner-changes.md).',
  '### Запуск',
  'Потрібні shared-стенд із OpenRouter, TRACE_CAPTURE_CONTENT=1 і Langfuse, без L07 proxy. Ключ тільки в .env стенду. Sibling каталог — paypilot-stand-shared; для іншого шляху задати STAND_DIR.',
  '**Ці команди платні й скидають seed-БД:**',
@@ -32,9 +32,9 @@ def main():
  (ROOT/'README.md').write_bytes(('\n\n'.join(lines).replace('|\n\n|','|\n|')+'\n').encode())
  submission='''# ДЗ №7 — артефакти здачі
 
-**Статус: готово до здачі.**
+**Статус: на перевірці. Надіслано в LMS 2026-10-28.**
 
-1. [Observability & Cost Report —3 слайди](l08/observability-cost-report.md).
+1. [Observability & Cost Report — 3 розділи](l08/observability-cost-report.md).
 2. [Порожня переносна форма](l08/observability-cost-report.template.md).
 3. [6 бюджетних кейсів](sets/l05_dialogs.jsonl), [запуск і пороги](README.md#запуск).
 4. [B4: дві моделі](l08/b4.json), [інцидент C-07/B3](l08/incident-summary.md).
@@ -43,7 +43,7 @@ def main():
 
 Для LMS: https://github.com/roman-olshevskiy/paypilot-hw7/blob/main/SUBMISSION.md
 
-Надсилання в LMS ще не підтверджено. Пілот, калібрування, перша валідація та незалежне підтвердження розділені.
+Надсилання в LMS підтверджено 2026-10-28; очікується перевірка ментора. Пілот, калібрування, перша валідація та незалежне підтвердження розділені.
 '''
  (ROOT/'SUBMISSION.md').write_bytes(submission.encode())
 if __name__=='__main__':main()

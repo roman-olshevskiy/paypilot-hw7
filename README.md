@@ -1,10 +1,10 @@
 # ДЗ №7 · Observability & Cost Report
 
-Готово до здачі. Повна копія актуального L03, власні бюджетні кейси й pinned L08. [Артефакти](SUBMISSION.md). [Оригінальний README L03](sources/L03-README.md).
+**На перевірці.** Надіслано в LMS 2026-10-28. Повна копія актуального L03, власні бюджетні кейси й pinned L08. [Артефакти](SUBMISSION.md). [Оригінальний README L03](sources/L03-README.md).
 
 ## L08 · Observability & Cost Report
 
-- [Звіт:3 слайди](l08/observability-cost-report.md) · [порожня форма](l08/observability-cost-report.template.md).
+- [Звіт: 3 розділи](l08/observability-cost-report.md) · [порожня форма](l08/observability-cost-report.template.md).
 - [Інцидент B3](l08/incident-summary.md) · [B4](l08/b4.json) · [витрати](evidence/billing-reconciliation.json).
 - [Межі вимірювання](l08/measurement-scope.md) · [зміни кіта](l08/capture-and-runner-changes.md).
 

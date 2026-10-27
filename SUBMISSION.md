@@ -1,8 +1,8 @@
 # ДЗ №7 — артефакти здачі
 
-**Статус: готово до здачі.**
+**Статус: на перевірці. Надіслано в LMS 2026-10-28.**
 
-1. [Observability & Cost Report —3 слайди](l08/observability-cost-report.md).
+1. [Observability & Cost Report — 3 розділи](l08/observability-cost-report.md).
 2. [Порожня переносна форма](l08/observability-cost-report.template.md).
 3. [6 бюджетних кейсів](sets/l05_dialogs.jsonl), [запуск і пороги](README.md#запуск).
 4. [B4: дві моделі](l08/b4.json), [інцидент C-07/B3](l08/incident-summary.md).
@@ -11,4 +11,4 @@
 
 Для LMS: https://github.com/roman-olshevskiy/paypilot-hw7/blob/main/SUBMISSION.md
 
-Надсилання в LMS ще не підтверджено. Пілот, калібрування, перша валідація та незалежне підтвердження розділені.
+Надсилання в LMS підтверджено 2026-10-28. Очікується перевірка ментора. Пілот, калібрування, перша валідація та незалежне підтвердження розділені.
