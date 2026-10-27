@@ -1,0 +1,8 @@
+{
+  "secret_matches": 0,
+  "third_person_personal_reference_files": [
+    "SUBMISSION.md"
+  ],
+  "scope": "Tracked textual artifacts; own submission markdown reviewed separately from original kit and verbatim raw evidence",
+  "excluded_false_positive": "GitHub owner roman-olshevskiy in URLs is not third-person address"
+}

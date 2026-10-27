@@ -1,0 +1,23 @@
+{
+  "cloned_commit": "02b6129c46928fdcefc0071e429cb5822b54fbe8",
+  "clean_before_and_after": true,
+  "scope": "Actual native Python CLI in a clean clone with recorded HTTP fixtures and recorded per-dialog latency; not a new live or Docker run",
+  "results": [
+    {
+      "profile": "clean",
+      "native_cli_exit": 0,
+      "verdicts_reproduced": 6,
+      "fixture_chat_calls": 134,
+      "real_http_calls": 0,
+      "real_model_calls": 0
+    },
+    {
+      "profile": "lesson-08",
+      "native_cli_exit": 1,
+      "verdicts_reproduced": 6,
+      "fixture_chat_calls": 134,
+      "real_http_calls": 0,
+      "real_model_calls": 0
+    }
+  ]
+}
