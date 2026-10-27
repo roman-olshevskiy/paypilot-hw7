@@ -25,6 +25,29 @@ class Budget(unittest.TestCase):
   try:self.assertRaises(RuntimeError,guard)
   finally:
    if old:os.environ['HW7_PAID']=old
+class Integrity(unittest.TestCase):
+ def test_run_case_counts_early_turn_tokens(self):
+  from unittest.mock import patch
+  import stand
+  case={'id':'fixture','turns':[{'role':'user','content':'a'},{'role':'user','content':'b'}],'additional_metadata':{'assertion':'budget','budget':{'tokens_total':104},'runs':1,'layer':'orchestration','oracle':'human','severity':'high'}}
+  responses=[{'answer':'a','request_id':'r1','usage':{'input_tokens':100,'output_tokens':0}},{'answer':'b','request_id':'r2','usage':{'input_tokens':5,'output_tokens':0}}]
+  with patch.object(stand,'reset'),patch.object(stand,'dialog',return_value=responses),patch.object(stand,'trace',return_value={'children':[]}):
+   result=runner.run_case(case)
+  self.assertFalse(result['verdict']['passed']);self.assertEqual(result['budget_samples'][0]['dialog_tokens'],105)
+ def test_response_survives_trace_failure_without_chat_retry(self):
+  import hw7_capture as cap,tempfile,types
+  from unittest.mock import patch
+  hits=[]
+  def fake(method,path,*args,**kw):
+   if path=='/api/_test/defects':return {'profile':'clean','extra_defects':[]}
+   if path=='/chat':hits.append(path);return {'request_id':'r1','session_id':'s1','answer':'fixture'}
+   if '/traces/' in path:raise RuntimeError('trace fixture unavailable')
+   return {}
+  module=types.SimpleNamespace(_call=fake)
+  with tempfile.TemporaryDirectory() as tmp,patch.object(cap,'ROOT',Path(tmp)):
+   c=cap.Capture('fixture',module)
+   with self.assertRaises(RuntimeError):c.execute('fixture',lambda:module._call('POST','/chat',{'message':'fixture'}))
+   rows=json.loads((c.folder/'captures.json').read_text());self.assertEqual(rows[0]['response']['request_id'],'r1');self.assertEqual(len(hits),1)
 @unittest.skipUnless(os.environ.get('HW7_ENV')=='1','Explicit readiness disabled')
 class Readiness(unittest.TestCase):
  def test_runtime(self):

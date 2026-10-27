@@ -1,0 +1,150 @@
+{
+  "BUD-H01": {
+    "samples": [
+      {
+        "dialog_tokens": 46100,
+        "latency_ms": 18037,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 55935,
+        "latency_ms": 20405,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 55715,
+        "latency_ms": 22232,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 55634,
+        "latency_ms": 20218,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 46996,
+        "latency_ms": 18495,
+        "identical_max": 1
+      }
+    ],
+    "median_tokens": 55634,
+    "median_latency_ms": 20218,
+    "thresholds": {
+      "tokens_total": 63980,
+      "latency_ms": 40436
+    },
+    "token_margin_percent": 15.0,
+    "latency_margin_percent": 100
+  },
+  "BUD-H02": {
+    "samples": [
+      {
+        "dialog_tokens": 38795,
+        "latency_ms": 18293,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 38744,
+        "latency_ms": 16593,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 38578,
+        "latency_ms": 17127,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 39547,
+        "latency_ms": 17709,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 38357,
+        "latency_ms": 16753,
+        "identical_max": 1
+      }
+    ],
+    "median_tokens": 38744,
+    "median_latency_ms": 17127,
+    "thresholds": {
+      "tokens_total": 44556,
+      "latency_ms": 34254
+    },
+    "token_margin_percent": 15.0,
+    "latency_margin_percent": 100
+  },
+  "BUD-H04": {
+    "samples": [
+      {
+        "dialog_tokens": 58591,
+        "latency_ms": 21970,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 50041,
+        "latency_ms": 21490,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 56860,
+        "latency_ms": 23164,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 49713,
+        "latency_ms": 26370,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 49843,
+        "latency_ms": 26025,
+        "identical_max": 1
+      }
+    ],
+    "median_tokens": 50041,
+    "median_latency_ms": 23164,
+    "thresholds": {
+      "tokens_total": 57548,
+      "latency_ms": 46328
+    },
+    "token_margin_percent": 15.0,
+    "latency_margin_percent": 100
+  },
+  "BUD-D15": {
+    "samples": [
+      {
+        "dialog_tokens": 44382,
+        "latency_ms": 21540,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 45647,
+        "latency_ms": 21159,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 45113,
+        "latency_ms": 25724,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 44199,
+        "latency_ms": 20829,
+        "identical_max": 1
+      },
+      {
+        "dialog_tokens": 45001,
+        "latency_ms": 22151,
+        "identical_max": 1
+      }
+    ],
+    "median_tokens": 45001,
+    "median_latency_ms": 21540,
+    "thresholds": {
+      "tokens_total": 47252,
+      "latency_ms": 43080
+    },
+    "token_margin_percent": 5.0,
+    "latency_margin_percent": 100
+  }
+}
