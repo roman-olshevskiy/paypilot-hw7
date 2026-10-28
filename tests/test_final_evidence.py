@@ -26,4 +26,4 @@ class FinalEvidence(unittest.TestCase):
     if '://' in target or target.startswith('#'):continue
     self.assertTrue((p.parent/target.split('#')[0]).exists(),f'{p.name}: {target}')
   text=(R/'l08/observability-cost-report.template.md').read_text(encoding='utf-8')
-  for value in ['PayPilot','TX-0401','CUS-','Haiku','Gemini','0.004']:self.assertNotIn(value,text)
+  for value in ['PayPilot','TX-0401','CUS-','Haiku','Gemini','0.004','BUD-D15','Lesson-08','Docker V2','B2 ·']:self.assertNotIn(value,text)
