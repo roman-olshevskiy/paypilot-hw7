@@ -10,5 +10,23 @@
   "sessions": 173,
   "byok_usage": 0,
   "direct_anthropic_calls": 0,
-  "scope": "All HW7 paid batches; no concurrent key consumer confirmed. Key usage is not account available balance."
+  "scope": "All HW7 paid batches; no concurrent key consumer confirmed. Key usage is not account available balance.",
+  "dashboard_confirmation": {
+    "date": "2026-10-28",
+    "source": "OpenRouter dashboard figures supplied in chat after LMS submission",
+    "displayed_cumulative_usage_usd": 0.629,
+    "exact_cumulative_key_usage_usd": 0.629046806,
+    "displayed_periods": [
+      "total",
+      "today",
+      "this_week",
+      "this_month"
+    ],
+    "matches_display_precision": true,
+    "displayed_model_totals_usd": {
+      "Claude Haiku 5.5": 0.55,
+      "Gemini 2.5 Flash": 0.08
+    },
+    "interpretation": "Cumulative key usage includes USD 0.03859273 before HW7. HW7 alone cost USD 0.590454076. Model totals are rounded cumulative figures, not an exact HW7 per-model allocation."
+  }
 }
