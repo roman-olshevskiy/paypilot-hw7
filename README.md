@@ -66,3 +66,5 @@ docker compose run --rm eval python -m unittest discover -s tests -v
 H04 V1 clean мав запас11 токенів. Clean-only правило розширення вибірки зафіксовано до own defect; V1 збережено, V2 frozen до незалежного Docker. [Рішення](evidence/calibration-amendment-intent.json), [freeze](evidence/budget-freeze.json).
 
 Budget PASS не доводить якість відповіді чи доречність дії. Raw transcripts не редагуються. Попередні ДЗ і стенд окремо не здаються.
+
+Витрати ДЗ7 **USD 0.590454076** звірено з кабінетом OpenRouter 28.10.2026: накопичений usage USD 0.6290 відповідає точному usage ключа після округлення. [Звірка та межі модельної розбивки](evidence/billing-reconciliation.json).
