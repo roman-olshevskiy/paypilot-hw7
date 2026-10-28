@@ -1,23 +1,25 @@
 # Observability & Cost Report · PayPilot
 
-Вимірювання 27–28.10.2026 (Europe/Kyiv); clock стенду 2026-09-15. Shared74f1995; L03 7d0f5e7; L08 666e496. OpenRouter: Haiku 5.5 та Gemini 2.5 Flash. Langfuse 4.69.0 локально. Прайс USD/M: Haiku input 0.10/output 0.50/cache-read0.01/write0.125; Gemini 0.30/2.50/0.03/effective-write0.113333. [Каталог API](../evidence/model-prices-api.json), [облік Gemini](pilot-and-price-review.md). B4/B3:5 незалежних повторів на умову; daily budget 1, release 5. Пілот і clean-калібрування окремі.
+Вимірювання 27–28.10.2026 (Europe/Kyiv), clock 2026-09-15. Стенд 74f1995; L03 7d0f5e7; L08 666e496; Langfuse 4.69.0. OpenRouter: Haiku 5.5 / Gemini 2.5 Flash, по 5 повторів B3/B4 на умову. Daily budget: 1 повтор, release: 5. [Версії](../evidence/provenance.json), [прайс](../evidence/model-prices-api.json), [облік cache-write](pilot-and-price-review.md).
+
+Прайс USD/млн токенів (input/output/cache-read/write): Haiku 0.10/0.50/0.01/0.125; Gemini 0.30/2.50/0.03/0.113333 (effective write).
 
 ## Слайд 1 · Трейс проти лічильника
 
 ![C-07: усі 7 кроків і ціна сесії](screenshots/c07-seven-steps-total-cost.png)
 
-Сесія f7146bdde3cf:7 кроків, Langfuse exact generation sum USD 0.00445066; UI сесії округлює до USD 0.004, [колонка Total Cost](screenshots/c07-total-cost-column.png) — до USD 0.004451. Це repeat 1, а таблиці нижче — медіани 5. [Raw Langfuse](../evidence/langfuse/session-f7146bdde3cf.json).
+Сесія f7146bdde3cf: 7 кроків, USD 0.00445066; [Total Cost](screenshots/c07-total-cost-column.png) округлює до 0.004451. Скриншот — повтор 1, таблиці — медіани 5. [Експорт](../evidence/langfuse/session-f7146bdde3cf.json).
 
 | Сліпа зона | Що пропущено | Джерело перевірки |
 |---|---|---|
-| usage.cost_usd за D14 | Приховані повтори моделі;8 однакових get_transactions | Provider cost і всі llm.call spans |
+| usage.cost_usd за D14 | Приховані повтори моделі; 8 однакових get_transactions | Provider cost і всі llm.call spans |
 | Langfuse без model definition | Ціна Haiku відсутня на старих сесіях | [Сесії, записані до definition](screenshots/sessions-before-haiku-pricing.png) |
 | Лише input/output prices | Cache buckets без ціни занижують суму | [Повне визначення](screenshots/haiku-model-definition.png), usage breakdown |
 | llm.call sum / root usage | Summary generation не включена | agent.summarize usage + provider total |
 
-Для сесії f7146bdde3cf лише input/output prices дали б USD 0.00340920 замість USD 0.00445066; cache buckets пояснюють різницю. Reasoning high не запускався; нуль reasoning у цих сесіях не доводить відсутність витрат за інших налаштувань.
+Лише input/output prices дали б USD 0.00340920: різницю до USD 0.00445066 пояснюють cache buckets. Reasoning high не перевірявся.
 
-**Інцидент B3, lesson-05/summarize_after2, repeat 2:**
+**Інцидент B3, lesson-05/summarize_after=2, repeat 2:**
 
 | Крок | Спан | Що записано | Де розійшлося |
 |---|---|---|---|
@@ -25,9 +27,9 @@
 | **3** | **agent.summarize** | **summary.input: TX-0401/duplicate_charge; summary.text: без них, service_not_rendered** | **Втрата на виході стиснення** |
 | 4 | llm.call / tools | tool.get_account, tool.get_transactions | Повторне отримання контексту після втрати |
 
-**Що було у вході генерації на кроці, де розійшлося:** summary.input спана agent.summarize містив TX-0401 і duplicate_charge; summary.text втратив обидві сутності.
+**Вхід генерації на кроці розбіжності:** summary.input містив TX-0401/duplicate_charge; summary.text — без обох.
 
-Для регулятора: на кроці 3 agent.summarize отримав TX-0401/duplicate_charge, але видав переказ без номера й з іншим reason code. [Дослівні вхід/вихід та IDs](incident-summary.md). Clean summary 5/5; defect0/5, із них не кожен губив обидві сутності.
+Для регулятора: крок 3, agent.summarize — втрачено TX-0401 і підмінено reason code. Перевірка summary: clean 5/5, defect 0/5. [Дослівний доказ і розподіл](incident-summary.md).
 
 **Ціна з трьох джерел, медіана USD/діалог (Haiku):**
 
@@ -44,9 +46,7 @@
 | Час, мс | 22895 | 24762 |
 | USD/діалог | 0.004161 | 0.006192 |
 
-B2 lesson-08/clean: input tokens **1.34×**, час **1.08×**, ціна **1.49×**. [Крива токенів](screenshots/b2-token-curve.png). D15 — різниця нахилів і context replay у вході, не сам факт зростання історії.
-
-Усі платні серії разом: 946 chat, 173 сесій; key delta **USD 0.59045408**. [Повна звірка](../evidence/billing-reconciliation.json); account balance не підміняється лімітом ключа.
+B2 lesson-08/clean: input **1.34×**, час **1.08×**, ціна **1.49×**. D15 додає context replay. [Крива токенів](screenshots/b2-token-curve.png).
 
 ## Слайд 2 · Прогноз
 
@@ -58,9 +58,9 @@ B2 lesson-08/clean: input tokens **1.34×**, час **1.08×**, ціна **1.49�
 | anthropic/claude-haiku-5.5 | USD 48.27/місяць; C(N)=N×20×0.0030171 | Виміряний clean mix, без hosting/fixed costs |
 | google/gemini-2.5-flash | USD 60.23/місяць; C(N)=N×20×0.0037646 | Виміряний clean mix, без hosting/fixed costs |
 
-**Що росте швидше за N:** при фіксованій довжині й mix витрати лінійні в N. Надлінійність потребує зміни довжини/контексту або навантаження; повторне перечитування історії може давати суму порядку T² у довжині діалогу T. Не приписуємо N автоматичну нелінійність. [Припущення](planning-assumptions.json).
+**Що росте швидше за N:** перечитування історії може давати T² за довжиною діалогу. За фіксованих довжини й міксу витрати лінійні в N. [Припущення](planning-assumptions.json).
 
-Прогноз закомічено до оплати: [4 гіпотези](forecast-before-runs.md). Пілот уточнив запас D15 до 5% до власних прогонів; [історія рішення](calibration-rule-update.md). Гіпотези не переписані заднім числом.
+[Чотири гіпотези](forecast-before-runs.md) закомічено до оплати; [звірка прогнозу](forecast-review.md) зберігає початкові очікування й результати.
 
 ## Слайд 3 · Рішення
 
@@ -71,7 +71,7 @@ B2 lesson-08/clean: input tokens **1.34×**, час **1.08×**, ціна **1.49�
 | Стиснення історії | Обмежує контекст | B3 показує втрату сутностей і повторні tools; потрібен summary invariant |
 | Зміна моделі | Може зменшити час | Інші tokenizer/поведінка, старі пороги не переносні |
 
-**Що обміняли:** дешевші виміряні Haiku-діалоги проти швидшого Gemini. **Чого не робимо:** не міняємо модель лише за прайсом і не видаємо cost PASS за якість. **Умова перегляду:** виміряна потреба меншої latency, новий прайс/навантаження й калібровані бюджети та semantic checks.
+**Що обміняли:** швидкість Gemini на дешевші діалоги Haiku. **Чого не робимо:** не трактуємо cost PASS як якість. **Умова перегляду:** потреба меншої затримки або новий прайс; спочатку перекалібрувати бюджети й перевірити зміст.
 
 ### Міграція моделі
 
@@ -86,27 +86,18 @@ B2 lesson-08/clean: input tokens **1.34×**, час **1.08×**, ціна **1.49�
 | Haiku | B2/clean | 0.004161 (0.003949–0.004823) | 22.9 (22.6–25.9) | PASS |
 | Haiku | B2/lesson-08 | 0.006192 (0.005164–0.006922) | 24.8 (23.2–26.1) | FAIL |
 
-- **Рішення:** зараз не переходимо. Haiku дешевший за обидва виміряні clean діалоги; Gemini швидший.
+- **Рішення:** лишаємо Haiku — дешевший в обох clean-сценаріях; Gemini швидший.
 - **Що зелене:** B1 tool/precondition+duplicate check 5/5 clean на обох; B2 clean aggregate PASS. D14 виявлено 5/5 обома.
-- **Чого перевірки не бачать:** правильність/тон/повноту відповідей і доречність раннього create_dispute у C-07; це конкретні кандидати для L09, [межі](measurement-scope.md).
-- **Пороги перезняти:** tokens_total, latency_ms власних release-кейсів і first-call-input B2. На Gemini 6500 пропускає defect; tokenizer-токени між моделями не порівнюємо. Довідкові токени є в b4.json.
+- **Чого перевірки не бачать:** правильність reason/window у B3, повноту відповідей B2 і доречність create_dispute на кроці 2 C-07; ці відповіді передаємо судді на L09, [межі](measurement-scope.md).
+- **Пороги перезняти:** tokens_total, latency_ms release-кейсів і first-call-input B2: поріг 6500 на Gemini пропускає defect. Токени різних tokenizer не порівнюємо.
 
-**Бюджети в кейсах:** [sets/l05_dialogs.jsonl](../sets/l05_dialogs.jsonl): BUD-H01/H02/H04/D15 — release 5; BUD-D14/READ — daily 1. Пороги frozen після окремого calibration, до фінальних умов. [Native L03 reports](../reports), [метод](measurement-scope.md).
+**Бюджети в кейсах:** [sets/l05_dialogs.jsonl](../sets/l05_dialogs.jsonl): BUD-H01/H02/H04/D15 — release/5; BUD-D14/READ — daily/1. [Reports](../reports), [метод](measurement-scope.md).
 
-### Фінальні власні бюджети · Docker V2
+Фінальна перевірка Docker V2: clean **6/6**, lesson-08 **2/6 PASS**. Чотири FAIL — бюджетні порушення. [Вердикти по кейсах](../evidence/docker-clean-clone.json).
 
-| Кейс | Clean | Lesson-08 |
-|---|---|---|
-| BUD-H01 | PASS | FAIL |
-| BUD-H02 | PASS | FAIL |
-| BUD-H04 | PASS | PASS |
-| BUD-D15 | PASS | FAIL |
-| BUD-D14 | PASS | FAIL |
-| BUD-READ | PASS | PASS |
+Поріг H04 V2 зменшує ризик false positive, але пропускає D15; H01/H02/BUD-D15 його виявляють. [Хронологія та вибірки](budget-calibration-notes.md).
 
-H04 V1 мав лише 11 токенів запасу на held-out clean. Розширення clean-вибірки до 10 зареєстровано до власної defect-серії; V2 frozen до незалежного Docker. Поріг 65935 зменшує ризик false positive, але пропускає D15 у H04. D15 виявляють H01/H02/BUD-D15. Це свідомо зафіксована втрата чутливості, не загальна гарантія покриття. [Хронологія](../evidence/calibration-amendment-intent.json), [V1/V2 і samples](../evidence/budget-calibration.json).
-
-Контроль без summary: provider median clean USD 0.00193182, lesson-05 USD 0.00199224; із summary 2 — USD 0.00283646/0.00298998. По 5 незалежних повторів. На цих коротких діалогах summary не заощаджує кошти; довші діалоги не вимірювалися. [Звірка 4 прогнозів](forecast-review.md).
+У короткому B3 контроль без summary дешевший за summary2; довгі діалоги не вимірювалися. [Медіани й межі висновку](forecast-review.md).
 
 ### Калібрування tokens_total · BUD-D15
 
@@ -116,9 +107,8 @@ H04 V1 мав лише 11 токенів запасу на held-out clean. Ро�
 | Занадто тісний | 43999 | 44884 / FAIL | 52242 / FAIL |
 | Обраний | 47252 | 44884 / PASS | 52242 / FAIL |
 
+Вільний/тісний пороги переоцінено на збережених captures. Обраний зафіксовано до фінальних прогонів: +5% до незалежної clean-медіани. [Метод](calibration-rule-update.md), [вибірки](../evidence/budget-calibration.json).
 
-Вільний/тісний варіанти — retrospective re-evaluation тих самих captures, не нові генерації. Обраний поріг frozen до final clean/lesson-08; запас 5% від незалежного calibration baseline. [Усі samples і запас](../evidence/budget-calibration.json).
+**Залишковий ризик:** latency містить instrumentation, місячний мікс — припущення, вибірка — 5 повторів. Зміна моделі/оточення потребує калібрування; production hosting і L09 ще не виміряні. [Межі](measurement-scope.md).
 
-**Залишковий ризик:** latency пороги залежать від локального instrumentation; місячний mix — припущення;5 повторів не доводять універсальність. Перезняти при зміні моделі/оточення. Semantic L09 і production capacity/hosting не вимірювалися. Точні raw докази зберігаються окремо.
-
-**Звірка з кабінетом OpenRouter, 28.10.2026:** накопичений usage USD 0.6290 відповідає точному значенню ключа USD 0.629046806 після округлення. До ДЗ7 було USD 0.03859273, тому фактичні витрати ДЗ7 — **USD 0.590454076**. Кабінет показує Haiku USD 0.55 і Gemini USD 0.08: це округлені накопичені суми, не точна розбивка лише ДЗ7. [Підтвердження звірки](../evidence/billing-reconciliation.json).
+**Фактичні витрати:** 946 chat-відповідей, 173 сесії, **USD 0.590454076**. Кабінет OpenRouter 28.10.2026 показує накопичені USD 0.6290: точний usage 0.629046806 мінус 0.03859273 до ДЗ7. Збіг до точності кабінету; округлені модельні суми не є розбивкою лише ДЗ7. [Звірка](../evidence/billing-reconciliation.json), [покажчик серій](run-index.md).
